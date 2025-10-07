@@ -16,9 +16,13 @@ async function setupModelSelection(viewer, selectedUrn) {
         }
         const models = await resp.json();
         dropdown.innerHTML = models.map(model => `<option value=${model.urn} ${model.urn === selectedUrn ? 'selected' : ''}>${model.name}</option>`).join('\n');
-        dropdown.onchange = () => onModelSelected(viewer, dropdown.value);
+        dropdown.onchange = async () => {
+            const v = await ensureViewer();
+            onModelSelected(v, dropdown.value);
+        };
         if (dropdown.value) {
-            onModelSelected(viewer, dropdown.value);
+            const v = await ensureViewer();
+            onModelSelected(v, dropdown.value);
         }
     } catch (err) {
         alert('Could not list models. See the console for more details.');
@@ -48,7 +52,8 @@ async function setupModelUpload(viewer) {
                 throw new Error(await resp.text());
             }
             const model = await resp.json();
-            setupModelSelection(viewer, model.urn);
+            // Refresh model list and select the newly uploaded model. Initialize viewer lazily when needed.
+            setupModelSelection(null, model.urn);
         } catch (err) {
             alert(`Could not upload model ${file.name}. See the console for more details.`);
             console.error(err);
@@ -105,4 +110,17 @@ function clearNotification() {
     const overlay = document.getElementById('overlay');
     overlay.innerHTML = '';
     overlay.style.display = 'none';
+}
+
+function setupExtractData() {
+    const btn = document.getElementById('extract');
+    if (!btn) return;
+    btn.onclick = () => {
+        const models = document.getElementById('models');
+        const urn = models?.value;
+        console.log('Extract Data button clicked. Selected urn:', urn);
+        showNotification('Extract Data clicked — this is a client-side test. Check the browser console.');
+        setTimeout(clearNotification, 3000);
+        alert('Extract Data click registered (check console for details).');
+    };
 }

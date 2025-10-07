@@ -43,5 +43,4 @@ public class Startup
             endpoints.MapControllers();
         });
     }
-    // Testing
 }
