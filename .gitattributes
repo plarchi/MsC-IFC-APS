@@ -1,0 +1,1 @@
+Revised_IFC/*.ifc filter=lfs diff=lfs merge=lfs -text
