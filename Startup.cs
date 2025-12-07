@@ -18,6 +18,9 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
+        // Swagger/OpenAPI
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
         var clientID = Configuration["APS_CLIENT_ID"];
         var clientSecret = Configuration["APS_CLIENT_SECRET"];
         var bucket = Configuration["APS_BUCKET"]; // Optional
@@ -34,6 +37,14 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+        else
+        {
+            // Optionally expose Swagger in non-dev environments
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
         app.UseDefaultFiles();
         app.UseStaticFiles();
