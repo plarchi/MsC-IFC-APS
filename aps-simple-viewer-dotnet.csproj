@@ -6,5 +6,6 @@
     <PackageReference Include="Autodesk.Authentication" Version="2.0.0" />
     <PackageReference Include="Autodesk.ModelDerivative" Version="2.0.0" />
     <PackageReference Include="Autodesk.OSS" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 </Project>
