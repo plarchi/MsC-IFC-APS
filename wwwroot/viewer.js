@@ -38,3 +38,13 @@ export function loadModel(viewer, urn) {
         Autodesk.Viewing.Document.load('urn:' + urn, onDocumentLoadSuccess, onDocumentLoadFailure);
     });
 }
+
+// Wire up the 'Extract Data' button to log a test string
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('extractDataBtn');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            console.log('Testing');
+        });
+    }
+});
