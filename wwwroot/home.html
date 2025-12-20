@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Models List</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn.autodesk.io/favicon.ico">
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    body, html { height: 100%; margin: 0; }
+    #container { display: flex; height: 100%; }
+    #left { width: 50%; padding: 12px; box-sizing: border-box; overflow-y: auto; }
+    #right { width: 50%; border-left: 1px solid #ddd; }
+    h1 { font-size: 18px; margin: 0 0 12px; }
+    ol { margin: 0; padding-left: 24px; }
+    li { margin: 8px 0; }
+    a { text-decoration: none; color: #0077cc; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="left">
+      <h1>Models</h1>
+      <ol id="modelList">
+        <!-- Filled by home.js -->
+      </ol>
+    </div>
+    <div id="right">
+      <!-- Empty right half for now -->
+    </div>
+  </div>
+  <script src="/home.js" type="module"></script>
+</body>
+</html>
