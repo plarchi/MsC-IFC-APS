@@ -46,7 +46,26 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        app.UseDefaultFiles();
+        app.Use(async (context, next) =>
+        {
+            var path = context.Request.Path.Value;
+            if (string.IsNullOrEmpty(path) || path == "/")
+            {
+                context.Response.Redirect("/home.html");
+                return;
+            }
+            if (string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase))
+            {
+                context.Response.Redirect("/home.html");
+                return;
+            }
+            await next();
+        });
+        // Serve home.html as the default landing page
+        var defaultFiles = new DefaultFilesOptions();
+        defaultFiles.DefaultFileNames.Clear();
+        defaultFiles.DefaultFileNames.Add("home.html");
+        app.UseDefaultFiles(defaultFiles);
         app.UseStaticFiles();
         app.UseRouting();
         app.UseEndpoints(endpoints =>

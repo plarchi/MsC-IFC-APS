@@ -20,6 +20,7 @@
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
+      "launchUrl": "home.html",
       "hotReloadProfile": "aspnetcore",
       "applicationUrl": "http://localhost:8080",
       "environmentVariables": {
