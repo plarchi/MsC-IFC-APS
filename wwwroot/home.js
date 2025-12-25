@@ -14,8 +14,8 @@ async function loadModels() {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.textContent = model.name;
-      // Link to existing viewer page, carrying URN via hash
-      a.href = `/index.html#${model.urn}`;
+      // Link to the 3D viewer page with URN in the hash
+      a.href = `/index.html#${encodeURIComponent(model.urn)}`;
       li.appendChild(a);
       list.appendChild(li);
     }

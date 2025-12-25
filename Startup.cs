@@ -54,11 +54,6 @@ public class Startup
                 context.Response.Redirect("/home.html");
                 return;
             }
-            if (string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase))
-            {
-                context.Response.Redirect("/home.html");
-                return;
-            }
             await next();
         });
         // Serve home.html as the default landing page
