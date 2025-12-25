@@ -22,7 +22,7 @@ async function loadModels() {
       del.className = 'delete-btn';
       del.addEventListener('click', (evt) => {
         evt.preventDefault();
-        console.log('Delete clicked for', model.name, model.urn);
+        console.log('Delete Testing');
       });
       li.appendChild(a);
       li.appendChild(del);
