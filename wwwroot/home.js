@@ -16,7 +16,16 @@ async function loadModels() {
       a.textContent = model.name;
       // Link to the 3D viewer page with URN in the hash
       a.href = `/index.html#${encodeURIComponent(model.urn)}`;
+      const del = document.createElement('button');
+      del.type = 'button';
+      del.textContent = 'Delete';
+      del.className = 'delete-btn';
+      del.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        console.log('Delete clicked for', model.name, model.urn);
+      });
       li.appendChild(a);
+      li.appendChild(del);
       list.appendChild(li);
     }
   } catch (err) {
