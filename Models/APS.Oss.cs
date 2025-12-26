@@ -59,4 +59,17 @@ public partial class APS
         }
         return results;
     }
+
+    public async Task DeleteObject(string objectName)
+    {
+        if (string.IsNullOrWhiteSpace(objectName))
+        {
+            throw new ArgumentException("Object name cannot be null or empty.", nameof(objectName));
+        }
+
+        await EnsureBucketExists(_bucket);
+        var auth = await GetInternalToken();
+        var ossClient = new OssClient();
+        await ossClient.DeleteObjectAsync(_bucket, objectName, accessToken: auth.AccessToken);
+    }
 }
