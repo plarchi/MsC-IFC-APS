@@ -1,3 +1,5 @@
+const HOME_JS_VERSION = '2025-12-26.1';
+console.log('home.js version:', HOME_JS_VERSION);
 async function loadModels() {
   const list = document.getElementById('modelList');
   list.innerHTML = '';
@@ -22,7 +24,7 @@ async function loadModels() {
       del.className = 'delete-btn';
       del.addEventListener('click', (evt) => {
         evt.preventDefault();
-        console.log('Delete Testing');
+        console.log(model.name);
       });
       li.appendChild(a);
       li.appendChild(del);

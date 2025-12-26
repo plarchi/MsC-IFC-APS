@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -61,7 +62,23 @@ public class Startup
         defaultFiles.DefaultFileNames.Clear();
         defaultFiles.DefaultFileNames.Add("home.html");
         app.UseDefaultFiles(defaultFiles);
-        app.UseStaticFiles();
+
+        if (env.IsDevelopment())
+        {
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    ctx.Context.Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
+                    ctx.Context.Response.Headers["Pragma"] = "no-cache";
+                    ctx.Context.Response.Headers["Expires"] = "0";
+                }
+            });
+        }
+        else
+        {
+            app.UseStaticFiles();
+        }
         app.UseRouting();
         app.UseEndpoints(endpoints =>
         {
