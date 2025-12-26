@@ -50,4 +50,12 @@ public class ModelsController : ControllerBase
         var job = await _aps.TranslateModel(obj.ObjectId, form.Entrypoint);
         return new BucketObject(obj.ObjectKey, job.Urn);
     }
+
+    // DELETE api/models/{objectKey}
+    [HttpDelete("{objectKey}")]
+    public async Task<IActionResult> Delete(string objectKey)
+    {
+        await _aps.DeleteObject(objectKey);
+        return NoContent();
+    }
 }
