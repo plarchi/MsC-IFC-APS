@@ -1,5 +1,15 @@
-const HOME_JS_VERSION = '2025-12-26.1';
+const HOME_JS_VERSION = '2025-12-27.1';
 console.log('home.js version:', HOME_JS_VERSION);
+
+async function deleteModel(objectKey) {
+  const resp = await fetch(`/api/models/${encodeURIComponent(objectKey)}`, {
+    method: 'DELETE'
+  });
+  if (!resp.ok) {
+    throw new Error(await resp.text());
+  }
+}
+
 async function loadModels() {
   const list = document.getElementById('modelList');
   list.innerHTML = '';
@@ -22,9 +32,18 @@ async function loadModels() {
       del.type = 'button';
       del.textContent = 'Delete';
       del.className = 'delete-btn';
-      del.addEventListener('click', (evt) => {
+      del.addEventListener('click', async (evt) => {
         evt.preventDefault();
-        console.log(model.name);
+        del.setAttribute('disabled', 'true');
+        try {
+          await deleteModel(model.name);
+          await loadModels();
+        } catch (err) {
+          console.error('Failed to delete model:', err);
+          alert('Could not delete model. See the console for more details.');
+        } finally {
+          del.removeAttribute('disabled');
+        }
       });
       li.appendChild(a);
       li.appendChild(del);
