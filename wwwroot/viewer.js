@@ -39,12 +39,56 @@ export function loadModel(viewer, urn) {
     });
 }
 
-// Wire up the 'Extract Data' button to log a test string
-document.addEventListener('DOMContentLoaded', () => {
+export function setupExtractDataButton(viewer) {
     const btn = document.getElementById('extractDataBtn');
-    if (btn) {
-        btn.addEventListener('click', () => {
-            console.log('Testing');
-        });
+    if (!btn) {
+        return;
     }
-});
+
+    btn.addEventListener('click', () => {
+        const selection = viewer.getSelection();
+        const dbId = selection && selection.length > 0 ? selection[0] : null;
+        if (!dbId) {
+            console.warn('Extract Data: no object selected.');
+            return;
+        }
+
+        viewer.getProperties(
+            dbId,
+            async (props) => {
+                const extracted = (props.properties || []).map(p => ({
+                    displayName: p.displayName,
+                    displayValue: String(p.displayValue),
+                    category: p.displayCategory
+                }));
+
+                console.log('Extracted metadata array:', extracted);
+
+                try {
+                    const urn = window.location.hash ? window.location.hash.substring(1) : null;
+                    const resp = await fetch('/api/models/extract-data', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            urn,
+                            dbId,
+                            name: props.name,
+                            externalId: props.externalId,
+                            properties: extracted
+                        })
+                    });
+                    if (!resp.ok) {
+                        throw new Error(await resp.text());
+                    }
+                    const echoed = await resp.json();
+                    console.log('ExtractData backend response:', echoed);
+                } catch (err) {
+                    console.error('ExtractData backend call failed:', err);
+                }
+            },
+            (err) => {
+                console.error('Extract Data: getProperties failed:', err);
+            }
+        );
+    });
+}

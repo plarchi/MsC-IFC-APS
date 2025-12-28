@@ -11,6 +11,22 @@ public class ModelsController : ControllerBase
 {
     public record BucketObject(string name, string urn);
 
+    public class ExtractProperty
+    {
+        public string DisplayName { get; set; }
+        public string DisplayValue { get; set; }
+        public string Category { get; set; }
+    }
+
+    public class ExtractDataRequest
+    {
+        public string Urn { get; set; }
+        public int DbId { get; set; }
+        public string Name { get; set; }
+        public string ExternalId { get; set; }
+        public List<ExtractProperty> Properties { get; set; } = new();
+    }
+
     private readonly APS _aps;
 
     public ModelsController(APS aps)
@@ -24,6 +40,18 @@ public class ModelsController : ControllerBase
         var objects = await _aps.GetObjects();
         return from o in objects
                select new BucketObject(o.ObjectKey, APS.Base64Encode(o.ObjectId));
+    }
+
+    // POST api/models/extract-data
+    // Minimal backend endpoint for receiving extracted metadata from the client.
+    [HttpPost("extract-data")]
+    public ActionResult<ExtractDataRequest> ExtractData([FromBody] ExtractDataRequest request)
+    {
+        if (request == null)
+        {
+            return BadRequest("Missing request body.");
+        }
+        return Ok(request);
     }
 
     [HttpGet("{urn}/status")]
