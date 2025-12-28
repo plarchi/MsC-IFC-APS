@@ -1,6 +1,7 @@
-import { initViewer, loadModel } from './viewer.js';
+import { initViewer, loadModel, setupExtractDataButton } from './viewer.js';
 
 initViewer(document.getElementById('preview')).then(viewer => {
+    setupExtractDataButton(viewer);
     const urn = window.location.hash?.substring(1);
     setupModelSelection(viewer, urn);
     setupModelUpload(viewer);
