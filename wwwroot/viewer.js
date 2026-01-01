@@ -53,42 +53,27 @@ export function setupExtractDataButton(viewer) {
             return;
         }
 
-        viewer.getProperties(
-            dbId,
-            async (props) => {
-                const extracted = (props.properties || []).map(p => ({
-                    displayName: p.displayName,
-                    displayValue: String(p.displayValue),
-                    category: p.displayCategory
-                }));
-
-                console.log('Extracted metadata array:', extracted);
-
-                try {
-                    const urn = window.location.hash ? window.location.hash.substring(1) : null;
-                    const resp = await fetch('/api/models/extract-data', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            urn,
-                            dbId,
-                            name: props.name,
-                            externalId: props.externalId,
-                            properties: extracted
-                        })
-                    });
-                    if (!resp.ok) {
-                        throw new Error(await resp.text());
-                    }
-                    const echoed = await resp.json();
-                    console.log('ExtractData backend response:', echoed);
-                } catch (err) {
-                    console.error('ExtractData backend call failed:', err);
+        (async () => {
+            try {
+                const urn = window.location.hash ? decodeURIComponent(window.location.hash.substring(1)) : null;
+                if (!urn) {
+                    throw new Error('Missing URN in URL.');
                 }
-            },
-            (err) => {
-                console.error('Extract Data: getProperties failed:', err);
+
+                const resp = await fetch('/api/models/export-element-properties', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ urn, dbId })
+                });
+                if (!resp.ok) {
+                    throw new Error(await resp.text());
+                }
+
+                const result = await resp.json();
+                console.log('Export complete:', result);
+            } catch (err) {
+                console.error('Export failed:', err);
             }
-        );
+        })();
     });
 }
