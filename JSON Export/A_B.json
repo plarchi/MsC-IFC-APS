@@ -1,0 +1,172 @@
+[
+  {
+    "category": "Item",
+    "displayName": "Name",
+    "value": "A/B"
+  },
+  {
+    "category": "Item",
+    "displayName": "Type",
+    "value": "IFCSPACE"
+  },
+  {
+    "category": "Item",
+    "displayName": "GUID",
+    "value": "959ebc82-bd24-444e-9142-56933265b6ae"
+  },
+  {
+    "category": "Item",
+    "displayName": "Icon",
+    "value": "Group"
+  },
+  {
+    "category": "Item",
+    "displayName": "Hidden",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Required",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Material",
+    "value": ""
+  },
+  {
+    "category": "Item",
+    "displayName": "Source File",
+    "value": "Ifc2x3_Duplex_Mechanical.ifc"
+  },
+  {
+    "category": "Item",
+    "displayName": "Layer",
+    "value": "Roof"
+  },
+  {
+    "category": "IFC",
+    "displayName": "GLOBALID",
+    "value": "2Ldho2lIH4Jf52LfCoPRQk"
+  },
+  {
+    "category": "IFC",
+    "displayName": "NAME",
+    "value": "A/B"
+  },
+  {
+    "category": "IFC",
+    "displayName": "LONGNAME",
+    "value": "Roof"
+  },
+  {
+    "category": "IFC",
+    "displayName": "COMPOSITIONTYPE",
+    "value": "ELEMENT"
+  },
+  {
+    "category": "IFC",
+    "displayName": "INTERIOROREXTERIORSPACE",
+    "value": "INTERNAL"
+  },
+  {
+    "category": "Quantities",
+    "displayName": "GLOBALID",
+    "value": "3mFNwacIbDzfdvAjzkbfFH"
+  },
+  {
+    "category": "Quantities",
+    "displayName": "NAME",
+    "value": "GSA Space Areas"
+  },
+  {
+    "category": "Quantities",
+    "displayName": "METHODOFMEASUREMENT",
+    "value": "GSA BIM Area"
+  },
+  {
+    "category": "Quantities",
+    "displayName": "GSA BIM Area",
+    "value": "135.151 m^2"
+  },
+  {
+    "category": "Pset_SpaceCommon",
+    "displayName": "GLOBALID",
+    "value": "3i3fxOqVf8ee5A3rBOzyw4"
+  },
+  {
+    "category": "PSet_Revit_Identity Data",
+    "displayName": "GLOBALID",
+    "value": "0oQ7K5lnP21v_$aW971K$r"
+  },
+  {
+    "category": "PSet_Revit_Identity Data",
+    "displayName": "Number",
+    "value": "A/B"
+  },
+  {
+    "category": "PSet_Revit_Identity Data",
+    "displayName": "Name",
+    "value": "Roof"
+  },
+  {
+    "category": "PSet_Revit_Constraints",
+    "displayName": "GLOBALID",
+    "value": "3QEbZBXZ59WhyvXfoBReeg"
+  },
+  {
+    "category": "PSet_Revit_Constraints",
+    "displayName": "Level",
+    "value": "Roof"
+  },
+  {
+    "category": "PSet_Revit_Constraints",
+    "displayName": "Upper Limit",
+    "value": "Roof"
+  },
+  {
+    "category": "PSet_Revit_Constraints",
+    "displayName": "Limit Offset",
+    "value": "4.000"
+  },
+  {
+    "category": "PSet_Revit_Constraints",
+    "displayName": "Base Offset",
+    "value": "0.000"
+  },
+  {
+    "category": "PSet_Revit_Dimensions",
+    "displayName": "GLOBALID",
+    "value": "37FCjECsT9Dh$1JHCGD_Iq"
+  },
+  {
+    "category": "PSet_Revit_Dimensions",
+    "displayName": "Area",
+    "value": "135.151"
+  },
+  {
+    "category": "PSet_Revit_Dimensions",
+    "displayName": "Perimeter",
+    "value": "49.864"
+  },
+  {
+    "category": "PSet_Revit_Dimensions",
+    "displayName": "Unbounded Height",
+    "value": "4.000"
+  },
+  {
+    "category": "PSet_Revit_Dimensions",
+    "displayName": "Volume",
+    "value": "478.841"
+  },
+  {
+    "category": "PSet_Revit_Phasing",
+    "displayName": "GLOBALID",
+    "value": "0IcoPnBsLB$A2m7fKfIjRs"
+  },
+  {
+    "category": "PSet_Revit_Phasing",
+    "displayName": "Phase",
+    "value": "New Construction"
+  }
+]

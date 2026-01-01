@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Item",
+    "displayName": "Name",
+    "value": "Body"
+  },
+  {
+    "category": "Item",
+    "displayName": "Type",
+    "value": "IFCSHAPEREPRESENTATION"
+  },
+  {
+    "category": "Item",
+    "displayName": "Icon",
+    "value": "Geometry"
+  },
+  {
+    "category": "Item",
+    "displayName": "Hidden",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Required",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Material",
+    "value": ""
+  },
+  {
+    "category": "Item",
+    "displayName": "Source File",
+    "value": "Ifc2x3_Duplex_Mechanical.ifc"
+  },
+  {
+    "category": "Item",
+    "displayName": "Layer",
+    "value": "Level 2"
+  }
+]
