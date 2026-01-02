@@ -77,3 +77,22 @@ export function setupExtractDataButton(viewer) {
         })();
     });
 }
+
+export function setupExtractWholeModelButton(viewer) {
+    const btn = document.getElementById('extractWholeModelBtn');
+    if (!btn) {
+        return;
+    }
+
+    btn.addEventListener('click', () => {
+        const urn = window.location.hash ? decodeURIComponent(window.location.hash.substring(1)) : null;
+        if (!urn) {
+            console.warn('Extract Whole Model Data: missing URN in URL.');
+            return;
+        }
+
+        // Next step: call a backend endpoint that exports all element properties into the "JSON Whole Model" folder.
+        console.log('Extract Whole Model Data clicked (stub). URN:', urn);
+        alert('Extract Whole Model Data is added. Backend export will be implemented next.');
+    });
+}
