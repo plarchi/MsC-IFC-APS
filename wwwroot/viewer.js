@@ -91,8 +91,23 @@ export function setupExtractWholeModelButton(viewer) {
             return;
         }
 
-        // Next step: call a backend endpoint that exports all element properties into the "JSON Whole Model" folder.
-        console.log('Extract Whole Model Data clicked (stub). URN:', urn);
-        alert('Extract Whole Model Data is added. Backend export will be implemented next.');
+        (async () => {
+            try {
+                const resp = await fetch('/api/models/export-whole-model-properties', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ urn })
+                });
+                if (!resp.ok) {
+                    throw new Error(await resp.text());
+                }
+                const result = await resp.json();
+                console.log('Whole model export complete:', result);
+                alert(`Whole model exported to ${result.folder}/${result.fileName}`);
+            } catch (err) {
+                console.error('Whole model export failed:', err);
+                alert('Whole model export failed. See console for details.');
+            }
+        })();
     });
 }
