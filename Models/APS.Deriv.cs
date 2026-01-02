@@ -144,4 +144,26 @@ public partial class APS
         var json = await resp.Content.ReadAsStringAsync();
         return JsonDocument.Parse(json);
     }
+
+    public async Task<JsonDocument> GetWholeModelProperties(string urn, string viewGuid)
+    {
+        if (string.IsNullOrWhiteSpace(urn))
+        {
+            throw new ArgumentException("Missing URN.", nameof(urn));
+        }
+        if (string.IsNullOrWhiteSpace(viewGuid))
+        {
+            throw new ArgumentException("Missing view GUID.", nameof(viewGuid));
+        }
+
+        var auth = await GetInternalToken();
+        var url = $"https://developer.api.autodesk.com/modelderivative/v2/designdata/{urn}/metadata/{viewGuid}/properties";
+        using var req = new HttpRequestMessage(HttpMethod.Get, url);
+        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
+        using var resp = await _http.SendAsync(req);
+        resp.EnsureSuccessStatusCode();
+
+        var json = await resp.Content.ReadAsStringAsync();
+        return JsonDocument.Parse(json);
+    }
 }

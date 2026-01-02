@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
@@ -38,6 +40,14 @@ public class ModelsController : ControllerBase
     }
 
     public record ExportElementPropertiesResponse(string FileName, string Folder, int PropertyCount, string ElementName);
+
+    public class ExportWholeModelPropertiesRequest
+    {
+        public string Urn { get; set; }
+        public string ViewGuid { get; set; }
+    }
+
+    public record ExportWholeModelPropertiesResponse(string FileName, string Folder, int ElementCount, string ModelName);
 
     private readonly APS _aps;
     private readonly IWebHostEnvironment _env;
@@ -109,6 +119,70 @@ public class ModelsController : ControllerBase
         return Ok(new ExportElementPropertiesResponse(safeFileName, "JSON Export", flattened.Count, elementName));
     }
 
+    // POST api/models/export-whole-model-properties
+    // Fetches the entire model properties payload from APS Model Derivative,
+    // converts it into an array of elements (sorted by Name), and writes it to JSON Whole Model/<ModelName>.json.
+    [HttpPost("export-whole-model-properties")]
+    public async Task<ActionResult<ExportWholeModelPropertiesResponse>> ExportWholeModelProperties([FromBody] ExportWholeModelPropertiesRequest request)
+    {
+        if (request == null)
+        {
+            return BadRequest("Missing request body.");
+        }
+        if (string.IsNullOrWhiteSpace(request.Urn))
+        {
+            return BadRequest("Missing 'urn'.");
+        }
+
+        var viewGuid = string.IsNullOrWhiteSpace(request.ViewGuid)
+            ? await _aps.GetDefaultModelViewGuid(request.Urn)
+            : request.ViewGuid;
+
+        using var propsDoc = await _aps.GetWholeModelProperties(request.Urn, viewGuid);
+
+        var elements = ConvertWholeModelToElementArray(propsDoc.RootElement);
+        var sortedNodes = elements
+            .Select(n => (JsonObject)n)
+            .OrderBy(o => GetJsonObjectString(o, "Name"), StringComparer.OrdinalIgnoreCase)
+            .Select(o => o.DeepClone())
+            .ToArray();
+        elements = new JsonArray(sortedNodes);
+
+        var modelName = GetModelNameFromUrn(request.Urn);
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            modelName = request.Urn;
+        }
+        modelName = Path.GetFileNameWithoutExtension(modelName);
+        var safeFileName = MakeSafeFileName(modelName) + ".json";
+
+        var exportFolder = Path.Combine(_env.ContentRootPath, "JSON Whole Model");
+        Directory.CreateDirectory(exportFolder);
+
+        var outputPath = Path.Combine(exportFolder, safeFileName);
+        var json = elements.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
+        await System.IO.File.WriteAllTextAsync(outputPath, json);
+
+        return Ok(new ExportWholeModelPropertiesResponse(safeFileName, "JSON Whole Model", elements.Count, modelName));
+    }
+
+    private static string GetJsonObjectString(JsonObject obj, string propertyName)
+    {
+        if (obj == null)
+        {
+            return string.Empty;
+        }
+        if (!obj.TryGetPropertyValue(propertyName, out var node) || node == null)
+        {
+            return string.Empty;
+        }
+        if (node is JsonValue value && value.TryGetValue<string>(out var s) && s != null)
+        {
+            return s;
+        }
+        return string.Empty;
+    }
+
     private static JsonArray FlattenPropertiesToArray(JsonElement root, out string elementName)
     {
         // Expected shape (typical for objectid query): { data: { collection: [ { name: "...", properties: { Category: { Prop: Value } } } ] } }
@@ -154,6 +228,107 @@ public class ModelsController : ControllerBase
         }
 
         return array;
+    }
+
+    private static JsonArray ConvertWholeModelToElementArray(JsonElement root)
+    {
+        // Expected shape (no objectid query): { data: { collection: [ { objectid, name, externalId?, properties: { Category: { Prop: Value } } } ... ] } }
+        var result = new JsonArray();
+
+        if (!root.TryGetProperty("data", out var dataEl))
+        {
+            return result;
+        }
+
+        if (!dataEl.TryGetProperty("collection", out var collectionEl) || collectionEl.ValueKind != JsonValueKind.Array)
+        {
+            return result;
+        }
+
+        foreach (var item in collectionEl.EnumerateArray())
+        {
+            var elementObj = new JsonObject();
+
+            if (item.TryGetProperty("name", out var nameEl))
+            {
+                elementObj["Name"] = nameEl.GetString();
+            }
+
+            if (item.TryGetProperty("objectid", out var objectIdEl) && objectIdEl.ValueKind == JsonValueKind.Number && objectIdEl.TryGetInt32(out var dbId))
+            {
+                elementObj["DbId"] = dbId;
+            }
+
+            if (item.TryGetProperty("externalId", out var externalIdEl) && externalIdEl.ValueKind == JsonValueKind.String)
+            {
+                elementObj["ExternalId"] = externalIdEl.GetString();
+            }
+
+            var propsArray = new JsonArray();
+            if (item.TryGetProperty("properties", out var propertiesEl) && propertiesEl.ValueKind == JsonValueKind.Object)
+            {
+                foreach (var category in propertiesEl.EnumerateObject())
+                {
+                    if (category.Value.ValueKind != JsonValueKind.Object)
+                    {
+                        continue;
+                    }
+                    foreach (var prop in category.Value.EnumerateObject())
+                    {
+                        propsArray.Add(new JsonObject
+                        {
+                            ["category"] = category.Name,
+                            ["displayName"] = prop.Name,
+                            ["value"] = JsonNode.Parse(prop.Value.GetRawText())
+                        });
+                    }
+                }
+            }
+
+            elementObj["Properties"] = propsArray;
+            result.Add(elementObj);
+        }
+
+        return result;
+    }
+
+    private static string GetModelNameFromUrn(string urn)
+    {
+        // URN is the base64 (unpadded) encoding of the OSS objectId, which ends with "/<objectKey>".
+        // Example objectId: "urn:adsk.objects:os.object:bucketKey/Ifc2x3_Duplex_Mechanical.ifc"
+        try
+        {
+            if (string.IsNullOrWhiteSpace(urn))
+            {
+                return null;
+            }
+
+            var padded = urn.Trim();
+            var mod = padded.Length % 4;
+            if (mod != 0)
+            {
+                padded = padded + new string('=', 4 - mod);
+            }
+
+            var bytes = Convert.FromBase64String(padded);
+            var objectId = Encoding.UTF8.GetString(bytes);
+            if (string.IsNullOrWhiteSpace(objectId))
+            {
+                return null;
+            }
+
+            var slash = objectId.LastIndexOf('/');
+            if (slash < 0 || slash == objectId.Length - 1)
+            {
+                return objectId;
+            }
+
+            return objectId[(slash + 1)..];
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private static string MakeSafeFileName(string name)
