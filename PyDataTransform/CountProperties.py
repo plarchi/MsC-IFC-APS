@@ -1,15 +1,12 @@
 """CountProperties.py
 
-Print two simple TSV tables from an APS exported model JSON:
+Print a simple TSV table from an APS exported model JSON:
 
-Table 1 (Objects):
-- Lists each element (object) that has a non-null "Name".
-- Columns: No, Name, DbId, ExternalId
-
-Table 2 (Properties per Object):
-- Lists each object (including duplicate Names) with the number of Properties
-	entries it has.
-- Columns: No, Name, PropertiesCount
+Table: Properties per Object (not grouped)
+- Lists each object (including duplicate Names) with:
+	- total number of Properties entries
+	- number of distinct property categories within the object
+- Columns: No, Name, PropertiesCount, CategoryCount
 
 Notes:
 - This intentionally does NOT print the nested "Properties" values.
@@ -35,6 +32,26 @@ def _safe_properties_count(element: dict) -> int:
 	return 0
 
 
+def _safe_distinct_category_count(element: dict) -> int:
+	properties = element.get("Properties")
+	if not isinstance(properties, list):
+		return 0
+
+	categories: set[str] = set()
+	for item in properties:
+		if not isinstance(item, dict):
+			continue
+		category = item.get("category")
+		if category is None:
+			continue
+		category_text = str(category).strip()
+		if not category_text:
+			continue
+		categories.add(category_text)
+
+	return len(categories)
+
+
 def main() -> None:
 	with DEFAULT_INPUT.open("r", encoding="utf-8") as file_handle:
 		data = json.load(file_handle)
@@ -45,12 +62,9 @@ def main() -> None:
 			f"Got: {type(data).__name__}"
 		)
 
-	# --- Table 1: Objects ---
-	print("No\tName\tDbId\tExternalId")
+	# --- Table: Properties per Object (not grouped) ---
+	print("No\tName\tPropertiesCount\tCategoryCount")
 	row_number = 0
-
-	# Keep per-object properties counts for Table 2.
-	per_object_props: list[tuple[str, int]] = []
 
 	for element in data:
 		if not isinstance(element, dict):
@@ -60,17 +74,9 @@ def main() -> None:
 			continue
 
 		row_number += 1
-		db_id = element.get("DbId")
-		external_id = element.get("ExternalId")
-		print(f"{row_number}\t{name}\t{db_id}\t{external_id}")
-
 		props_count = _safe_properties_count(element)
-		per_object_props.append((name, props_count))
-
-	# --- Table 2: Properties per Object (not grouped) ---
-	print("\nNo\tName\tPropertiesCount")
-	for index, (name, props_count) in enumerate(per_object_props, start=1):
-		print(f"{index}\t{name}\t{props_count}")
+		category_count = _safe_distinct_category_count(element)
+		print(f"{row_number}\t{name}\t{props_count}\t{category_count}")
 
 
 if __name__ == "__main__":
