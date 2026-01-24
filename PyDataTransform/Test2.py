@@ -4,8 +4,8 @@ from pathlib import Path
 
 json_path = (
     Path(__file__).resolve().parent.parent
-    / "JSON Whole Model"
-    / "ASTIDC-STAN-HE-EPD-MVB1-M-E-0002.json"
+    / "JSON Export"
+    / "Pipe Types_Mechanical Pipe_557528.json"
 )
 
 with open(json_path, "r", encoding="utf-8") as f:
