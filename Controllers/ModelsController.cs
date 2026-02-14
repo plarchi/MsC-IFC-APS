@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using System.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
@@ -382,5 +383,26 @@ public class ModelsController : ControllerBase
     {
         await _aps.DeleteObject(objectKey);
         return NoContent();
+    }
+
+    // GET api/models/download/{objectKey}
+    // Redirects to a short-lived signed download URL.
+    [HttpGet("download/{*objectKey}")]
+    public async Task<IActionResult> Download(string objectKey)
+    {
+        if (string.IsNullOrWhiteSpace(objectKey))
+        {
+            return BadRequest("Missing object key.");
+        }
+
+        try
+        {
+            var signedUrl = await _aps.GetSignedDownloadUrl(objectKey);
+            return Redirect(signedUrl);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode((int)HttpStatusCode.BadGateway, ex.Message);
+        }
     }
 }

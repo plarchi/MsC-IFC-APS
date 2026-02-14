@@ -10,6 +10,11 @@ async function deleteModel(objectKey) {
   }
 }
 
+function downloadModel(objectKey) {
+  // Trigger a browser file download by navigating to the download endpoint.
+  window.location.href = `/api/models/download/${encodeURIComponent(objectKey)}`;
+}
+
 async function loadModels() {
   const list = document.getElementById('modelList');
   list.innerHTML = '';
@@ -28,6 +33,19 @@ async function loadModels() {
       a.textContent = model.name;
       // Link to the 3D viewer page with URN in the hash
       a.href = `/index.html#${encodeURIComponent(model.urn)}`;
+
+      const actions = document.createElement('div');
+      actions.className = 'row-actions';
+
+      const dl = document.createElement('button');
+      dl.type = 'button';
+      dl.textContent = 'Download';
+      dl.className = 'download-btn';
+      dl.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        downloadModel(model.name);
+      });
+
       const del = document.createElement('button');
       del.type = 'button';
       del.textContent = 'Delete';
@@ -46,7 +64,9 @@ async function loadModels() {
         }
       });
       li.appendChild(a);
-      li.appendChild(del);
+      actions.appendChild(dl);
+      actions.appendChild(del);
+      li.appendChild(actions);
       list.appendChild(li);
     }
   } catch (err) {
