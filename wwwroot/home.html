@@ -15,10 +15,13 @@
     .top-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 12px; }
     .nav-btn { display: inline-flex; align-items: center; justify-content: center; width: 50%; box-sizing: border-box; padding: 10px 20px; border: 1px solid #ddd; background: transparent; border-radius: 5px; cursor: pointer; text-decoration: none; color: #000; font-weight: 700; text-transform: uppercase; line-height: 1; flex: 0 0 auto; }
     ol { margin: 0; padding-left: 24px; }
-    li { margin: 8px 0; display: flex; align-items: center; gap: 12px; position: relative; padding-right: calc(10px + 96px); }
+    li { margin: 8px 0; display: flex; align-items: center; gap: 12px; position: relative; padding-right: calc(10px + 200px); }
     #modelList a { text-decoration: none; color: #444; flex: 1 1 auto; }
     #modelList a:hover { text-decoration: underline; }
-    .delete-btn { position: absolute; right: 0px; top: 50%; transform: translateY(-50%); padding: 5px 10px; border: 1px solid #ddd; background: transparent; color: darkred; border-radius: 5px; cursor: pointer; }
+    .row-actions { position: absolute; right: 0px; top: 50%; transform: translateY(-50%); display: inline-flex; gap: 8px; }
+    .row-actions button { padding: 5px 10px; border: 1px solid #ddd; background: transparent; border-radius: 5px; cursor: pointer; }
+    .delete-btn { color: darkred; }
+    .download-btn { color: darkblue; }
   </style>
 </head>
 <body>
