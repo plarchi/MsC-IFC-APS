@@ -128,13 +128,18 @@ export function setupLoadTransformedDataButton(viewer) {
         (async () => {
             btn.setAttribute('disabled', 'true');
             try {
-                const resp = await fetch(`/api/models/transformed-data?urn=${encodeURIComponent(urn)}`);
+                const resp = await fetch(`/api/models/apply-transformed-data?urn=${encodeURIComponent(urn)}`, {
+                    method: 'POST'
+                });
                 if (!resp.ok) {
                     throw new Error(await resp.text());
                 }
 
                 const result = await resp.json();
-                console.log('Transformed data full path:', result.fullPath);
+                console.log('Source IFC path:', result.sourceIfcPath);
+                console.log('JSON path:', result.jsonPath);
+                console.log('Revised IFC path:', result.revisedIfcPath);
+                alert(`Revised IFC saved to ${result.revisedIfcPath}`);
             } catch (err) {
                 console.error('Load transformed data failed:', err);
                 alert('Could not load transformed data. See console for details.');
