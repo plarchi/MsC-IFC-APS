@@ -7,6 +7,8 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Net;
+using System.Net.Http;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
@@ -407,6 +409,7 @@ public class ModelsController : ControllerBase
     }
 
     public record TransformedDataPathResponse(string FullPath, string FileName);
+    public record ApplyTransformedDataResponse(string SourceIfcPath, string JsonPath, string RevisedIfcPath, string FileName, int ElementCount, int PropertyCount);
 
     // GET api/models/transformed-data?urn=<modelUrn>
     // Resolves the transformed JSON path in JSON_Edit corresponding to the selected model.
@@ -434,5 +437,119 @@ public class ModelsController : ControllerBase
         }
 
         return Ok(new TransformedDataPathResponse(transformedPath, safeFileName));
+    }
+
+    // POST api/models/apply-transformed-data?urn=<modelUrn>
+    // Applies metadata from JSON_Edit/<ModelName>.json to the source IFC and saves Revised_IFC/<ModelName>.ifc.
+    [HttpPost("apply-transformed-data")]
+    public async Task<ActionResult<ApplyTransformedDataResponse>> ApplyTransformedData([FromQuery] string urn)
+    {
+        if (string.IsNullOrWhiteSpace(urn))
+        {
+            return BadRequest("Missing 'urn'.");
+        }
+
+        var modelName = GetModelNameFromUrn(urn);
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            return BadRequest("Could not resolve model name from 'urn'.");
+        }
+
+        var objectKey = modelName;
+        var baseName = Path.GetFileNameWithoutExtension(modelName);
+        var jsonFileName = MakeSafeFileName(baseName) + ".json";
+        var jsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", jsonFileName);
+        if (!System.IO.File.Exists(jsonPath))
+        {
+            return NotFound($"Transformed data file not found in JSON_Edit: {jsonFileName}");
+        }
+
+        var revisedFolder = Path.Combine(_env.ContentRootPath, "Revised_IFC");
+        Directory.CreateDirectory(revisedFolder);
+
+        var tempFolder = Path.Combine(_env.ContentRootPath, "Temp_IFC");
+        Directory.CreateDirectory(tempFolder);
+
+        var sourceIfcPath = Path.Combine(tempFolder, Path.GetFileName(modelName));
+        var revisedIfcPath = Path.Combine(revisedFolder, Path.GetFileName(modelName));
+
+        try
+        {
+            var signedUrl = await _aps.GetSignedDownloadUrl(objectKey);
+            using (var http = new HttpClient())
+            using (var response = await http.GetAsync(signedUrl))
+            {
+                response.EnsureSuccessStatusCode();
+                await using var fs = new FileStream(sourceIfcPath, FileMode.Create, FileAccess.Write, FileShare.None);
+                await response.Content.CopyToAsync(fs);
+            }
+
+            var scriptPath = Path.Combine(_env.ContentRootPath, "PyDataTransform", "ApplyTransformedJsonToIfc.py");
+            if (!System.IO.File.Exists(scriptPath))
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, "Missing script: PyDataTransform/ApplyTransformedJsonToIfc.py");
+            }
+
+            var venvPython = Path.Combine(_env.ContentRootPath, ".venv", "Scripts", "python.exe");
+            var pythonExecutable = System.IO.File.Exists(venvPython) ? venvPython : "python";
+
+            var psi = new ProcessStartInfo
+            {
+                FileName = pythonExecutable,
+                Arguments = $"\"{scriptPath}\" --input-ifc \"{sourceIfcPath}\" --input-json \"{jsonPath}\" --output-ifc \"{revisedIfcPath}\"",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                WorkingDirectory = _env.ContentRootPath
+            };
+
+            using var process = Process.Start(psi);
+            if (process == null)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, "Failed to start Python process.");
+            }
+
+            var stdOut = await process.StandardOutput.ReadToEndAsync();
+            var stdErr = await process.StandardError.ReadToEndAsync();
+            await process.WaitForExitAsync();
+
+            if (process.ExitCode != 0)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError,
+                    $"Apply transformed data failed (exit {process.ExitCode}). stdout: {stdOut} stderr: {stdErr}");
+            }
+
+            var elementCount = 0;
+            var propertyCount = 0;
+            if (!string.IsNullOrWhiteSpace(stdOut))
+            {
+                var lines = stdOut
+                    .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .ToArray();
+
+                var jsonLine = lines.LastOrDefault(l => l.StartsWith("{") && l.EndsWith("}"));
+                if (!string.IsNullOrWhiteSpace(jsonLine))
+                {
+                    using var doc = JsonDocument.Parse(jsonLine);
+                    if (doc.RootElement.TryGetProperty("elementsUpdated", out var el) && el.ValueKind == JsonValueKind.Number)
+                    {
+                        elementCount = el.GetInt32();
+                    }
+                    if (doc.RootElement.TryGetProperty("propertiesUpdated", out var pl) && pl.ValueKind == JsonValueKind.Number)
+                    {
+                        propertyCount = pl.GetInt32();
+                    }
+                }
+            }
+
+            return Ok(new ApplyTransformedDataResponse(sourceIfcPath, jsonPath, revisedIfcPath, Path.GetFileName(modelName), elementCount, propertyCount));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+        }
     }
 }
