@@ -111,3 +111,36 @@ export function setupExtractWholeModelButton(viewer) {
         })();
     });
 }
+
+export function setupLoadTransformedDataButton(viewer) {
+    const btn = document.getElementById('loadTransformedDataBtn');
+    if (!btn) {
+        return;
+    }
+
+    btn.addEventListener('click', () => {
+        const urn = window.location.hash ? decodeURIComponent(window.location.hash.substring(1)) : null;
+        if (!urn) {
+            alert('Missing URN in URL. Please select a model first.');
+            return;
+        }
+
+        (async () => {
+            btn.setAttribute('disabled', 'true');
+            try {
+                const resp = await fetch(`/api/models/transformed-data?urn=${encodeURIComponent(urn)}`);
+                if (!resp.ok) {
+                    throw new Error(await resp.text());
+                }
+
+                const result = await resp.json();
+                console.log('Transformed data full path:', result.fullPath);
+            } catch (err) {
+                console.error('Load transformed data failed:', err);
+                alert('Could not load transformed data. See console for details.');
+            } finally {
+                btn.removeAttribute('disabled');
+            }
+        })();
+    });
+}
