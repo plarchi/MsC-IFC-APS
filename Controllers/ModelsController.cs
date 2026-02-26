@@ -405,4 +405,34 @@ public class ModelsController : ControllerBase
             return StatusCode((int)HttpStatusCode.BadGateway, ex.Message);
         }
     }
+
+    public record TransformedDataPathResponse(string FullPath, string FileName);
+
+    // GET api/models/transformed-data?urn=<modelUrn>
+    // Resolves the transformed JSON path in JSON_Edit corresponding to the selected model.
+    [HttpGet("transformed-data")]
+    public ActionResult<TransformedDataPathResponse> GetTransformedData([FromQuery] string urn)
+    {
+        if (string.IsNullOrWhiteSpace(urn))
+        {
+            return BadRequest("Missing 'urn'.");
+        }
+
+        var modelName = GetModelNameFromUrn(urn);
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            return BadRequest("Could not resolve model name from 'urn'.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(modelName);
+        var safeFileName = MakeSafeFileName(baseName) + ".json";
+        var transformedPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", safeFileName);
+
+        if (!System.IO.File.Exists(transformedPath))
+        {
+            return NotFound($"Transformed data file not found in JSON_Edit: {safeFileName}");
+        }
+
+        return Ok(new TransformedDataPathResponse(transformedPath, safeFileName));
+    }
 }

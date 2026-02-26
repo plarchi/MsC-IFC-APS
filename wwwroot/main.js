@@ -1,8 +1,9 @@
-import { initViewer, loadModel, setupExtractDataButton, setupExtractWholeModelButton } from './viewer.js';
+import { initViewer, loadModel, setupExtractDataButton, setupExtractWholeModelButton, setupLoadTransformedDataButton } from './viewer.js';
 
 initViewer(document.getElementById('preview')).then(viewer => {
     setupExtractDataButton(viewer);
     setupExtractWholeModelButton(viewer);
+    setupLoadTransformedDataButton(viewer);
     const urn = window.location.hash?.substring(1);
     setupModelSelection(viewer, urn);
     setupModelUpload(viewer);
