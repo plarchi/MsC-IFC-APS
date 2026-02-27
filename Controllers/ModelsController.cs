@@ -409,7 +409,16 @@ public class ModelsController : ControllerBase
     }
 
     public record TransformedDataPathResponse(string FullPath, string FileName);
-    public record ApplyTransformedDataResponse(string SourceIfcPath, string JsonPath, string RevisedIfcPath, string FileName, int ElementCount, int PropertyCount);
+    public record ApplyTransformedDataResponse(
+        string SourceIfcPath,
+        string JsonPath,
+        string RevisedIfcPath,
+        string FileName,
+        int ElementCount,
+        int PropertyCount,
+        int ElementsUpdated,
+        int PropertiesUpdated,
+        string OutputIfc);
 
     // GET api/models/transformed-data?urn=<modelUrn>
     // Resolves the transformed JSON path in JSON_Edit corresponding to the selected model.
@@ -542,7 +551,16 @@ public class ModelsController : ControllerBase
                 }
             }
 
-            return Ok(new ApplyTransformedDataResponse(sourceIfcPath, jsonPath, revisedIfcPath, Path.GetFileName(modelName), elementCount, propertyCount));
+            return Ok(new ApplyTransformedDataResponse(
+                sourceIfcPath,
+                jsonPath,
+                revisedIfcPath,
+                Path.GetFileName(modelName),
+                elementCount,
+                propertyCount,
+                elementCount,
+                propertyCount,
+                revisedIfcPath));
         }
         catch (Exception ex)
         {
