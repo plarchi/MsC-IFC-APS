@@ -139,6 +139,12 @@ export function setupLoadTransformedDataButton(viewer) {
                 console.log('Source IFC path:', result.sourceIfcPath);
                 console.log('JSON path:', result.jsonPath);
                 console.log('Revised IFC path:', result.revisedIfcPath);
+                console.log('Updated IFC by GUID:');
+                console.log({
+                    elementsUpdated: result.elementsUpdated ?? result.elementCount ?? 0,
+                    propertiesUpdated: result.propertiesUpdated ?? result.propertyCount ?? 0,
+                    outputIfc: result.outputIfc ?? result.revisedIfcPath
+                });
                 alert(`Revised IFC saved to ${result.revisedIfcPath}`);
             } catch (err) {
                 console.error('Load transformed data failed:', err);
