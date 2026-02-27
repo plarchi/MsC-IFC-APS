@@ -28,6 +28,18 @@ def _extract_guid(entry):
     return None
 
 
+def _nominal_to_text(value):
+    if value is None:
+        return None
+    if hasattr(value, "wrappedValue"):
+        raw = value.wrappedValue
+    else:
+        raw = value
+    if raw is None:
+        return None
+    return str(raw).strip()
+
+
 def _get_psets(entity):
     psets = {}
     for rel in getattr(entity, "IsDefinedBy", []) or []:
@@ -39,6 +51,41 @@ def _get_psets(entity):
             continue
         psets[str(pset_name)] = rel_def
     return psets
+
+
+def _extract_guid_from_entity_properties(entity):
+    psets = _get_psets(entity)
+    for pset in psets.values():
+        for prop in getattr(pset, "HasProperties", []) or []:
+            if not prop.is_a("IfcPropertySingleValue"):
+                continue
+            if str(getattr(prop, "Name", "")).strip().lower() != "guid":
+                continue
+            return _nominal_to_text(getattr(prop, "NominalValue", None))
+    return None
+
+
+def _build_entity_guid_index(model):
+    guid_index = {}
+    for entity in model.by_type("IfcObject"):
+        guid_text = _extract_guid_from_entity_properties(entity)
+        if not guid_text:
+            continue
+        guid_index.setdefault(guid_text.lower(), entity)
+    return guid_index
+
+
+def _guid_to_ifc_globalid(ifcopenshell_module, guid_value):
+    if guid_value is None:
+        return None
+    text = str(guid_value).strip()
+    compact_hex = text.replace("-", "")
+    if len(compact_hex) != 32:
+        return None
+    try:
+        return ifcopenshell_module.guid.compress(compact_hex)
+    except Exception:
+        return None
 
 
 def _set_property_value(model, entity, category, prop_name, value):
@@ -93,6 +140,8 @@ def apply_transformed_json_to_ifc(input_ifc_path, input_json_path, output_ifc_pa
     if not isinstance(data, list):
         raise ValueError("Expected JSON array of model elements.")
 
+    entity_guid_index = _build_entity_guid_index(model)
+
     elements_updated = 0
     properties_updated = 0
 
@@ -104,10 +153,21 @@ def apply_transformed_json_to_ifc(input_ifc_path, input_json_path, output_ifc_pa
         if not guid:
             continue
 
-        try:
-            entity = model.by_guid(guid)
-        except Exception:
-            entity = None
+        entity = None
+        guid_candidates = [str(guid).strip()]
+        global_id_candidate = _guid_to_ifc_globalid(ifcopenshell, guid)
+        if global_id_candidate:
+            guid_candidates.append(global_id_candidate)
+
+        for guid_candidate in guid_candidates:
+            try:
+                entity = model.by_guid(guid_candidate)
+            except Exception:
+                entity = None
+            if entity is not None:
+                break
+        if entity is None and guid:
+            entity = entity_guid_index.get(str(guid).strip().lower())
         if entity is None:
             continue
 
