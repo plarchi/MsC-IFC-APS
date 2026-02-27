@@ -467,10 +467,7 @@ public class ModelsController : ControllerBase
         var revisedFolder = Path.Combine(_env.ContentRootPath, "Revised_IFC");
         Directory.CreateDirectory(revisedFolder);
 
-        var tempFolder = Path.Combine(_env.ContentRootPath, "Temp_IFC");
-        Directory.CreateDirectory(tempFolder);
-
-        var sourceIfcPath = Path.Combine(tempFolder, Path.GetFileName(modelName));
+        var sourceIfcPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}_{Path.GetFileName(modelName)}");
         var revisedIfcPath = Path.Combine(revisedFolder, Path.GetFileName(modelName));
 
         try
@@ -550,6 +547,20 @@ public class ModelsController : ControllerBase
         catch (Exception ex)
         {
             return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+        }
+        finally
+        {
+            try
+            {
+                if (System.IO.File.Exists(sourceIfcPath))
+                {
+                    System.IO.File.Delete(sourceIfcPath);
+                }
+            }
+            catch
+            {
+                // Best-effort cleanup.
+            }
         }
     }
 }
