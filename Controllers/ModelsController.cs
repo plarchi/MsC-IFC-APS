@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Hosting;
 public class ModelsController : ControllerBase
 {
     public record BucketObject(string name, string urn);
+    public record RevisedIfcObject(string name);
 
     public class ExtractProperty
     {
@@ -67,6 +68,80 @@ public class ModelsController : ControllerBase
         var objects = await _aps.GetObjects();
         return from o in objects
                select new BucketObject(o.ObjectKey, APS.Base64Encode(o.ObjectId));
+    }
+
+    [HttpGet("revised-models")]
+    public ActionResult<IEnumerable<RevisedIfcObject>> GetRevisedModels()
+    {
+        var revisedFolder = Path.Combine(_env.ContentRootPath, "Revised_IFC");
+        if (!Directory.Exists(revisedFolder))
+        {
+            return Ok(Array.Empty<RevisedIfcObject>());
+        }
+
+        var files = Directory
+            .EnumerateFiles(revisedFolder, "*.ifc", SearchOption.TopDirectoryOnly)
+            .Select(Path.GetFileName)
+            .Where(name => !string.IsNullOrWhiteSpace(name))
+            .OrderBy(name => name, StringComparer.OrdinalIgnoreCase)
+            .Select(name => new RevisedIfcObject(name!))
+            .ToArray();
+
+        return Ok(files);
+    }
+
+    // GET api/models/revised/download/{fileName}
+    // Downloads a revised IFC file from Revised_IFC.
+    [HttpGet("revised/download/{*fileName}")]
+    public IActionResult DownloadRevisedModel(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var revisedFolder = Path.Combine(_env.ContentRootPath, "Revised_IFC");
+        var filePath = Path.Combine(revisedFolder, safeFileName);
+        if (!System.IO.File.Exists(filePath))
+        {
+            return NotFound($"Revised IFC file not found: {safeFileName}");
+        }
+
+        var fileBytes = System.IO.File.ReadAllBytes(filePath);
+        return File(fileBytes, "application/octet-stream", safeFileName);
+    }
+
+    // DELETE api/models/revised/{fileName}
+    // Deletes a revised IFC file from Revised_IFC.
+    [HttpDelete("revised/{*fileName}")]
+    public IActionResult DeleteRevisedModel(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var revisedFolder = Path.Combine(_env.ContentRootPath, "Revised_IFC");
+        var filePath = Path.Combine(revisedFolder, safeFileName);
+        if (!System.IO.File.Exists(filePath))
+        {
+            return NotFound($"Revised IFC file not found: {safeFileName}");
+        }
+
+        System.IO.File.Delete(filePath);
+        return NoContent();
     }
 
     // POST api/models/extract-data

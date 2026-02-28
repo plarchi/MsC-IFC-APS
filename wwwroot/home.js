@@ -15,6 +15,19 @@ function downloadModel(objectKey) {
   window.location.href = `/api/models/download/${encodeURIComponent(objectKey)}`;
 }
 
+async function deleteRevisedModel(fileName) {
+  const resp = await fetch(`/api/models/revised/${encodeURIComponent(fileName)}`, {
+    method: 'DELETE'
+  });
+  if (!resp.ok) {
+    throw new Error(await resp.text());
+  }
+}
+
+function downloadRevisedModel(fileName) {
+  window.location.href = `/api/models/revised/download/${encodeURIComponent(fileName)}`;
+}
+
 async function loadModels() {
   const list = document.getElementById('modelList');
   list.innerHTML = '';
@@ -75,4 +88,73 @@ async function loadModels() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', loadModels);
+async function loadRevisedModels() {
+  const list = document.getElementById('revisedModelList');
+  if (!list) {
+    return;
+  }
+
+  list.innerHTML = '';
+  try {
+    const resp = await fetch('/api/models/revised-models');
+    if (!resp.ok) throw new Error(await resp.text());
+
+    const models = await resp.json();
+    if (!Array.isArray(models) || models.length === 0) {
+      list.innerHTML = '<li>No revised IFC models found</li>';
+      return;
+    }
+
+    for (const model of models) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.textContent = model.name;
+      a.href = '#';
+      a.addEventListener('click', (evt) => evt.preventDefault());
+
+      const actions = document.createElement('div');
+      actions.className = 'row-actions';
+
+      const dl = document.createElement('button');
+      dl.type = 'button';
+      dl.textContent = 'Download';
+      dl.className = 'download-btn';
+      dl.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        downloadRevisedModel(model.name);
+      });
+
+      const del = document.createElement('button');
+      del.type = 'button';
+      del.textContent = 'Delete';
+      del.className = 'delete-btn';
+      del.addEventListener('click', async (evt) => {
+        evt.preventDefault();
+        del.setAttribute('disabled', 'true');
+        try {
+          await deleteRevisedModel(model.name);
+          await loadRevisedModels();
+        } catch (err) {
+          console.error('Failed to delete revised IFC model:', err);
+          alert('Could not delete revised IFC model. See the console for more details.');
+        } finally {
+          del.removeAttribute('disabled');
+        }
+      });
+
+      li.appendChild(a);
+      actions.appendChild(dl);
+      actions.appendChild(del);
+      li.appendChild(actions);
+      list.appendChild(li);
+    }
+  } catch (err) {
+    console.error('Failed to load revised IFC models:', err);
+    list.innerHTML = '<li>Error loading revised IFC models</li>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadModels();
+  await loadRevisedModels();
+});
