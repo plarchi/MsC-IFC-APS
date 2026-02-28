@@ -10,14 +10,18 @@
     body, html { height: 100%; margin: 0; }
     #container { display: flex; height: 100%; }
     #left { width: 50%; padding: 12px 32px 12px 12px; box-sizing: border-box; overflow-y: auto; position: relative; }
-    #right { width: 50%; border-left: 1px solid #ddd; background: transparent; }
+    #right { width: 50%; border-left: 1px solid #ddd; background: transparent; padding: 12px 12px 12px 32px; box-sizing: border-box; overflow-y: auto; }
+    .right-top-actions { display: flex; align-items: center; justify-content: center; margin: 12px 0 0; }
     h1 { font-size: 18px; margin: 0 0 12px; color: #444; }
     .top-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 12px; }
     .nav-btn { display: inline-flex; align-items: center; justify-content: center; width: 50%; box-sizing: border-box; padding: 10px 20px; border: 1px solid #ddd; background: transparent; border-radius: 5px; cursor: pointer; text-decoration: none; color: #000; font-weight: 700; text-transform: uppercase; line-height: 1; flex: 0 0 auto; }
+    .etl-btn { color: darkblue; }
     ol { margin: 0; padding-left: 24px; }
     li { margin: 8px 0; display: flex; align-items: center; gap: 12px; position: relative; padding-right: calc(10px + 200px); }
     #modelList a { text-decoration: none; color: #444; flex: 1 1 auto; }
     #modelList a:hover { text-decoration: underline; }
+    #revisedModelList a { text-decoration: none; color: #444; flex: 1 1 auto; }
+    #revisedModelList a:hover { text-decoration: underline; }
     .row-actions { position: absolute; right: 0px; top: 50%; transform: translateY(-50%); display: inline-flex; gap: 8px; }
     .row-actions button { padding: 5px 10px; border: 1px solid #ddd; background: transparent; border-radius: 5px; cursor: pointer; }
     .delete-btn { color: darkred; }
@@ -36,7 +40,13 @@
       </ol>
     </div>
     <div id="right">
-      <!-- Empty right half for now -->
+      <div class="right-top-actions">
+        <button type="button" class="nav-btn etl-btn">Model after ETL</button>
+      </div>
+      <h1>Model List</h1>
+      <ol id="revisedModelList">
+        <!-- Filled by home.js -->
+      </ol>
     </div>
   </div>
   <script src="/home.js?v=4" type="module"></script>
