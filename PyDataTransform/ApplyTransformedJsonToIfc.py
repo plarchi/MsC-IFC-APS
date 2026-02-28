@@ -1,6 +1,7 @@
 import argparse
 import json
 from pathlib import Path
+import uuid
 
 
 def _to_ifc_value(model, value):
@@ -88,7 +89,66 @@ def _guid_to_ifc_globalid(ifcopenshell_module, guid_value):
         return None
 
 
-def _set_property_value(model, entity, category, prop_name, value):
+def _new_ifc_guid(ifcopenshell_module):
+    try:
+        return ifcopenshell_module.guid.new()
+    except Exception:
+        return ifcopenshell_module.guid.compress(uuid.uuid4().hex)
+
+
+def _get_owner_history(model, entity):
+    owner_history = getattr(entity, "OwnerHistory", None)
+    if owner_history is not None:
+        return owner_history
+    owners = model.by_type("IfcOwnerHistory")
+    return owners[0] if owners else None
+
+
+def _create_property_set(model, ifcopenshell_module, entity, pset_name):
+    if not pset_name:
+        return None
+
+    owner_history = _get_owner_history(model, entity)
+    pset = model.create_entity(
+        "IfcPropertySet",
+        _new_ifc_guid(ifcopenshell_module),
+        owner_history,
+        str(pset_name),
+        None,
+        [],
+    )
+
+    model.create_entity(
+        "IfcRelDefinesByProperties",
+        _new_ifc_guid(ifcopenshell_module),
+        owner_history,
+        None,
+        None,
+        [entity],
+        pset,
+    )
+    return pset
+
+
+def _add_property_to_pset(model, pset, prop_name, value):
+    if not prop_name:
+        return False
+
+    prop = model.create_entity(
+        "IfcPropertySingleValue",
+        str(prop_name),
+        None,
+        _to_ifc_value(model, value),
+        None,
+    )
+
+    existing = list(getattr(pset, "HasProperties", []) or [])
+    existing.append(prop)
+    pset.HasProperties = existing
+    return True
+
+
+def _set_property_value(model, ifcopenshell_module, entity, category, prop_name, value):
     if not category or not prop_name:
         return False
 
@@ -109,7 +169,9 @@ def _set_property_value(model, entity, category, prop_name, value):
     psets = _get_psets(entity)
     pset = psets.get(str(category))
     if pset is None:
-        return False
+        pset = _create_property_set(model, ifcopenshell_module, entity, str(category))
+        if pset is None:
+            return False
 
     for p in getattr(pset, "HasProperties", []) or []:
         if not p.is_a("IfcPropertySingleValue"):
@@ -126,7 +188,7 @@ def _set_property_value(model, entity, category, prop_name, value):
             p.NominalValue = _to_ifc_value(model, value)
             return True
 
-    return False
+    return _add_property_to_pset(model, pset, prop_name_text, value)
 
 
 def apply_transformed_json_to_ifc(input_ifc_path, input_json_path, output_ifc_path):
@@ -187,7 +249,7 @@ def apply_transformed_json_to_ifc(input_ifc_path, input_json_path, output_ifc_pa
                 category = prop.get("category")
                 display_name = prop.get("displayName")
                 value = prop.get("value")
-                if _set_property_value(model, entity, category, display_name, value):
+                if _set_property_value(model, ifcopenshell, entity, category, display_name, value):
                     element_changed = True
                     properties_updated += 1
 
