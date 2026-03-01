@@ -26,6 +26,13 @@
     .row-actions button { padding: 5px 10px; border: 1px solid #ddd; background: transparent; border-radius: 5px; cursor: pointer; }
     .delete-btn { color: darkred; }
     .download-btn { color: darkblue; }
+    #comparisonPanel { margin-top: 18px; }
+    #comparisonTitle { font-size: 16px; margin: 0 0 8px; color: #444; text-align: left; }
+    #comparisonSummary { margin: 0 0 8px; color: #444; font-weight: 700; text-align: left; }
+    #comparisonContent { text-align: left; color: #444; }
+    #comparisonTable { width: 100%; border-collapse: collapse; }
+    #comparisonTable th, #comparisonTable td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+    #comparisonTable th { background: #f8f8f8; }
   </style>
 </head>
 <body>
@@ -47,6 +54,11 @@
       <ol id="revisedModelList">
         <!-- Filled by home.js -->
       </ol>
+      <div id="comparisonPanel">
+        <h2 id="comparisonTitle">Comparison Table</h2>
+        <p id="comparisonSummary"></p>
+        <div id="comparisonContent">Select a revised model to view comparison data.</div>
+      </div>
     </div>
   </div>
   <script src="/home.js?v=4" type="module"></script>

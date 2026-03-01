@@ -90,6 +90,41 @@ public class ModelsController : ControllerBase
         return Ok(files);
     }
 
+    // GET api/models/revised-comparison/{fileName}
+    // Returns comparison table rows exported from notebook as JSON: ExportedExcel/<ModelName>.json
+    [HttpGet("revised-comparison/{*fileName}")]
+    public async Task<IActionResult> GetRevisedComparisonData(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var comparisonJsonPath = Path.Combine(_env.ContentRootPath, "ExportedExcel", $"{baseName}.json");
+
+        if (!System.IO.File.Exists(comparisonJsonPath))
+        {
+            return NotFound("No Comparison Data Currently");
+        }
+
+        try
+        {
+            var json = await System.IO.File.ReadAllTextAsync(comparisonJsonPath);
+            return Content(json, "application/json");
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to read comparison data.");
+        }
+    }
+
     // GET api/models/revised/download/{fileName}
     // Downloads a revised IFC file from Revised_IFC.
     [HttpGet("revised/download/{*fileName}")]
