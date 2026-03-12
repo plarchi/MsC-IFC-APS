@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,13 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+        const long MaxUploadSize = 600L * 1024L * 1024L; // 600 MB
+
+        services.Configure<FormOptions>(options =>
+        {
+            options.MultipartBodyLengthLimit = MaxUploadSize;
+        });
+
         services.AddControllers();
         // Swagger/OpenAPI
         services.AddEndpointsApiExplorer();

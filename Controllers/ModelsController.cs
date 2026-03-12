@@ -480,7 +480,9 @@ public class ModelsController : ControllerBase
         public IFormFile File { get; set; }
     }
 
-    [HttpPost(), DisableRequestSizeLimit]
+    [HttpPost]
+    [RequestSizeLimit(600L * 1024L * 1024L)]
+    [RequestFormLimits(MultipartBodyLengthLimit = 600L * 1024L * 1024L)]
     public async Task<BucketObject> UploadAndTranslateModel([FromForm] UploadModelForm form)
     {
         using var stream = form.File.OpenReadStream();
