@@ -49,8 +49,7 @@ function renderComparisonChart(fileName, container) {
     loading.style.color = '#a33';
   });
 
-  const baseName = fileName.replace(/\.ifc$/i, '');
-  img.src = `/generated-charts/${encodeURIComponent(baseName)}.png`;
+  img.src = `/api/models/revised-comparison-chart/${encodeURIComponent(fileName)}`;
 
   chartSection.appendChild(loading);
   chartSection.appendChild(img);
@@ -100,8 +99,71 @@ function renderComparisonTable(rows, fileName) {
     return;
   }
 
+  const getRowValue = (row, keys) => {
+    for (const key of keys) {
+      if (row[key] !== undefined && row[key] !== null) {
+        return row[key];
+      }
+    }
+    return '';
+  };
+
+  const truncateExistingNamesForA = (existingName, editedName, maxLines = 10) => {
+    if (String(editedName ?? '').trim() !== 'A') {
+      return String(existingName ?? '');
+    }
+
+    const lines = String(existingName ?? '')
+      .split(/\r?\n|<br\s*\/?\s*>/gi)
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0);
+
+    if (lines.length <= maxLines) {
+      return String(existingName ?? '');
+    }
+
+    const remaining = lines.length - maxLines;
+    return [...lines.slice(0, maxLines), `... (${remaining} more)`].join('\n');
+  };
+
+  const normalizedRows = safeRows.map((row) => {
+    const editedName = getRowValue(row, ['Edited Name', 'editedName', 'EditedName']);
+    const existingName = getRowValue(row, ['Existing Model Name', 'existingModelName', 'ExistingModelName']);
+
+    return {
+      existingName: truncateExistingNamesForA(existingName, editedName, 10),
+      editedName,
+      propertyCategory: getRowValue(row, ['Property Category', 'propertyCategory', 'PropertyCategory']),
+      propertyDisplayName: getRowValue(row, ['Property DisplayName', 'propertyDisplayName', 'PropertyDisplayName']),
+      count: getRowValue(row, ['Count', 'count'])
+    };
+  });
+
+  const maxRowsToShow = 30;
+  let displayRows = normalizedRows;
+  if (normalizedRows.length > maxRowsToShow) {
+    displayRows = [
+      ...normalizedRows.slice(0, maxRowsToShow),
+      {
+        existingName: '...',
+        editedName: '...',
+        propertyCategory: '...',
+        propertyDisplayName: '...',
+        count: '...'
+      },
+      normalizedRows[normalizedRows.length - 1]
+    ];
+  }
+
   content.innerHTML = '';
   renderComparisonChart(fileName, content);
+
+  const tableTitle = document.createElement('div');
+  tableTitle.textContent = 'Changed IFC Names Comparison';
+  tableTitle.style.fontWeight = '700';
+  tableTitle.style.fontSize = '16px';
+  tableTitle.style.margin = '8px 0 10px 0';
+  content.appendChild(tableTitle);
 
   const table = document.createElement('table');
   table.id = 'comparisonTable';
@@ -117,16 +179,16 @@ function renderComparisonTable(rows, fileName) {
   table.appendChild(thead);
 
   const tbody = document.createElement('tbody');
-  for (const row of safeRows) {
+  for (const row of displayRows) {
     const tr = document.createElement('tr');
 
-    const existingName = row['Existing Model Name'] ?? row.existingModelName ?? row.ExistingModelName ?? '';
-    const editedName = row['Edited Name'] ?? row.editedName ?? row.EditedName ?? '';
-    const propertyCategory = row['Property Category'] ?? row.propertyCategory ?? row.PropertyCategory ?? '';
-    const propertyDisplayName = row['Property DisplayName'] ?? row.propertyDisplayName ?? row.PropertyDisplayName ?? '';
-    const count = row['Count'] ?? row.count ?? row.Count ?? '';
-
-    for (const [index, value] of [existingName, editedName, propertyCategory, propertyDisplayName, count].entries()) {
+    for (const [index, value] of [
+      row.existingName,
+      row.editedName,
+      row.propertyCategory,
+      row.propertyDisplayName,
+      row.count
+    ].entries()) {
       const td = document.createElement('td');
       td.textContent = value;
       if (index === 0) {
