@@ -6,8 +6,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Http;
 using System.Diagnostics;
@@ -19,8 +17,6 @@ using Microsoft.AspNetCore.Hosting;
 [Route("api/[controller]")]
 public class ModelsController : ControllerBase
 {
-    private static readonly ConcurrentDictionary<string, SemaphoreSlim> ChartLocks = new(StringComparer.OrdinalIgnoreCase);
-
     public record BucketObject(string name, string urn);
     public record RevisedIfcObject(string name);
     public record RevisedComparisonRow(
@@ -143,9 +139,9 @@ public class ModelsController : ControllerBase
     }
 
     // GET api/models/revised-comparison-chart/{fileName}
-    // Generates a PNG nested pie chart using the same logic/style as the notebook.
+    // Serves a pre-generated PNG nested pie chart from GeneratedCharts/<ModelName>.png.
     [HttpGet("revised-comparison-chart/{*fileName}")]
-    public async Task<IActionResult> GetRevisedComparisonChart(string fileName)
+    public IActionResult GetRevisedComparisonChart(string fileName)
     {
         if (string.IsNullOrWhiteSpace(fileName))
         {
@@ -159,122 +155,15 @@ public class ModelsController : ControllerBase
         }
 
         var baseName = Path.GetFileNameWithoutExtension(safeFileName);
-        var wholeModelJsonPath = Path.Combine(_env.ContentRootPath, "JSON Whole Model", $"{baseName}.json");
-        var editedJsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", $"{baseName}.json");
+        var chartPath = Path.Combine(_env.ContentRootPath, "GeneratedCharts", $"{baseName}.png");
 
-        if (!System.IO.File.Exists(wholeModelJsonPath) || !System.IO.File.Exists(editedJsonPath))
+        if (!System.IO.File.Exists(chartPath))
         {
-            return NotFound("No Comparison Data Currently");
+            return NotFound("No pre-generated chart found.");
         }
 
-        var scriptPath = Path.Combine(_env.ContentRootPath, "PyDataAnalysis", "GenerateNestedPieChart.py");
-        if (!System.IO.File.Exists(scriptPath))
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, "Missing script: PyDataAnalysis/GenerateNestedPieChart.py");
-        }
-
-        var chartCacheFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
-        Directory.CreateDirectory(chartCacheFolder);
-        var cachedChartPath = Path.Combine(chartCacheFolder, $"{baseName}.png");
-
-        var newestInputWriteUtc = new[]
-        {
-            System.IO.File.GetLastWriteTimeUtc(wholeModelJsonPath),
-            System.IO.File.GetLastWriteTimeUtc(editedJsonPath)
-        }.Max();
-
-        if (System.IO.File.Exists(cachedChartPath) && System.IO.File.GetLastWriteTimeUtc(cachedChartPath) >= newestInputWriteUtc)
-        {
-            var cachedBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
-            return File(cachedBytes, "image/png");
-        }
-
-        var chartLock = ChartLocks.GetOrAdd(baseName, _ => new SemaphoreSlim(1, 1));
-        await chartLock.WaitAsync();
-
-        try
-        {
-            if (System.IO.File.Exists(cachedChartPath) && System.IO.File.GetLastWriteTimeUtc(cachedChartPath) >= newestInputWriteUtc)
-            {
-                var cachedBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
-                return File(cachedBytes, "image/png");
-            }
-
-            var wholeJson = await System.IO.File.ReadAllTextAsync(wholeModelJsonPath);
-            var editedJson = await System.IO.File.ReadAllTextAsync(editedJsonPath);
-
-            using var wholeDoc = JsonDocument.Parse(wholeJson);
-            using var editedDoc = JsonDocument.Parse(editedJson);
-            var rows = BuildRevisedComparisonRows(wholeDoc.RootElement, editedDoc.RootElement);
-
-            var tempInputJson = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}_comparison_rows.json");
-            var tempOutputPng = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}_nested_pie.png");
-            await System.IO.File.WriteAllTextAsync(tempInputJson, JsonSerializer.Serialize(rows));
-
-            try
-            {
-                var venvPython = Path.Combine(_env.ContentRootPath, ".venv", "Scripts", "python.exe");
-                var pythonExecutable = System.IO.File.Exists(venvPython) ? venvPython : "python";
-
-                var psi = new ProcessStartInfo
-                {
-                    FileName = pythonExecutable,
-                    Arguments = $"\"{scriptPath}\" --input-json \"{tempInputJson}\" --output-png \"{tempOutputPng}\"",
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WorkingDirectory = _env.ContentRootPath
-                };
-
-                using var process = Process.Start(psi);
-                if (process == null)
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "Failed to start Python process.");
-                }
-
-                var stdOut = await process.StandardOutput.ReadToEndAsync();
-                var stdErr = await process.StandardError.ReadToEndAsync();
-                await process.WaitForExitAsync();
-
-                if (process.ExitCode != 0 || !System.IO.File.Exists(tempOutputPng))
-                {
-                    return StatusCode(
-                        StatusCodes.Status500InternalServerError,
-                        $"Chart generation failed (exit {process.ExitCode}). stdout: {stdOut} stderr: {stdErr}");
-                }
-
-                System.IO.File.Copy(tempOutputPng, cachedChartPath, overwrite: true);
-                var pngBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
-                return File(pngBytes, "image/png");
-            }
-            finally
-            {
-                try
-                {
-                    if (System.IO.File.Exists(tempInputJson))
-                    {
-                        System.IO.File.Delete(tempInputJson);
-                    }
-                    if (System.IO.File.Exists(tempOutputPng))
-                    {
-                        System.IO.File.Delete(tempOutputPng);
-                    }
-                }
-                catch
-                {
-                    // best-effort cleanup
-                }
-            }
-        }
-        catch
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to generate comparison chart.");
-        }
-        finally
-        {
-            chartLock.Release();
-        }
+        var fileBytes = System.IO.File.ReadAllBytes(chartPath);
+        return File(fileBytes, "image/png");
     }
 
     private static List<RevisedComparisonRow> BuildRevisedComparisonRows(JsonElement wholeRoot, JsonElement editedRoot)

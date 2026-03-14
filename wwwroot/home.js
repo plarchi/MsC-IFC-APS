@@ -49,7 +49,8 @@ function renderComparisonChart(fileName, container) {
     loading.style.color = '#a33';
   });
 
-  img.src = `/api/models/revised-comparison-chart/${encodeURIComponent(fileName)}`;
+  const baseName = fileName.replace(/\.ifc$/i, '');
+  img.src = `/generated-charts/${encodeURIComponent(baseName)}.png`;
 
   chartSection.appendChild(loading);
   chartSection.appendChild(img);
