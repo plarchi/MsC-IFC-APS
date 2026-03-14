@@ -6,6 +6,8 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Http;
 using System.Diagnostics;
@@ -17,8 +19,16 @@ using Microsoft.AspNetCore.Hosting;
 [Route("api/[controller]")]
 public class ModelsController : ControllerBase
 {
+    private static readonly ConcurrentDictionary<string, SemaphoreSlim> ChartLocks = new(StringComparer.OrdinalIgnoreCase);
+
     public record BucketObject(string name, string urn);
     public record RevisedIfcObject(string name);
+    public record RevisedComparisonRow(
+        string ExistingModelName,
+        string EditedName,
+        string PropertyCategory,
+        string PropertyDisplayName,
+        int Count);
 
     public class ExtractProperty
     {
@@ -107,22 +117,337 @@ public class ModelsController : ControllerBase
         }
 
         var baseName = Path.GetFileNameWithoutExtension(safeFileName);
-        var comparisonJsonPath = Path.Combine(_env.ContentRootPath, "ExportedExcel", $"{baseName}.json");
+        var wholeModelJsonPath = Path.Combine(_env.ContentRootPath, "JSON Whole Model", $"{baseName}.json");
+        var editedJsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", $"{baseName}.json");
 
-        if (!System.IO.File.Exists(comparisonJsonPath))
+        if (!System.IO.File.Exists(wholeModelJsonPath) || !System.IO.File.Exists(editedJsonPath))
         {
             return NotFound("No Comparison Data Currently");
         }
 
         try
         {
-            var json = await System.IO.File.ReadAllTextAsync(comparisonJsonPath);
-            return Content(json, "application/json");
+            var wholeJson = await System.IO.File.ReadAllTextAsync(wholeModelJsonPath);
+            var editedJson = await System.IO.File.ReadAllTextAsync(editedJsonPath);
+
+            using var wholeDoc = JsonDocument.Parse(wholeJson);
+            using var editedDoc = JsonDocument.Parse(editedJson);
+
+            var rows = BuildRevisedComparisonRows(wholeDoc.RootElement, editedDoc.RootElement);
+            return Ok(rows);
         }
         catch
         {
-            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to read comparison data.");
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to build comparison data.");
         }
+    }
+
+    // GET api/models/revised-comparison-chart/{fileName}
+    // Generates a PNG nested pie chart using the same logic/style as the notebook.
+    [HttpGet("revised-comparison-chart/{*fileName}")]
+    public async Task<IActionResult> GetRevisedComparisonChart(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var wholeModelJsonPath = Path.Combine(_env.ContentRootPath, "JSON Whole Model", $"{baseName}.json");
+        var editedJsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", $"{baseName}.json");
+
+        if (!System.IO.File.Exists(wholeModelJsonPath) || !System.IO.File.Exists(editedJsonPath))
+        {
+            return NotFound("No Comparison Data Currently");
+        }
+
+        var scriptPath = Path.Combine(_env.ContentRootPath, "PyDataAnalysis", "GenerateNestedPieChart.py");
+        if (!System.IO.File.Exists(scriptPath))
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Missing script: PyDataAnalysis/GenerateNestedPieChart.py");
+        }
+
+        var chartCacheFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
+        Directory.CreateDirectory(chartCacheFolder);
+        var cachedChartPath = Path.Combine(chartCacheFolder, $"{baseName}.png");
+
+        var newestInputWriteUtc = new[]
+        {
+            System.IO.File.GetLastWriteTimeUtc(wholeModelJsonPath),
+            System.IO.File.GetLastWriteTimeUtc(editedJsonPath)
+        }.Max();
+
+        if (System.IO.File.Exists(cachedChartPath) && System.IO.File.GetLastWriteTimeUtc(cachedChartPath) >= newestInputWriteUtc)
+        {
+            var cachedBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
+            return File(cachedBytes, "image/png");
+        }
+
+        var chartLock = ChartLocks.GetOrAdd(baseName, _ => new SemaphoreSlim(1, 1));
+        await chartLock.WaitAsync();
+
+        try
+        {
+            if (System.IO.File.Exists(cachedChartPath) && System.IO.File.GetLastWriteTimeUtc(cachedChartPath) >= newestInputWriteUtc)
+            {
+                var cachedBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
+                return File(cachedBytes, "image/png");
+            }
+
+            var wholeJson = await System.IO.File.ReadAllTextAsync(wholeModelJsonPath);
+            var editedJson = await System.IO.File.ReadAllTextAsync(editedJsonPath);
+
+            using var wholeDoc = JsonDocument.Parse(wholeJson);
+            using var editedDoc = JsonDocument.Parse(editedJson);
+            var rows = BuildRevisedComparisonRows(wholeDoc.RootElement, editedDoc.RootElement);
+
+            var tempInputJson = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}_comparison_rows.json");
+            var tempOutputPng = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}_nested_pie.png");
+            await System.IO.File.WriteAllTextAsync(tempInputJson, JsonSerializer.Serialize(rows));
+
+            try
+            {
+                var venvPython = Path.Combine(_env.ContentRootPath, ".venv", "Scripts", "python.exe");
+                var pythonExecutable = System.IO.File.Exists(venvPython) ? venvPython : "python";
+
+                var psi = new ProcessStartInfo
+                {
+                    FileName = pythonExecutable,
+                    Arguments = $"\"{scriptPath}\" --input-json \"{tempInputJson}\" --output-png \"{tempOutputPng}\"",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    WorkingDirectory = _env.ContentRootPath
+                };
+
+                using var process = Process.Start(psi);
+                if (process == null)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, "Failed to start Python process.");
+                }
+
+                var stdOut = await process.StandardOutput.ReadToEndAsync();
+                var stdErr = await process.StandardError.ReadToEndAsync();
+                await process.WaitForExitAsync();
+
+                if (process.ExitCode != 0 || !System.IO.File.Exists(tempOutputPng))
+                {
+                    return StatusCode(
+                        StatusCodes.Status500InternalServerError,
+                        $"Chart generation failed (exit {process.ExitCode}). stdout: {stdOut} stderr: {stdErr}");
+                }
+
+                System.IO.File.Copy(tempOutputPng, cachedChartPath, overwrite: true);
+                var pngBytes = await System.IO.File.ReadAllBytesAsync(cachedChartPath);
+                return File(pngBytes, "image/png");
+            }
+            finally
+            {
+                try
+                {
+                    if (System.IO.File.Exists(tempInputJson))
+                    {
+                        System.IO.File.Delete(tempInputJson);
+                    }
+                    if (System.IO.File.Exists(tempOutputPng))
+                    {
+                        System.IO.File.Delete(tempOutputPng);
+                    }
+                }
+                catch
+                {
+                    // best-effort cleanup
+                }
+            }
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to generate comparison chart.");
+        }
+        finally
+        {
+            chartLock.Release();
+        }
+    }
+
+    private static List<RevisedComparisonRow> BuildRevisedComparisonRows(JsonElement wholeRoot, JsonElement editedRoot)
+    {
+        var wholeMap = BuildComparisonMap(wholeRoot);
+        var editedMap = BuildComparisonMap(editedRoot);
+
+        var rawRows = new List<(string ExistingName, string EditedName, string Category, string DisplayName)>();
+
+        foreach (var key in wholeMap.Keys.Intersect(editedMap.Keys).OrderBy(k => k, StringComparer.Ordinal))
+        {
+            var whole = wholeMap[key];
+            var edited = editedMap[key];
+
+            var wholeName = Normalize(whole.Name);
+            var editedName = Normalize(edited.Name);
+
+            if (string.Equals(wholeName, editedName, StringComparison.Ordinal))
+            {
+                continue;
+            }
+            if (string.IsNullOrWhiteSpace(wholeName) && string.IsNullOrWhiteSpace(editedName))
+            {
+                continue;
+            }
+
+            var wholeNameProp = FindNameProperty(whole.Properties);
+            var editedNameProp = FindNameProperty(edited.Properties);
+
+            var category = !string.IsNullOrWhiteSpace(wholeNameProp.Category)
+                ? wholeNameProp.Category
+                : editedNameProp.Category;
+            var displayName = !string.IsNullOrWhiteSpace(wholeNameProp.DisplayName)
+                ? wholeNameProp.DisplayName
+                : editedNameProp.DisplayName;
+
+            rawRows.Add((wholeName, editedName, category, displayName));
+        }
+
+        var grouped = rawRows
+            .GroupBy(r => r.EditedName ?? string.Empty, StringComparer.Ordinal)
+            .OrderBy(g => g.Key, StringComparer.Ordinal)
+            .Select(g =>
+            {
+                var countsByExistingName = g
+                    .GroupBy(x => x.ExistingName ?? string.Empty, StringComparer.Ordinal)
+                    .OrderBy(x => x.Key, StringComparer.Ordinal)
+                    .Select(x => $"{x.Key} (x{x.Count()})");
+
+                var first = g.First();
+                return new RevisedComparisonRow(
+                    ExistingModelName: string.Join("\n", countsByExistingName),
+                    EditedName: g.Key,
+                    PropertyCategory: first.Category ?? string.Empty,
+                    PropertyDisplayName: first.DisplayName ?? string.Empty,
+                    Count: g.Count());
+            })
+            .ToList();
+
+        return grouped;
+    }
+
+    private static Dictionary<string, (string Name, JsonElement Properties)> BuildComparisonMap(JsonElement root)
+    {
+        var result = new Dictionary<string, (string Name, JsonElement Properties)>(StringComparer.Ordinal);
+        if (root.ValueKind != JsonValueKind.Array)
+        {
+            return result;
+        }
+
+        foreach (var item in root.EnumerateArray())
+        {
+            if (item.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            var key = BuildMatchKey(item);
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                continue;
+            }
+
+            var name = TryGetString(item, "Name");
+            var hasProps = item.TryGetProperty("Properties", out var props);
+            result[key] = (name, hasProps ? props : default);
+        }
+
+        return result;
+    }
+
+    private static string BuildMatchKey(JsonElement item)
+    {
+        int? dbId = null;
+        if (item.TryGetProperty("DbId", out var dbIdEl))
+        {
+            if (dbIdEl.ValueKind == JsonValueKind.Number && dbIdEl.TryGetInt32(out var parsedDbId))
+            {
+                dbId = parsedDbId;
+            }
+            else if (dbIdEl.ValueKind == JsonValueKind.String && int.TryParse(dbIdEl.GetString(), out var parsedDbIdFromString))
+            {
+                dbId = parsedDbIdFromString;
+            }
+        }
+
+        var externalId = Normalize(TryGetString(item, "ExternalId"));
+
+        if (dbId.HasValue && !string.IsNullOrWhiteSpace(externalId))
+        {
+            return $"DbId:{dbId.Value}|ExternalId:{externalId}";
+        }
+        if (dbId.HasValue)
+        {
+            return $"DbId:{dbId.Value}";
+        }
+        if (!string.IsNullOrWhiteSpace(externalId))
+        {
+            return $"ExternalId:{externalId}";
+        }
+
+        return null;
+    }
+
+    private static (string Category, string DisplayName, string Value) FindNameProperty(JsonElement properties)
+    {
+        if (properties.ValueKind != JsonValueKind.Array)
+        {
+            return (string.Empty, string.Empty, string.Empty);
+        }
+
+        foreach (var prop in properties.EnumerateArray())
+        {
+            if (prop.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            var displayName = Normalize(TryGetString(prop, "displayName"));
+            if (!string.Equals(displayName, "name", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            return (
+                Category: Normalize(TryGetString(prop, "category")),
+                DisplayName: displayName,
+                Value: Normalize(TryGetString(prop, "value")));
+        }
+
+        return (string.Empty, string.Empty, string.Empty);
+    }
+
+    private static string TryGetString(JsonElement element, string propertyName)
+    {
+        if (!element.TryGetProperty(propertyName, out var value))
+        {
+            return string.Empty;
+        }
+
+        return value.ValueKind switch
+        {
+            JsonValueKind.String => value.GetString() ?? string.Empty,
+            JsonValueKind.Number => value.GetRawText(),
+            JsonValueKind.True => "true",
+            JsonValueKind.False => "false",
+            _ => string.Empty
+        };
+    }
+
+    private static string Normalize(string value)
+    {
+        return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
     }
 
     // GET api/models/revised/download/{fileName}

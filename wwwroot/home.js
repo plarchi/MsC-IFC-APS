@@ -1,11 +1,70 @@
-const HOME_JS_VERSION = '2026-03-01.1';
+const HOME_JS_VERSION = '2026-03-14.2';
 console.log('home.js version:', HOME_JS_VERSION);
+
+let activeComparisonRequestId = 0;
 
 function getComparisonElements() {
   return {
     summary: document.getElementById('comparisonSummary'),
     content: document.getElementById('comparisonContent')
   };
+}
+
+function renderComparisonChart(fileName, container) {
+  if (!fileName || !container) {
+    return;
+  }
+
+  const chartSection = document.createElement('div');
+  chartSection.style.margin = '0 0 14px 0';
+
+  const chartTitle = document.createElement('div');
+  chartTitle.textContent = 'Edited Model Name - Nested Pie';
+  chartTitle.style.fontWeight = '700';
+  chartTitle.style.fontSize = '18px';
+  chartTitle.style.margin = '0 0 10px 0';
+  chartSection.appendChild(chartTitle);
+
+  const img = document.createElement('img');
+  img.alt = 'Nested pie chart';
+  img.loading = 'lazy';
+  img.style.display = 'block';
+  img.style.maxWidth = '100%';
+  img.style.height = 'auto';
+  img.style.opacity = '0';
+  img.style.transition = 'opacity 180ms ease';
+
+  const loading = document.createElement('div');
+  loading.textContent = 'Loading chart...';
+  loading.style.color = '#666';
+  loading.style.fontSize = '13px';
+  loading.style.margin = '4px 0 10px 0';
+
+  img.addEventListener('load', () => {
+    loading.remove();
+    img.style.opacity = '1';
+  });
+  img.addEventListener('error', () => {
+    loading.textContent = 'Could not load comparison chart.';
+    loading.style.color = '#a33';
+  });
+
+  img.src = `/api/models/revised-comparison-chart/${encodeURIComponent(fileName)}`;
+
+  chartSection.appendChild(loading);
+  chartSection.appendChild(img);
+  container.appendChild(chartSection);
+}
+
+function renderComparisonLoading(message) {
+  const { summary, content } = getComparisonElements();
+  if (!summary) {
+    return;
+  }
+  summary.textContent = message;
+  if (content && !content.innerHTML.trim()) {
+    content.textContent = 'Loading...';
+  }
 }
 
 function renderComparisonMessage(message) {
@@ -19,15 +78,20 @@ function renderComparisonMessage(message) {
   content.textContent = message;
 }
 
-function renderComparisonTable(rows) {
+function renderComparisonTable(rows, fileName) {
   const { summary, content } = getComparisonElements();
   if (!content) {
     return;
   }
 
   const safeRows = Array.isArray(rows) ? rows : [];
+  const totalChangedModelElements = safeRows.reduce((sum, row) => {
+    const countValue = Number(row['Count'] ?? row.count ?? row.Count ?? 0);
+    return sum + (Number.isFinite(countValue) ? countValue : 0);
+  }, 0);
+
   if (summary) {
-    summary.textContent = `Total changed model elements: ${safeRows.length}`;
+    summary.textContent = `Total changed model elements: ${totalChangedModelElements}`;
   }
 
   if (safeRows.length === 0) {
@@ -35,12 +99,15 @@ function renderComparisonTable(rows) {
     return;
   }
 
+  content.innerHTML = '';
+  renderComparisonChart(fileName, content);
+
   const table = document.createElement('table');
   table.id = 'comparisonTable';
 
   const thead = document.createElement('thead');
   const headRow = document.createElement('tr');
-  for (const title of ['Existing Model Name', 'Edited Name', 'Property Category', 'Property DisplayName']) {
+  for (const title of ['Existing Model Name', 'Edited Name', 'Property Category', 'Property DisplayName', 'Count']) {
     const th = document.createElement('th');
     th.textContent = title;
     headRow.appendChild(th);
@@ -56,10 +123,14 @@ function renderComparisonTable(rows) {
     const editedName = row['Edited Name'] ?? row.editedName ?? row.EditedName ?? '';
     const propertyCategory = row['Property Category'] ?? row.propertyCategory ?? row.PropertyCategory ?? '';
     const propertyDisplayName = row['Property DisplayName'] ?? row.propertyDisplayName ?? row.PropertyDisplayName ?? '';
+    const count = row['Count'] ?? row.count ?? row.Count ?? '';
 
-    for (const value of [existingName, editedName, propertyCategory, propertyDisplayName]) {
+    for (const [index, value] of [existingName, editedName, propertyCategory, propertyDisplayName, count].entries()) {
       const td = document.createElement('td');
       td.textContent = value;
+      if (index === 0) {
+        td.style.whiteSpace = 'pre-line';
+      }
       tr.appendChild(td);
     }
 
@@ -67,14 +138,17 @@ function renderComparisonTable(rows) {
   }
   table.appendChild(tbody);
 
-  content.innerHTML = '';
   content.appendChild(table);
 }
 
 async function loadRevisedComparison(fileName) {
-  renderComparisonMessage('Loading comparison data...');
+  const requestId = ++activeComparisonRequestId;
+  renderComparisonLoading('Loading comparison data...');
   try {
     const resp = await fetch(`/api/models/revised-comparison/${encodeURIComponent(fileName)}`);
+    if (requestId !== activeComparisonRequestId) {
+      return;
+    }
     if (resp.status === 404) {
       renderComparisonMessage('No Comparison Data Currently.');
       return;
@@ -83,8 +157,14 @@ async function loadRevisedComparison(fileName) {
       throw new Error(await resp.text());
     }
     const rows = await resp.json();
-    renderComparisonTable(rows);
+    if (requestId !== activeComparisonRequestId) {
+      return;
+    }
+    renderComparisonTable(rows, fileName);
   } catch (err) {
+    if (requestId !== activeComparisonRequestId) {
+      return;
+    }
     console.error('Failed to load comparison data:', err);
     renderComparisonMessage('No Comparison Data Currently.');
   }
