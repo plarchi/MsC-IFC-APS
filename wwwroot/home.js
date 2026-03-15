@@ -10,29 +10,52 @@ function getComparisonElements() {
   };
 }
 
-function renderComparisonChart(fileName, container) {
+function createRevealSection(animationDelayMs = 0) {
+  const section = document.createElement('section');
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(8px)';
+  section.style.transition = 'opacity 220ms ease, transform 220ms ease';
+  section.style.transitionDelay = `${animationDelayMs}ms`;
+
+  requestAnimationFrame(() => {
+    section.style.opacity = '1';
+    section.style.transform = 'translateY(0)';
+  });
+
+  return section;
+}
+
+function appendChartSection({
+  fileName,
+  container,
+  title,
+  endpoint,
+  alt,
+  animationDelayMs,
+  missingMessage
+}) {
   if (!fileName || !container) {
     return;
   }
 
-  const chartSection = document.createElement('div');
-  chartSection.style.margin = '0 0 14px 0';
+  const chartSection = createRevealSection(animationDelayMs);
+  chartSection.style.margin = '0 0 16px 0';
 
   const chartTitle = document.createElement('div');
-  chartTitle.textContent = 'Edited Model Name - Nested Pie';
+  chartTitle.textContent = title;
   chartTitle.style.fontWeight = '700';
   chartTitle.style.fontSize = '18px';
   chartTitle.style.margin = '0 0 10px 0';
   chartSection.appendChild(chartTitle);
 
   const img = document.createElement('img');
-  img.alt = 'Nested pie chart';
+  img.alt = alt;
   img.loading = 'lazy';
   img.style.display = 'block';
   img.style.maxWidth = '100%';
   img.style.height = 'auto';
   img.style.opacity = '0';
-  img.style.transition = 'opacity 180ms ease';
+  img.style.transition = 'opacity 220ms ease';
 
   const loading = document.createElement('div');
   loading.textContent = 'Loading chart...';
@@ -44,12 +67,13 @@ function renderComparisonChart(fileName, container) {
     loading.remove();
     img.style.opacity = '1';
   });
+
   img.addEventListener('error', () => {
-    loading.textContent = 'Could not load comparison chart.';
+    loading.textContent = missingMessage || 'Could not load chart.';
     loading.style.color = '#a33';
   });
 
-  img.src = `/api/models/revised-comparison-chart/${encodeURIComponent(fileName)}`;
+  img.src = `${endpoint}/${encodeURIComponent(fileName)}`;
 
   chartSection.appendChild(loading);
   chartSection.appendChild(img);
@@ -156,14 +180,36 @@ function renderComparisonTable(rows, fileName) {
   }
 
   content.innerHTML = '';
-  renderComparisonChart(fileName, content);
+
+  appendChartSection({
+    fileName,
+    container: content,
+    title: 'Hierarchical Bubble Graph',
+    endpoint: '/api/models/revised-hierarchical-bubble-chart',
+    alt: 'Hierarchical bubble chart',
+    animationDelayMs: 0,
+    missingMessage: 'No pre-generated Hierarchical Bubble PNG found.'
+  });
+
+  appendChartSection({
+    fileName,
+    container: content,
+    title: 'Edited Model Name - Nested Pie Chart',
+    endpoint: '/api/models/revised-comparison-chart',
+    alt: 'Nested pie chart',
+    animationDelayMs: 80,
+    missingMessage: 'No pre-generated Nested Pie PNG found.'
+  });
+
+  const tableSection = createRevealSection(140);
+  tableSection.style.margin = '0 0 8px 0';
 
   const tableTitle = document.createElement('div');
   tableTitle.textContent = 'Changed IFC Names Comparison';
   tableTitle.style.fontWeight = '700';
   tableTitle.style.fontSize = '16px';
   tableTitle.style.margin = '8px 0 10px 0';
-  content.appendChild(tableTitle);
+  tableSection.appendChild(tableTitle);
 
   const table = document.createElement('table');
   table.id = 'comparisonTable';
@@ -201,7 +247,8 @@ function renderComparisonTable(rows, fileName) {
   }
   table.appendChild(tbody);
 
-  content.appendChild(table);
+  tableSection.appendChild(table);
+  content.appendChild(tableSection);
 }
 
 async function loadRevisedComparison(fileName) {

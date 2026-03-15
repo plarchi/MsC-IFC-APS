@@ -166,6 +166,45 @@ public class ModelsController : ControllerBase
         return File(fileBytes, "image/png");
     }
 
+    // GET api/models/revised-hierarchical-bubble-chart/{fileName}
+    // Serves a pre-generated PNG hierarchical bubble chart from GeneratedCharts using common naming patterns.
+    [HttpGet("revised-hierarchical-bubble-chart/{*fileName}")]
+    public IActionResult GetRevisedHierarchicalBubbleChart(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var chartsFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
+        var candidateNames = new[]
+        {
+            $"{baseName}_hierarchical_bubble.png",
+            $"{baseName}-hierarchical-bubble.png",
+            $"{baseName}_bubble.png",
+            $"{baseName}-bubble.png"
+        };
+
+        var chartPath = candidateNames
+            .Select(name => Path.Combine(chartsFolder, name))
+            .FirstOrDefault(System.IO.File.Exists);
+
+        if (string.IsNullOrWhiteSpace(chartPath))
+        {
+            return NotFound("No pre-generated hierarchical bubble chart found.");
+        }
+
+        var fileBytes = System.IO.File.ReadAllBytes(chartPath);
+        return File(fileBytes, "image/png");
+    }
+
     private static List<RevisedComparisonRow> BuildRevisedComparisonRows(JsonElement wholeRoot, JsonElement editedRoot)
     {
         var wholeMap = BuildComparisonMap(wholeRoot);
