@@ -9,8 +9,28 @@
   <style>
     body, html { height: 100%; margin: 0; }
     #container { display: flex; height: 100%; }
-    #left { width: 50%; padding: 12px 32px 12px 12px; box-sizing: border-box; overflow-y: auto; position: relative; }
-    #right { width: 50%; border-left: 1px solid #ddd; background: transparent; padding: 12px 12px 12px 32px; box-sizing: border-box; overflow-y: auto; }
+    #left { flex: 0 0 50%; min-width: 280px; padding: 12px 32px 12px 12px; box-sizing: border-box; overflow-y: auto; position: relative; }
+    #splitter {
+      flex: 0 0 10px;
+      cursor: col-resize;
+      position: relative;
+      background: transparent;
+      user-select: none;
+      touch-action: none;
+    }
+    #splitter::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: #ddd;
+      transform: translateX(-50%);
+    }
+    #splitter:hover::before,
+    #splitter.is-dragging::before { background: #999; }
+    #right { flex: 1 1 auto; min-width: 320px; background: transparent; padding: 12px 12px 12px 32px; box-sizing: border-box; overflow-y: auto; }
     .right-top-actions { display: flex; align-items: center; justify-content: center; margin: 12px 0 0; }
     h1 { font-size: 18px; margin: 0 0 12px; color: #444; }
     .top-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 12px; }
@@ -46,6 +66,7 @@
         <!-- Filled by home.js -->
       </ol>
     </div>
+    <div id="splitter" aria-label="Resize panels" role="separator"></div>
     <div id="right">
       <div class="right-top-actions">
         <button type="button" class="nav-btn etl-btn">Model after ETL</button>
@@ -61,6 +82,6 @@
       </div>
     </div>
   </div>
-  <script src="/home.js?v=4" type="module"></script>
+  <script src="/home.js?v=5" type="module"></script>
 </body>
 </html>
