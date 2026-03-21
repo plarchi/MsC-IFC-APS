@@ -24143,6 +24143,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -24597,6 +24602,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -25051,6 +25061,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -25505,6 +25520,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -25959,6 +25979,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -26413,6 +26438,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -26867,6 +26897,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -27321,6 +27356,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -27775,6 +27815,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -28229,6 +28274,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -28683,6 +28733,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -29137,6 +29192,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -29373,17 +29433,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -29614,6 +29674,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -29850,17 +29915,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -30091,6 +30156,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -30327,17 +30397,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -30568,6 +30638,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -30804,17 +30879,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -31045,6 +31120,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -31281,17 +31361,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -31522,6 +31602,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -31758,17 +31843,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -31999,6 +32084,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -32235,17 +32325,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -32476,6 +32566,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -32921,6 +33016,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -33366,6 +33466,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -33816,6 +33921,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -34266,6 +34376,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -34716,6 +34831,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -35166,6 +35286,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -35481,6 +35606,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -35796,6 +35926,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -36111,6 +36246,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -36426,6 +36566,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -36741,6 +36886,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -37056,6 +37206,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -37371,6 +37526,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -37686,6 +37846,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -38137,6 +38302,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -38588,6 +38758,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -39039,6 +39214,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -39490,6 +39670,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -39941,6 +40126,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -40392,6 +40582,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -40843,6 +41038,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -41294,6 +41494,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -41745,6 +41950,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -42196,6 +42406,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -42647,6 +42862,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -43098,6 +43318,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -43549,6 +43774,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -44000,6 +44230,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -44451,6 +44686,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -44902,6 +45142,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -45353,6 +45598,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -45804,6 +46054,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -46255,6 +46510,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -46706,6 +46966,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -47161,6 +47426,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -47616,6 +47886,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -48066,6 +48341,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -48521,6 +48801,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -49329,7 +49614,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162486"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486"
       },
       {
         "category": "IFC",
@@ -49847,7 +50132,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162487"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487"
       },
       {
         "category": "IFC",
@@ -50318,7 +50603,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162488"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488"
       },
       {
         "category": "IFC",
@@ -50789,7 +51074,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162489"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489"
       },
       {
         "category": "IFC",
@@ -51542,7 +51827,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162493"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493"
       },
       {
         "category": "IFC",
@@ -52536,7 +52821,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162495"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495"
       },
       {
         "category": "IFC",
@@ -53007,7 +53292,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162496"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496"
       },
       {
         "category": "IFC",
@@ -53478,7 +53763,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162497"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497"
       },
       {
         "category": "IFC",
@@ -55313,7 +55598,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159159"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159"
       },
       {
         "category": "IFC",
@@ -55784,7 +56069,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159262"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262"
       },
       {
         "category": "IFC",
@@ -56255,7 +56540,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160671"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671"
       },
       {
         "category": "IFC",
@@ -56726,7 +57011,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160717"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717"
       },
       {
         "category": "IFC",
@@ -57432,7 +57717,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162230"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230"
       },
       {
         "category": "IFC",
@@ -58379,7 +58664,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162311"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311"
       },
       {
         "category": "IFC",
@@ -58850,7 +59135,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162357"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357"
       },
       {
         "category": "IFC",
@@ -59321,7 +59606,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162383"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383"
       },
       {
         "category": "IFC",
@@ -111019,17 +111304,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -111533,17 +111818,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -112047,17 +112332,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -112561,17 +112846,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -113075,17 +113360,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -113589,17 +113874,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -114103,17 +114388,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Exterior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Interior Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
@@ -114515,17 +114800,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -114892,17 +115177,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -115269,17 +115554,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -115646,17 +115931,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -116023,17 +116308,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -116400,17 +116685,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -116777,17 +117062,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -135295,14 +135580,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159159",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159",
     "DbId": 282,
     "ExternalId": "0/0/0/0/5/0",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159159"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159"
       },
       {
         "category": "Item",
@@ -135352,7 +135637,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159159"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159"
       },
       {
         "category": "IFC",
@@ -135677,14 +135962,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159262",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262",
     "DbId": 283,
     "ExternalId": "0/0/0/0/5/1",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159262"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262"
       },
       {
         "category": "Item",
@@ -135734,7 +136019,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:159262"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262"
       },
       {
         "category": "IFC",
@@ -136059,14 +136344,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160671",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671",
     "DbId": 284,
     "ExternalId": "0/0/0/0/5/2",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160671"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671"
       },
       {
         "category": "Item",
@@ -136116,7 +136401,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160671"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671"
       },
       {
         "category": "IFC",
@@ -136441,14 +136726,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160717",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717",
     "DbId": 285,
     "ExternalId": "0/0/0/0/5/3",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160717"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717"
       },
       {
         "category": "Item",
@@ -136498,7 +136783,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:160717"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717"
       },
       {
         "category": "IFC",
@@ -136823,14 +137108,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162230",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230",
     "DbId": 288,
     "ExternalId": "0/0/0/0/5/6",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162230"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230"
       },
       {
         "category": "Item",
@@ -136880,7 +137165,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162230"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230"
       },
       {
         "category": "IFC",
@@ -137205,14 +137490,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162311",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311",
     "DbId": 290,
     "ExternalId": "0/0/0/0/5/8",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162311"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311"
       },
       {
         "category": "Item",
@@ -137262,7 +137547,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162311"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311"
       },
       {
         "category": "IFC",
@@ -137587,14 +137872,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162357",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357",
     "DbId": 291,
     "ExternalId": "0/0/0/0/5/9",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162357"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357"
       },
       {
         "category": "Item",
@@ -137644,7 +137929,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162357"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357"
       },
       {
         "category": "IFC",
@@ -137969,14 +138254,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162383",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383",
     "DbId": 292,
     "ExternalId": "0/0/0/0/5/10",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162383"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383"
       },
       {
         "category": "Item",
@@ -138026,7 +138311,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162383"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383"
       },
       {
         "category": "IFC",
@@ -138351,14 +138636,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162486",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486",
     "DbId": 125,
     "ExternalId": "0/0/0/0/1/0",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162486"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486"
       },
       {
         "category": "Item",
@@ -138408,7 +138693,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162486"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486"
       },
       {
         "category": "IFC",
@@ -138733,14 +139018,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162487",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487",
     "DbId": 126,
     "ExternalId": "0/0/0/0/1/1",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162487"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487"
       },
       {
         "category": "Item",
@@ -138790,7 +139075,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162487"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487"
       },
       {
         "category": "IFC",
@@ -139115,14 +139400,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162488",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488",
     "DbId": 127,
     "ExternalId": "0/0/0/0/1/2",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162488"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488"
       },
       {
         "category": "Item",
@@ -139172,7 +139457,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162488"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488"
       },
       {
         "category": "IFC",
@@ -139497,14 +139782,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162489",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489",
     "DbId": 128,
     "ExternalId": "0/0/0/0/1/3",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162489"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489"
       },
       {
         "category": "Item",
@@ -139554,7 +139839,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162489"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489"
       },
       {
         "category": "IFC",
@@ -139879,14 +140164,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162493",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493",
     "DbId": 131,
     "ExternalId": "0/0/0/0/1/6",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162493"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493"
       },
       {
         "category": "Item",
@@ -139936,7 +140221,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162493"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493"
       },
       {
         "category": "IFC",
@@ -140261,14 +140546,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162495",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495",
     "DbId": 133,
     "ExternalId": "0/0/0/0/1/8",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162495"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495"
       },
       {
         "category": "Item",
@@ -140318,7 +140603,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162495"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495"
       },
       {
         "category": "IFC",
@@ -140643,14 +140928,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162496",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496",
     "DbId": 134,
     "ExternalId": "0/0/0/0/1/9",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162496"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496"
       },
       {
         "category": "Item",
@@ -140700,7 +140985,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162496"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496"
       },
       {
         "category": "IFC",
@@ -141025,14 +141310,14 @@
     ]
   },
   {
-    "Name": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162497",
+    "Name": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497",
     "DbId": 135,
     "ExternalId": "0/0/0/0/1/10",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162497"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497"
       },
       {
         "category": "Item",
@@ -141082,7 +141367,7 @@
       {
         "category": "IFC",
         "displayName": "NAME",
-        "value": "M_Base Cabinet-Double Door \u0026 2 Drawer:1000mm:1000mm:162497"
+        "value": "M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497"
       },
       {
         "category": "IFC",
@@ -223844,17 +224129,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -224226,17 +224511,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -224608,17 +224893,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -224990,17 +225275,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -225372,17 +225657,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -225754,17 +226039,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
@@ -226136,17 +226421,17 @@
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Top Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Bottom Face",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Structural",
         "displayName": "Rebar Cover - Other Faces",
-        "value": "Rebar Cover 1 \u003C0.025\u003E"
+        "value": "Rebar Cover 1 <0.025>"
       },
       {
         "category": "PSet_Revit_Type_Materials and Finishes",
