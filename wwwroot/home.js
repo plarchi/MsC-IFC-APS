@@ -1,9 +1,10 @@
-const HOME_JS_VERSION = '2026-03-26.1';
+const HOME_JS_VERSION = '2026-03-26.2';
 console.log('home.js version:', HOME_JS_VERSION);
 
 const NOTEBOOK_FLOW_MODELS = new Set([
   'ifc2x3_duplex_architecture',
-  'ifc4_samplehouse'
+  'ifc4_samplehouse',
+  'snowdon+towers+sample+structural2x3'
 ]);
 
 let activeComparisonRequestId = 0;
