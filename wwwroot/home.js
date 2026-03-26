@@ -1,6 +1,8 @@
 const HOME_JS_VERSION = '2026-03-14.2';
 console.log('home.js version:', HOME_JS_VERSION);
 
+const DUPLEX_NOTEBOOK_MODEL = 'Ifc2x3_Duplex_Architecture';
+
 let activeComparisonRequestId = 0;
 const LEFT_PANEL_WIDTH_KEY = 'home.leftPanelWidthPercent';
 
@@ -75,9 +77,22 @@ function initResizableSplit() {
 
 function getComparisonElements() {
   return {
+    title: document.getElementById('comparisonTitle'),
     summary: document.getElementById('comparisonSummary'),
     content: document.getElementById('comparisonContent')
   };
+}
+
+function getModelBaseName(fileName) {
+  const safeName = String(fileName ?? '').trim();
+  if (!safeName) {
+    return '';
+  }
+  return safeName.toLowerCase().endsWith('.ifc') ? safeName.slice(0, -4) : safeName;
+}
+
+function isDuplexNotebookModel(fileName) {
+  return getModelBaseName(fileName) === DUPLEX_NOTEBOOK_MODEL;
 }
 
 function createRevealSection(animationDelayMs = 0) {
@@ -151,7 +166,10 @@ function appendChartSection({
 }
 
 function renderComparisonLoading(message) {
-  const { summary, content } = getComparisonElements();
+  const { title, summary, content } = getComparisonElements();
+  if (title) {
+    title.textContent = 'Comparison Table';
+  }
   if (!summary) {
     return;
   }
@@ -162,9 +180,12 @@ function renderComparisonLoading(message) {
 }
 
 function renderComparisonMessage(message) {
-  const { summary, content } = getComparisonElements();
+  const { title, summary, content } = getComparisonElements();
   if (!content) {
     return;
+  }
+  if (title) {
+    title.textContent = 'Comparison Table';
   }
   if (summary) {
     summary.textContent = '';
@@ -173,9 +194,13 @@ function renderComparisonMessage(message) {
 }
 
 function renderComparisonTable(rows, fileName) {
-  const { summary, content } = getComparisonElements();
+  const { title, summary, content } = getComparisonElements();
   if (!content) {
     return;
+  }
+
+  if (title) {
+    title.textContent = 'Comparison Table';
   }
 
   const safeRows = Array.isArray(rows) ? rows : [];
@@ -321,11 +346,111 @@ function renderComparisonTable(rows, fileName) {
   content.appendChild(tableSection);
 }
 
+function renderCobieImplementationTable(rows, fileName) {
+  const { title, summary, content } = getComparisonElements();
+  if (!content) {
+    return;
+  }
+
+  if (title) {
+    title.textContent = 'COBie Data implementation';
+  }
+
+  const safeRows = Array.isArray(rows) ? rows : [];
+  const dataRows = safeRows.filter((row) => {
+    const name = String(row.name ?? row.Name ?? '').trim();
+    return name.length > 0 && name !== '---';
+  });
+
+  if (summary) {
+    summary.textContent = `Changed rows shown in base data: ${dataRows.length}`;
+  }
+
+  if (safeRows.length === 0) {
+    content.textContent = 'No Comparison Data Currently.';
+    return;
+  }
+
+  content.innerHTML = '';
+
+  appendChartSection({
+    fileName,
+    container: content,
+    title: 'IFC Type Bubble Diagram (COBie Coverage)',
+    endpoint: '/api/models/revised-hierarchical-bubble-chart',
+    alt: 'IFC type bubble chart',
+    animationDelayMs: 0,
+    missingMessage: 'No pre-generated bubble PNG found.'
+  });
+
+  appendChartSection({
+    fileName,
+    container: content,
+    title: 'COBie Item Type - Nested Pie Chart',
+    endpoint: '/api/models/revised-comparison-chart',
+    alt: 'COBie nested pie chart',
+    animationDelayMs: 80,
+    missingMessage: 'No pre-generated nested pie PNG found.'
+  });
+
+  const tableSection = createRevealSection(140);
+  tableSection.style.margin = '0 0 8px 0';
+
+  const tableTitle = document.createElement('div');
+  tableTitle.textContent = 'COBie Data implementation';
+  tableTitle.style.fontWeight = '700';
+  tableTitle.style.fontSize = '16px';
+  tableTitle.style.margin = '8px 0 10px 0';
+  tableSection.appendChild(tableTitle);
+
+  const table = document.createElement('table');
+  table.id = 'comparisonTable';
+
+  const thead = document.createElement('thead');
+  const headRow = document.createElement('tr');
+  for (const headerText of ['Item Type', 'IFC Type', 'Total Items count', 'Name', 'COBie Value']) {
+    const th = document.createElement('th');
+    th.textContent = headerText;
+    headRow.appendChild(th);
+  }
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  for (const row of safeRows) {
+    const tr = document.createElement('tr');
+    const cells = [
+      row.itemType ?? row.ItemType ?? '',
+      row.ifcType ?? row.IfcType ?? '',
+      row.totalItemsCount ?? row.TotalItemsCount ?? '',
+      row.name ?? row.Name ?? '',
+      row.cobieValue ?? row.CobieValue ?? ''
+    ];
+
+    for (const value of cells) {
+      const td = document.createElement('td');
+      td.textContent = value;
+      tr.appendChild(td);
+    }
+
+    tbody.appendChild(tr);
+  }
+
+  table.appendChild(tbody);
+  tableSection.appendChild(table);
+  content.appendChild(tableSection);
+}
+
 async function loadRevisedComparison(fileName) {
   const requestId = ++activeComparisonRequestId;
   renderComparisonLoading('Loading comparison data...');
   try {
-    const resp = await fetch(`/api/models/revised-comparison/${encodeURIComponent(fileName)}`);
+    const useNotebookFlow = isDuplexNotebookModel(fileName);
+    const endpoint = useNotebookFlow
+      ? '/api/models/revised-cobie-implementation/'
+      : '/api/models/revised-comparison/';
+
+    const resp = await fetch(`${endpoint}${encodeURIComponent(fileName)}`);
     if (requestId !== activeComparisonRequestId) {
       return;
     }
@@ -340,7 +465,11 @@ async function loadRevisedComparison(fileName) {
     if (requestId !== activeComparisonRequestId) {
       return;
     }
-    renderComparisonTable(rows, fileName);
+    if (useNotebookFlow) {
+      renderCobieImplementationTable(rows, fileName);
+    } else {
+      renderComparisonTable(rows, fileName);
+    }
   } catch (err) {
     if (requestId !== activeComparisonRequestId) {
       return;

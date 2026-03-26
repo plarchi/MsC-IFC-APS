@@ -26,6 +26,13 @@ public class ModelsController : ControllerBase
         string PropertyDisplayName,
         int Count);
 
+    public record CobieImplementationRow(
+        string ItemType,
+        string IfcType,
+        string TotalItemsCount,
+        string Name,
+        string CobieValue);
+
     public class ExtractProperty
     {
         public string DisplayName { get; set; }
@@ -138,8 +145,50 @@ public class ModelsController : ControllerBase
         }
     }
 
+    // GET api/models/revised-cobie-implementation/{fileName}
+    // Returns grouped COBie implementation rows aligned with the Duplex notebook logic.
+    [HttpGet("revised-cobie-implementation/{*fileName}")]
+    public async Task<IActionResult> GetRevisedCobieImplementationData(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var beforeJsonPath = Path.Combine(_env.ContentRootPath, "JSON Whole Model", $"{baseName}.json");
+        var afterJsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", $"{baseName}.json");
+
+        if (!System.IO.File.Exists(beforeJsonPath) || !System.IO.File.Exists(afterJsonPath))
+        {
+            return NotFound("No Comparison Data Currently");
+        }
+
+        try
+        {
+            var beforeJson = await System.IO.File.ReadAllTextAsync(beforeJsonPath);
+            var afterJson = await System.IO.File.ReadAllTextAsync(afterJsonPath);
+
+            using var beforeDoc = JsonDocument.Parse(beforeJson);
+            using var afterDoc = JsonDocument.Parse(afterJson);
+
+            var rows = BuildCobieImplementationRows(beforeDoc.RootElement, afterDoc.RootElement);
+            return Ok(rows);
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to build COBie implementation data.");
+        }
+    }
+
     // GET api/models/revised-comparison-chart/{fileName}
-    // Serves a pre-generated PNG nested pie chart from GeneratedCharts/<ModelName>.png.
+    // Serves a pre-generated PNG nested pie chart from GeneratedCharts using common naming patterns.
     [HttpGet("revised-comparison-chart/{*fileName}")]
     public IActionResult GetRevisedComparisonChart(string fileName)
     {
@@ -155,9 +204,19 @@ public class ModelsController : ControllerBase
         }
 
         var baseName = Path.GetFileNameWithoutExtension(safeFileName);
-        var chartPath = Path.Combine(_env.ContentRootPath, "GeneratedCharts", $"{baseName}.png");
+        var chartsFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
+        var candidateNames = new[]
+        {
+            $"{baseName}_cobie_nested_pie.png",
+            $"{baseName}-cobie-nested-pie.png",
+            $"{baseName}.png"
+        };
 
-        if (!System.IO.File.Exists(chartPath))
+        var chartPath = candidateNames
+            .Select(name => Path.Combine(chartsFolder, name))
+            .FirstOrDefault(System.IO.File.Exists);
+
+        if (string.IsNullOrWhiteSpace(chartPath))
         {
             return NotFound("No pre-generated chart found.");
         }
@@ -186,6 +245,8 @@ public class ModelsController : ControllerBase
         var chartsFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
         var candidateNames = new[]
         {
+            $"{baseName}_ifc_type_cobie_bubble.png",
+            $"{baseName}-ifc-type-cobie-bubble.png",
             $"{baseName}_hierarchical_bubble.png",
             $"{baseName}-hierarchical-bubble.png",
             $"{baseName}_bubble.png",
@@ -203,6 +264,263 @@ public class ModelsController : ControllerBase
 
         var fileBytes = System.IO.File.ReadAllBytes(chartPath);
         return File(fileBytes, "image/png");
+    }
+
+    private static List<CobieImplementationRow> BuildCobieImplementationRows(JsonElement beforeRoot, JsonElement afterRoot)
+    {
+        var beforeRows = ExtractCobieRows(beforeRoot);
+        var afterRows = ExtractCobieRows(afterRoot);
+
+        var beforeByKey = beforeRows
+            .GroupBy(x => x.ElementKey ?? string.Empty, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Last(), StringComparer.Ordinal);
+        var afterByKey = afterRows
+            .GroupBy(x => x.ElementKey ?? string.Empty, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Last(), StringComparer.Ordinal);
+
+        var beforePrepared = beforeRows
+            .Select(row => new
+            {
+                IfcType = NormalizeIfcType(row.IfcType),
+                ItemType = InferItemType(row.CobieValue, row.IfcType)
+            })
+            .ToList();
+        var afterPrepared = afterRows
+            .Select(row => new
+            {
+                IfcType = NormalizeIfcType(row.IfcType),
+                ItemType = InferItemType(row.CobieValue, row.IfcType)
+            })
+            .ToList();
+
+        var itemTypeOrder = BuildOrderMap(beforePrepared.Select(x => x.ItemType).Concat(afterPrepared.Select(x => x.ItemType)));
+        var ifcTypeOrder = BuildOrderMap(beforePrepared.Select(x => x.IfcType).Concat(afterPrepared.Select(x => x.IfcType)));
+
+        var totalItemsByIfc = beforePrepared
+            .GroupBy(x => x.IfcType ?? string.Empty, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+        foreach (var kvp in afterPrepared.GroupBy(x => x.IfcType ?? string.Empty, StringComparer.Ordinal))
+        {
+            var count = kvp.Count();
+            if (!totalItemsByIfc.TryGetValue(kvp.Key, out var beforeCount) || count > beforeCount)
+            {
+                totalItemsByIfc[kvp.Key] = count;
+            }
+        }
+
+        var totalItemsByItemType = beforePrepared
+            .GroupBy(x => x.ItemType ?? string.Empty, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+        foreach (var kvp in afterPrepared.GroupBy(x => x.ItemType ?? string.Empty, StringComparer.Ordinal))
+        {
+            var count = kvp.Count();
+            if (!totalItemsByItemType.TryGetValue(kvp.Key, out var beforeCount) || count > beforeCount)
+            {
+                totalItemsByItemType[kvp.Key] = count;
+            }
+        }
+
+        var changedRows = new List<(string ItemType, string IfcType, string Name, string CobieValue, int SortItem, int SortIfc)>();
+
+        foreach (var key in beforeByKey.Keys.Union(afterByKey.Keys, StringComparer.Ordinal).OrderBy(k => k, StringComparer.Ordinal))
+        {
+            var hasBefore = beforeByKey.TryGetValue(key, out var beforeRow);
+            var hasAfter = afterByKey.TryGetValue(key, out var afterRow);
+
+            var beforeCobie = hasBefore ? beforeRow.CobieValue : string.Empty;
+            var afterCobie = hasAfter ? afterRow.CobieValue : string.Empty;
+            if (string.Equals(beforeCobie, afterCobie, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            var rawIfcType = hasAfter && !string.IsNullOrWhiteSpace(afterRow.IfcType)
+                ? afterRow.IfcType
+                : (hasBefore ? beforeRow.IfcType : string.Empty);
+            var ifcType = NormalizeIfcType(rawIfcType);
+
+            var cobieValue = !string.IsNullOrWhiteSpace(afterCobie) ? afterCobie : beforeCobie;
+            var name = hasAfter && !string.IsNullOrWhiteSpace(afterRow.ModelElementName)
+                ? afterRow.ModelElementName
+                : (hasBefore ? beforeRow.ModelElementName : string.Empty);
+            var itemType = InferItemType(cobieValue, ifcType);
+
+            changedRows.Add((
+                ItemType: itemType,
+                IfcType: ifcType,
+                Name: name,
+                CobieValue: cobieValue ?? string.Empty,
+                SortItem: itemTypeOrder.TryGetValue(itemType, out var itemOrder) ? itemOrder : 999,
+                SortIfc: ifcTypeOrder.TryGetValue(ifcType, out var ifcOrder) ? ifcOrder : 999));
+        }
+
+        var sortedChangedRows = changedRows
+            .OrderBy(x => x.SortItem)
+            .ThenBy(x => x.SortIfc)
+            .ThenBy(x => x.Name, StringComparer.Ordinal)
+            .ToList();
+
+        const int maxRowsPerItemType = 3;
+        var result = new List<CobieImplementationRow>();
+
+        foreach (var group in sortedChangedRows.GroupBy(x => x.ItemType, StringComparer.Ordinal))
+        {
+            foreach (var row in group.Take(maxRowsPerItemType))
+            {
+                var ifcTotal = totalItemsByIfc.TryGetValue(row.IfcType ?? string.Empty, out var totalCount)
+                    ? totalCount
+                    : 0;
+
+                result.Add(new CobieImplementationRow(
+                    ItemType: row.ItemType,
+                    IfcType: row.IfcType,
+                    TotalItemsCount: ifcTotal.ToString(),
+                    Name: row.Name,
+                    CobieValue: row.CobieValue));
+            }
+
+            result.Add(new CobieImplementationRow("---", "---", "---", "---", "---"));
+
+            var groupTotal = totalItemsByItemType.TryGetValue(group.Key ?? string.Empty, out var itemTotal)
+                ? itemTotal
+                : 0;
+            result.Add(new CobieImplementationRow(string.Empty, string.Empty, $"Total Items: {groupTotal}", string.Empty, string.Empty));
+            result.Add(new CobieImplementationRow(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty));
+        }
+
+        return result;
+    }
+
+    private static List<(string ElementKey, string IfcType, string ModelElementName, string CobieValue)> ExtractCobieRows(JsonElement root)
+    {
+        var result = new List<(string ElementKey, string IfcType, string ModelElementName, string CobieValue)>();
+        if (root.ValueKind != JsonValueKind.Array)
+        {
+            return result;
+        }
+
+        foreach (var item in root.EnumerateArray())
+        {
+            if (item.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            var name = Normalize(TryGetString(item, "Name"));
+            var externalId = Normalize(TryGetString(item, "ExternalId"));
+
+            item.TryGetProperty("Properties", out var properties);
+            var typeProp = FindProperty(properties, "Type", "Item") ?? FindProperty(properties, "Type", null);
+            var nameProp = FindProperty(properties, "Name", "Item") ?? FindProperty(properties, "Name", null);
+            var cobieProp = FindProperty(properties, "COBie", null);
+
+            var modelElementName = !string.IsNullOrWhiteSpace(name)
+                ? name
+                : (nameProp?.Value ?? string.Empty);
+
+            var elementKey = !string.IsNullOrWhiteSpace(externalId)
+                ? externalId
+                : modelElementName;
+
+            result.Add((
+                ElementKey: elementKey ?? string.Empty,
+                IfcType: typeProp?.Value ?? string.Empty,
+                ModelElementName: modelElementName ?? string.Empty,
+                CobieValue: cobieProp?.Value ?? string.Empty));
+        }
+
+        return result;
+    }
+
+    private static (string Category, string DisplayName, string Value)? FindProperty(JsonElement properties, string displayName, string category)
+    {
+        if (properties.ValueKind != JsonValueKind.Array)
+        {
+            return null;
+        }
+
+        foreach (var prop in properties.EnumerateArray())
+        {
+            if (prop.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            var propDisplayName = Normalize(TryGetString(prop, "displayName"));
+            if (!string.Equals(propDisplayName, displayName, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            var propCategory = Normalize(TryGetString(prop, "category"));
+            if (!string.IsNullOrWhiteSpace(category) && !string.Equals(propCategory, category, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            return (
+                Category: propCategory,
+                DisplayName: propDisplayName,
+                Value: Normalize(TryGetString(prop, "value")));
+        }
+
+        return null;
+    }
+
+    private static string NormalizeIfcType(string rawIfcType)
+    {
+        return Normalize(rawIfcType).ToUpperInvariant();
+    }
+
+    private static string ExtractCobieItemType(string cobieValue)
+    {
+        var value = Normalize(cobieValue);
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return string.Empty;
+        }
+
+        var separatorIndex = value.IndexOf(':');
+        if (separatorIndex < 0)
+        {
+            return string.Empty;
+        }
+
+        if (separatorIndex + 1 >= value.Length)
+        {
+            return string.Empty;
+        }
+
+        return Normalize(value.Substring(separatorIndex + 1));
+    }
+
+    private static string InferItemType(string cobieValue, string ifcType)
+    {
+        var extracted = ExtractCobieItemType(cobieValue);
+        if (!string.IsNullOrWhiteSpace(extracted))
+        {
+            return extracted;
+        }
+
+        var normalizedIfc = NormalizeIfcType(ifcType);
+        return string.IsNullOrWhiteSpace(normalizedIfc) ? "Unclassified" : normalizedIfc;
+    }
+
+    private static Dictionary<string, int> BuildOrderMap(IEnumerable<string> values)
+    {
+        var order = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (var raw in values)
+        {
+            var value = Normalize(raw);
+            if (string.IsNullOrWhiteSpace(value) || order.ContainsKey(value))
+            {
+                continue;
+            }
+
+            order[value] = order.Count + 1;
+        }
+
+        return order;
     }
 
     private static List<RevisedComparisonRow> BuildRevisedComparisonRows(JsonElement wholeRoot, JsonElement editedRoot)
