@@ -1,7 +1,10 @@
-const HOME_JS_VERSION = '2026-03-14.2';
+const HOME_JS_VERSION = '2026-03-26.1';
 console.log('home.js version:', HOME_JS_VERSION);
 
-const DUPLEX_NOTEBOOK_MODEL = 'Ifc2x3_Duplex_Architecture';
+const NOTEBOOK_FLOW_MODELS = new Set([
+  'ifc2x3_duplex_architecture',
+  'ifc4_samplehouse'
+]);
 
 let activeComparisonRequestId = 0;
 const LEFT_PANEL_WIDTH_KEY = 'home.leftPanelWidthPercent';
@@ -91,8 +94,8 @@ function getModelBaseName(fileName) {
   return safeName.toLowerCase().endsWith('.ifc') ? safeName.slice(0, -4) : safeName;
 }
 
-function isDuplexNotebookModel(fileName) {
-  return getModelBaseName(fileName) === DUPLEX_NOTEBOOK_MODEL;
+function usesNotebookCobieFlow(fileName) {
+  return NOTEBOOK_FLOW_MODELS.has(getModelBaseName(fileName).toLowerCase());
 }
 
 function createRevealSection(animationDelayMs = 0) {
@@ -445,7 +448,7 @@ async function loadRevisedComparison(fileName) {
   const requestId = ++activeComparisonRequestId;
   renderComparisonLoading('Loading comparison data...');
   try {
-    const useNotebookFlow = isDuplexNotebookModel(fileName);
+    const useNotebookFlow = usesNotebookCobieFlow(fileName);
     const endpoint = useNotebookFlow
       ? '/api/models/revised-cobie-implementation/'
       : '/api/models/revised-comparison/';

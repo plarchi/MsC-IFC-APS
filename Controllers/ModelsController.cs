@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using System.Diagnostics;
+using System.Threading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
@@ -65,6 +66,8 @@ public class ModelsController : ControllerBase
     }
 
     public record ExportWholeModelPropertiesResponse(string FileName, string Folder, int ElementCount, string ModelName);
+
+    private const int WholeModelFallbackConcurrency = 6;
 
     private readonly APS _aps;
     private readonly IWebHostEnvironment _env;
@@ -822,9 +825,17 @@ public class ModelsController : ControllerBase
             ? await _aps.GetDefaultModelViewGuid(request.Urn)
             : request.ViewGuid;
 
-        using var propsDoc = await _aps.GetWholeModelProperties(request.Urn, viewGuid);
+        JsonArray elements;
+        try
+        {
+            using var propsDoc = await _aps.GetWholeModelProperties(request.Urn, viewGuid);
+            elements = ConvertWholeModelToElementArray(propsDoc.RootElement);
+        }
+        catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.RequestEntityTooLarge)
+        {
+            elements = await BuildWholeModelElementArrayFallback(request.Urn, viewGuid);
+        }
 
-        var elements = ConvertWholeModelToElementArray(propsDoc.RootElement);
         var sortedNodes = elements
             .Select(n => (JsonObject)n)
             .OrderBy(o => GetJsonObjectString(o, "Name"), StringComparer.OrdinalIgnoreCase)
@@ -848,6 +859,39 @@ public class ModelsController : ControllerBase
         await System.IO.File.WriteAllTextAsync(outputPath, json);
 
         return Ok(new ExportWholeModelPropertiesResponse(safeFileName, "JSON Whole Model", elements.Count, modelName));
+    }
+
+    private async Task<JsonArray> BuildWholeModelElementArrayFallback(string urn, string viewGuid)
+    {
+        using var hierarchyDoc = await _aps.GetModelHierarchy(urn, viewGuid);
+        var objectIds = ExtractHierarchyObjectIds(hierarchyDoc.RootElement);
+        if (objectIds.Count == 0)
+        {
+            return new JsonArray();
+        }
+
+        var semaphore = new SemaphoreSlim(WholeModelFallbackConcurrency);
+        var tasks = objectIds.Select(async dbId =>
+        {
+            await semaphore.WaitAsync();
+            try
+            {
+                using var propsDoc = await _aps.GetElementProperties(urn, viewGuid, dbId);
+                return ConvertElementPropertiesToElementObject(propsDoc.RootElement, dbId);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Skipping dbId {dbId} during fallback whole-model export: {ex.Message}");
+                return null;
+            }
+            finally
+            {
+                semaphore.Release();
+            }
+        });
+
+        var nodes = await Task.WhenAll(tasks);
+        return new JsonArray(nodes.Where(node => node != null).Select(node => node!).ToArray());
     }
 
     private static string GetJsonObjectString(JsonObject obj, string propertyName)
@@ -974,6 +1018,110 @@ public class ModelsController : ControllerBase
         }
 
         return result;
+    }
+
+    private static JsonObject ConvertElementPropertiesToElementObject(JsonElement root, int fallbackDbId)
+    {
+        var elementObj = new JsonObject
+        {
+            ["DbId"] = fallbackDbId,
+            ["Properties"] = new JsonArray()
+        };
+
+        if (!root.TryGetProperty("data", out var dataEl))
+        {
+            return elementObj;
+        }
+
+        if (!dataEl.TryGetProperty("collection", out var collectionEl) || collectionEl.ValueKind != JsonValueKind.Array || collectionEl.GetArrayLength() == 0)
+        {
+            return elementObj;
+        }
+
+        var itemEl = collectionEl[0];
+
+        if (itemEl.TryGetProperty("name", out var nameEl) && nameEl.ValueKind == JsonValueKind.String)
+        {
+            elementObj["Name"] = nameEl.GetString();
+        }
+
+        if (itemEl.TryGetProperty("objectid", out var objectIdEl) && objectIdEl.ValueKind == JsonValueKind.Number && objectIdEl.TryGetInt32(out var objectId))
+        {
+            elementObj["DbId"] = objectId;
+        }
+
+        if (itemEl.TryGetProperty("externalId", out var externalIdEl) && externalIdEl.ValueKind == JsonValueKind.String)
+        {
+            elementObj["ExternalId"] = externalIdEl.GetString();
+        }
+
+        var propsArray = new JsonArray();
+        if (itemEl.TryGetProperty("properties", out var propertiesEl) && propertiesEl.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var category in propertiesEl.EnumerateObject())
+            {
+                if (category.Value.ValueKind != JsonValueKind.Object)
+                {
+                    continue;
+                }
+
+                foreach (var prop in category.Value.EnumerateObject())
+                {
+                    propsArray.Add(new JsonObject
+                    {
+                        ["category"] = category.Name,
+                        ["displayName"] = prop.Name,
+                        ["value"] = JsonNode.Parse(prop.Value.GetRawText())
+                    });
+                }
+            }
+        }
+
+        elementObj["Properties"] = propsArray;
+        return elementObj;
+    }
+
+    private static List<int> ExtractHierarchyObjectIds(JsonElement root)
+    {
+        var ids = new HashSet<int>();
+
+        if (!root.TryGetProperty("data", out var dataEl))
+        {
+            return ids.OrderBy(id => id).ToList();
+        }
+
+        if (dataEl.TryGetProperty("objects", out var objectsEl) && objectsEl.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var obj in objectsEl.EnumerateArray())
+            {
+                CollectHierarchyObjectIds(obj, ids);
+            }
+        }
+
+        return ids.OrderBy(id => id).ToList();
+    }
+
+    private static void CollectHierarchyObjectIds(JsonElement node, HashSet<int> ids)
+    {
+        if (node.ValueKind != JsonValueKind.Object)
+        {
+            return;
+        }
+
+        if (node.TryGetProperty("objectid", out var objectIdEl) && objectIdEl.ValueKind == JsonValueKind.Number && objectIdEl.TryGetInt32(out var objectId) && objectId > 0)
+        {
+            ids.Add(objectId);
+        }
+
+        if (!node.TryGetProperty("objects", out var childrenEl) || childrenEl.ValueKind != JsonValueKind.Array)
+        {
+            return;
+        }
+
+        foreach (var child in childrenEl.EnumerateArray())
+        {
+            CollectHierarchyObjectIds(child, ids);
+        }
     }
 
     private static string GetModelNameFromUrn(string urn)
