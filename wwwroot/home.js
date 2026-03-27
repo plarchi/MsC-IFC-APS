@@ -1,7 +1,8 @@
-const HOME_JS_VERSION = '2026-03-26.2';
+const HOME_JS_VERSION = '2026-03-27.2';
 console.log('home.js version:', HOME_JS_VERSION);
 
 const NOTEBOOK_FLOW_MODELS = new Set([
+  'acd-18040-all-st-n2x3',
   'ifc2x3_duplex_architecture',
   'ifc4_samplehouse',
   'snowdon+towers+sample+structural2x3'
@@ -350,7 +351,7 @@ function renderComparisonTable(rows, fileName) {
   content.appendChild(tableSection);
 }
 
-function renderCobieImplementationTable(rows, fileName) {
+function renderCobieImplementationTable(rows, fileName, totalChangedModelElements = null) {
   const { title, summary, content } = getComparisonElements();
   if (!content) {
     return;
@@ -361,13 +362,17 @@ function renderCobieImplementationTable(rows, fileName) {
   }
 
   const safeRows = Array.isArray(rows) ? rows : [];
-  const dataRows = safeRows.filter((row) => {
+  const fallbackChangedCount = safeRows.filter((row) => {
     const name = String(row.name ?? row.Name ?? '').trim();
     return name.length > 0 && name !== '---';
-  });
+  }).length;
+  const normalizedChangedCount = Number(totalChangedModelElements);
+  const displayChangedCount = Number.isFinite(normalizedChangedCount)
+    ? normalizedChangedCount
+    : fallbackChangedCount;
 
   if (summary) {
-    summary.textContent = `Changed rows shown in base data: ${dataRows.length}`;
+    summary.textContent = `Total Change of model elements: ${displayChangedCount}`;
   }
 
   if (safeRows.length === 0) {
@@ -412,7 +417,7 @@ function renderCobieImplementationTable(rows, fileName) {
 
   const thead = document.createElement('thead');
   const headRow = document.createElement('tr');
-  for (const headerText of ['Item Type', 'IFC Type', 'Total Items count', 'Name', 'COBie Value']) {
+  for (const headerText of ['Item Type', 'IFC Type', 'Name', 'COBie Value']) {
     const th = document.createElement('th');
     th.textContent = headerText;
     headRow.appendChild(th);
@@ -423,18 +428,38 @@ function renderCobieImplementationTable(rows, fileName) {
   const tbody = document.createElement('tbody');
   for (const row of safeRows) {
     const tr = document.createElement('tr');
-    const cells = [
-      row.itemType ?? row.ItemType ?? '',
-      row.ifcType ?? row.IfcType ?? '',
-      row.totalItemsCount ?? row.TotalItemsCount ?? '',
-      row.name ?? row.Name ?? '',
-      row.cobieValue ?? row.CobieValue ?? ''
-    ];
+    const itemType = row.itemType ?? row.ItemType ?? '';
+    const ifcType = row.ifcType ?? row.IfcType ?? '';
+    const totalItemsCount = row.totalItemsCount ?? row.TotalItemsCount ?? '';
+    const name = row.name ?? row.Name ?? '';
+    const cobieValue = row.cobieValue ?? row.CobieValue ?? '';
 
-    for (const value of cells) {
+    const itemTypeCell = document.createElement('td');
+    itemTypeCell.style.whiteSpace = 'pre-line';
+
+    const isDividerRow = itemType === '---' && ifcType === '---' && name === '---' && cobieValue === '---';
+    const isGroupTotalRow = !String(itemType).trim()
+      && !String(ifcType).trim()
+      && !String(name).trim()
+      && !String(cobieValue).trim()
+      && String(totalItemsCount).trim().length > 0;
+
+    if (isGroupTotalRow) {
+      itemTypeCell.textContent = String(totalItemsCount).trim();
+      itemTypeCell.style.fontWeight = '700';
+    } else {
+      itemTypeCell.textContent = itemType;
+    }
+    tr.appendChild(itemTypeCell);
+
+    for (const value of [ifcType, name, cobieValue]) {
       const td = document.createElement('td');
       td.textContent = value;
       tr.appendChild(td);
+    }
+
+    if (isDividerRow) {
+      tr.style.background = '#fafafa';
     }
 
     tbody.appendChild(tr);
@@ -465,12 +490,16 @@ async function loadRevisedComparison(fileName) {
     if (!resp.ok) {
       throw new Error(await resp.text());
     }
+    const totalChangedModelElementsHeader = resp.headers.get('X-Total-Changed-Model-Elements');
+    const totalChangedModelElements = totalChangedModelElementsHeader === null
+      ? null
+      : Number(totalChangedModelElementsHeader);
     const rows = await resp.json();
     if (requestId !== activeComparisonRequestId) {
       return;
     }
     if (useNotebookFlow) {
-      renderCobieImplementationTable(rows, fileName);
+      renderCobieImplementationTable(rows, fileName, totalChangedModelElements);
     } else {
       renderComparisonTable(rows, fileName);
     }

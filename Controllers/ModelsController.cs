@@ -181,7 +181,8 @@ public class ModelsController : ControllerBase
             using var beforeDoc = JsonDocument.Parse(beforeJson);
             using var afterDoc = JsonDocument.Parse(afterJson);
 
-            var rows = BuildCobieImplementationRows(beforeDoc.RootElement, afterDoc.RootElement);
+            var rows = BuildCobieImplementationRows(beforeDoc.RootElement, afterDoc.RootElement, out var totalChangedModelElements);
+            Response.Headers["X-Total-Changed-Model-Elements"] = totalChangedModelElements.ToString();
             return Ok(rows);
         }
         catch
@@ -269,7 +270,7 @@ public class ModelsController : ControllerBase
         return File(fileBytes, "image/png");
     }
 
-    private static List<CobieImplementationRow> BuildCobieImplementationRows(JsonElement beforeRoot, JsonElement afterRoot)
+    private static List<CobieImplementationRow> BuildCobieImplementationRows(JsonElement beforeRoot, JsonElement afterRoot, out int totalChangedModelElements)
     {
         var beforeRows = ExtractCobieRows(beforeRoot);
         var afterRows = ExtractCobieRows(afterRoot);
@@ -362,6 +363,8 @@ public class ModelsController : ControllerBase
             .ThenBy(x => x.SortIfc)
             .ThenBy(x => x.Name, StringComparer.Ordinal)
             .ToList();
+
+        totalChangedModelElements = sortedChangedRows.Count;
 
         const int maxRowsPerItemType = 3;
         var result = new List<CobieImplementationRow>();
