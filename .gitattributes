@@ -1,1 +1,2 @@
 Revised_IFC/*.ifc filter=lfs diff=lfs merge=lfs -text
+JSON[[:space:]]Whole[[:space:]]Model/ACD-18040-ALL-ST-N2x3.json filter=lfs diff=lfs merge=lfs -text
