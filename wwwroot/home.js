@@ -2,6 +2,76 @@ const HOME_JS_VERSION = '2026-03-14.2';
 console.log('home.js version:', HOME_JS_VERSION);
 
 let activeComparisonRequestId = 0;
+const LEFT_PANEL_WIDTH_KEY = 'home.leftPanelWidthPercent';
+
+function initResizableSplit() {
+  const container = document.getElementById('container');
+  const left = document.getElementById('left');
+  const right = document.getElementById('right');
+  const splitter = document.getElementById('splitter');
+
+  if (!container || !left || !right || !splitter) {
+    return;
+  }
+
+  const minPercent = 20;
+  const maxPercent = 80;
+
+  const applyLeftPercent = (percent) => {
+    const clamped = Math.max(minPercent, Math.min(maxPercent, percent));
+    left.style.flexBasis = `${clamped}%`;
+    right.style.flexBasis = `${100 - clamped}%`;
+  };
+
+  const savedPercent = Number(localStorage.getItem(LEFT_PANEL_WIDTH_KEY));
+  if (Number.isFinite(savedPercent)) {
+    applyLeftPercent(savedPercent);
+  }
+
+  let isDragging = false;
+
+  const onPointerMove = (event) => {
+    if (!isDragging) {
+      return;
+    }
+
+    const bounds = container.getBoundingClientRect();
+    const relativeX = event.clientX - bounds.left;
+    const percent = (relativeX / bounds.width) * 100;
+    applyLeftPercent(percent);
+  };
+
+  const stopDragging = () => {
+    if (!isDragging) {
+      return;
+    }
+    isDragging = false;
+    splitter.classList.remove('is-dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+
+    const currentPercent = parseFloat(left.style.flexBasis);
+    if (Number.isFinite(currentPercent)) {
+      localStorage.setItem(LEFT_PANEL_WIDTH_KEY, String(currentPercent));
+    }
+
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', stopDragging);
+    window.removeEventListener('pointercancel', stopDragging);
+  };
+
+  splitter.addEventListener('pointerdown', (event) => {
+    event.preventDefault();
+    isDragging = true;
+    splitter.classList.add('is-dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', stopDragging);
+    window.addEventListener('pointercancel', stopDragging);
+  });
+}
 
 function getComparisonElements() {
   return {
@@ -437,6 +507,7 @@ async function loadRevisedModels() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  initResizableSplit();
   renderComparisonMessage('Select a revised model to view comparison data.');
   await loadModels();
   await loadRevisedModels();
