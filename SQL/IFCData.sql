@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS IFCItems (
+	ID               INTEGER PRIMARY KEY AUTOINCREMENT,
+	SOURCE_FILE      TEXT,
+	NAME             TEXT,
+	TYPE             TEXT,
+	UNIT             TEXT,
+	GUID             TEXT,
+	GLOBAL_ID        TEXT,
+	OBJECT_TYPE      TEXT,
+	MATERIAL         TEXT,
+	NX_AREA          TEXT,
+	NX_VOLUME        TEXT,
+	NX_VOLUME_SOURCE TEXT,
+	NX_WEIGHT        TEXT,
+	NX_WEIGHT_SOURCE TEXT
+);
