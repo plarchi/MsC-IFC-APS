@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd \"c:\\\\Git\\\\APS-IFC\"; python -c \"\nimport pandas as pd\nexcel_path = 'COBie/Uniclass2015_EF_v1_16\\.xlsx'\nef_df = pd\\.read_excel\\(excel_path, sheet_name='EF', header=2\\)\nprint\\('Columns:', ef_df\\.columns\\.tolist\\(\\)\\)\nwin_df = ef_df\\[ef_df\\['Title'\\]\\.astype\\(str\\)\\.str\\.contains\\('window', case=False, na=False\\)\\]\nprint\\('Window rows:'\\)\nprint\\(win_df\\[\\['Code','Title','COBie'\\]\\]\\.to_string\\(\\)\\)\n\"\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

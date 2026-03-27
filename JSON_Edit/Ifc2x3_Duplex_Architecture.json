@@ -14413,11 +14413,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -14685,11 +14680,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -14957,11 +14947,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -15229,11 +15214,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -15501,11 +15481,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -15773,11 +15748,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -22155,11 +22125,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -22427,11 +22392,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -22699,11 +22659,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -22971,11 +22926,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -23243,11 +23193,6 @@
         "category": "PSet_Revit_Other",
         "displayName": "RoomTag",
         "value": "RoomTag"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -23325,6 +23270,11 @@
         "category": "IFC",
         "displayName": "PREDEFINEDTYPE",
         "value": "ROOF"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -48860,7 +48810,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_10_25 : External walls"
       }
     ]
   },
@@ -60842,11 +60792,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -61331,11 +61276,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -61820,11 +61760,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -62309,11 +62244,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -62798,11 +62728,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -63287,11 +63212,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -63776,11 +63696,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -64265,11 +64180,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -64749,11 +64659,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -65238,11 +65143,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -65727,11 +65627,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -66216,11 +66111,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -67529,11 +67419,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -68018,11 +67903,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -74939,11 +74819,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -75423,11 +75298,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -75912,11 +75782,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -76401,11 +76266,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -76890,11 +76750,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -78359,11 +78214,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -78848,11 +78698,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -88477,11 +88322,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -88966,11 +88806,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -89455,11 +89290,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -89944,11 +89774,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -90433,11 +90258,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -90922,11 +90742,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -91411,11 +91226,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -91900,11 +91710,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -92389,11 +92194,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -92878,11 +92678,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -93367,11 +93162,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -93856,11 +93646,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -94345,11 +94130,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -104341,11 +104121,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -104830,11 +104605,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -105319,11 +105089,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -105949,11 +105714,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -108833,11 +108593,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -109187,11 +108942,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -109541,11 +109291,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -109895,11 +109640,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -110249,11 +109989,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -110603,11 +110338,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -110957,11 +110687,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -111311,11 +111036,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "Classification Code",
         "value": "23-25 40 11 11 11"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -111830,11 +111550,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -112349,11 +112064,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -112868,11 +112578,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -113387,11 +113092,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -113906,11 +113606,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -114425,11 +114120,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -114944,11 +114634,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -115331,11 +115016,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -115713,11 +115393,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -116095,11 +115770,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -116477,11 +116147,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -116859,11 +116524,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -117241,11 +116901,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -117623,11 +117278,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -118184,11 +117834,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -118673,11 +118318,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -119162,11 +118802,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -119651,11 +119286,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -127375,6 +127005,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -127797,6 +127432,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -128219,6 +127859,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -128641,6 +128286,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -129066,6 +128716,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -129491,6 +129146,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -129916,6 +129576,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -130341,6 +130006,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -130766,6 +130436,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -131191,6 +130866,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -131616,6 +131296,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -132041,6 +131726,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -132466,6 +132156,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -132891,6 +132586,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -133316,6 +133016,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -133741,6 +133446,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -134166,6 +133876,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -134591,6 +134306,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -135016,6 +134736,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -135441,6 +135166,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_30 : Roofs, floor and paving elements"
       }
     ]
   },
@@ -143952,7 +143682,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -144434,7 +144164,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -144916,7 +144646,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -145398,7 +145128,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -145796,11 +145526,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -146198,11 +145923,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -148232,7 +147952,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -148714,7 +148434,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -149196,7 +148916,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -149678,7 +149398,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -150160,7 +149880,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -150642,7 +150362,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -151124,7 +150844,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -151606,7 +151326,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -152088,7 +151808,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -152570,7 +152290,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -153052,7 +152772,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -153534,7 +153254,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -154016,7 +153736,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -154498,7 +154218,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -154980,7 +154700,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -155462,7 +155182,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -155944,7 +155664,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -156426,7 +156146,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -156913,7 +156633,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -157400,7 +157120,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -157887,7 +157607,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -158374,7 +158094,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -158861,7 +158581,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -159348,7 +159068,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -159835,7 +159555,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -160322,7 +160042,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -160809,7 +160529,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -161296,7 +161016,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -161783,7 +161503,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -162270,7 +161990,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -162777,7 +162497,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -163284,7 +163004,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_25_30_25 : Doors"
       }
     ]
   },
@@ -163737,6 +163457,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -164189,6 +163914,11 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
+      },
+      {
+        "category": "IFC",
+        "displayName": "COBie",
+        "value": "EF_25_30_97 : Windows"
       }
     ]
   },
@@ -172610,11 +172340,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -172982,11 +172707,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -173354,11 +173074,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -173726,11 +173441,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -174098,11 +173808,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -174470,11 +174175,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -174842,11 +174542,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -175214,11 +174909,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -184831,11 +184521,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -185956,11 +185641,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -186511,11 +186191,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -187019,11 +186694,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -187574,11 +187244,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -190604,11 +190269,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -191635,11 +191295,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -192143,11 +191798,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -192651,11 +192301,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -193159,11 +192804,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -193824,11 +193464,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -194442,11 +194077,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -195112,11 +194742,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -195735,11 +195360,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -196400,11 +196020,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -197018,11 +196633,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -197688,11 +197298,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -198311,11 +197916,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -199001,11 +198601,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -199644,11 +199239,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -204327,11 +203917,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -204992,11 +204577,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -205657,11 +205237,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -206275,11 +205850,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -206893,11 +206463,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -207511,11 +207076,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -208129,11 +207689,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -208747,11 +208302,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -209417,11 +208967,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -210040,11 +209585,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -210710,11 +210250,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -211333,11 +210868,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -211956,11 +211486,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -212579,11 +212104,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -213197,11 +212717,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -213815,11 +213330,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -214433,11 +213943,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -215051,11 +214556,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -215669,11 +215169,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -216287,11 +215782,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -216905,11 +216395,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -217523,11 +217008,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -218141,11 +217621,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -218759,11 +218234,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -219429,11 +218899,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -220052,11 +219517,6 @@
         "category": "PSet_Revit_Type_Other",
         "displayName": "ModelLabel",
         "value": "ModelLabel"
-      },
-      {
-        "category": "IFC",
-        "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
       }
     ]
   },
@@ -225179,7 +224639,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -225566,7 +225026,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -225953,7 +225413,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -226340,7 +225800,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -226727,7 +226187,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -227114,7 +226574,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   },
@@ -227501,7 +226961,7 @@
       {
         "category": "IFC",
         "displayName": "COBie",
-        "value": "EF_25_10 : Walls"
+        "value": "EF_20_05_30 : Foundations"
       }
     ]
   }

@@ -435,3 +435,8 @@ $RECYCLE.BIN/
 ## Custom
 .env
 appsettings.Development.json
+
+# Large generated model files that exceed GitHub's 100 MB limit.
+# These are re-exportable from APS at any time via the "Export Whole Model"
+# button and do not need to be version-controlled.
+JSON Whole Model/ACD-18040-ALL-ST-N2x3.json
