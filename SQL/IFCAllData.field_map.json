@@ -1,0 +1,6472 @@
+{
+  "source_folder": "C:\\Git\\APS-IFC\\JSON_Edit",
+  "json_files": [
+    "ACD-18040-ALL-ST-N2x3.json",
+    "ASTIDC-STAN-HE-EPD-MVB1-M-E-0002.json",
+    "ASTIDC-STAN-HE-MPD-RHP1-M-M-0001.json",
+    "ASTIDC-STAN-HE-MPD-TXBP1-M-M-0001.json",
+    "Ifc2x3_Duplex_Architecture.json",
+    "Ifc4_SampleHouse.json",
+    "Snowdon+Towers+Sample+Structural2x3.json"
+  ],
+  "category_count": 136,
+  "pair_count": 1263,
+  "logical_field_count": 697,
+  "category_priority": [
+    "Instance Part Properties",
+    "Item",
+    "IFC",
+    "ABB4HVDCDesignRevision",
+    "ABB4HVDCDesign",
+    "ABB4ModelRevision Master",
+    "empty property set name"
+  ],
+  "logical_field_map": {
+    "A": [
+      [
+        "PSet_Revit_Type_Structural",
+        "A"
+      ],
+      [
+        "Structural",
+        "A"
+      ]
+    ],
+    "ABB4_DOC_KIND": [
+      [
+        "Instance Part Properties",
+        "ABB4_DOC_KIND"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB4_DOC_KIND"
+      ]
+    ],
+    "ABB_APPLICATION": [
+      [
+        "Instance Part Properties",
+        "ABB_APPLICATION"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_APPLICATION"
+      ]
+    ],
+    "ABB_CLASSIFICATION_Y": [
+      [
+        "Instance Part Properties",
+        "ABB_CLASSIFICATION_Y"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_CLASSIFICATION_Y"
+      ]
+    ],
+    "ABB_DIMENSION": [
+      [
+        "Instance Part Properties",
+        "ABB_DIMENSION"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_DIMENSION"
+      ]
+    ],
+    "ABB_DIM_DWG": [
+      [
+        "Instance Part Properties",
+        "ABB_DIM_DWG"
+      ],
+      [
+        "empty property set name",
+        "ABB_DIM_DWG"
+      ]
+    ],
+    "ABB_DIM_DWG_REV": [
+      [
+        "Instance Part Properties",
+        "ABB_DIM_DWG_REV"
+      ],
+      [
+        "empty property set name",
+        "ABB_DIM_DWG_REV"
+      ]
+    ],
+    "ABB_LIWL": [
+      [
+        "Instance Part Properties",
+        "ABB_LIWL"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_LIWL"
+      ]
+    ],
+    "ABB_MASS": [
+      [
+        "Instance Part Properties",
+        "ABB_MASS"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_MASS"
+      ]
+    ],
+    "ABB_MTRL_TYPE": [
+      [
+        "Instance Part Properties",
+        "ABB_MTRL_TYPE"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_MTRL_TYPE"
+      ]
+    ],
+    "ABB_NOTE": [
+      [
+        "Instance Part Properties",
+        "ABB_NOTE"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_NOTE"
+      ]
+    ],
+    "ABB_POSITION_NO": [
+      [
+        "Instance Part Properties",
+        "ABB_POSITION_NO"
+      ],
+      [
+        "empty property set name",
+        "ABB_POSITION_NO"
+      ]
+    ],
+    "ABB_PREFERRED": [
+      [
+        "Instance Part Properties",
+        "ABB_PREFERRED"
+      ],
+      [
+        "empty property set name",
+        "ABB_PREFERRED"
+      ]
+    ],
+    "ABB_PROJECT_NAME": [
+      [
+        "Instance Part Properties",
+        "ABB_PROJECT_NAME"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_PROJECT_NAME"
+      ]
+    ],
+    "ABB_RATED_CURRENT": [
+      [
+        "Instance Part Properties",
+        "ABB_RATED_CURRENT"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_RATED_CURRENT"
+      ]
+    ],
+    "ABB_RATED_VOLTAGE": [
+      [
+        "Instance Part Properties",
+        "ABB_RATED_VOLTAGE"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_RATED_VOLTAGE"
+      ]
+    ],
+    "ABB_RESPONSIBLE_DEPT": [
+      [
+        "Instance Part Properties",
+        "ABB_RESPONSIBLE_DEPT"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_RESPONSIBLE_DEPT"
+      ]
+    ],
+    "ABB_REV_NOTE": [
+      [
+        "Instance Part Properties",
+        "ABB_REV_NOTE"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_REV_NOTE"
+      ]
+    ],
+    "ABB_STANDARD": [
+      [
+        "Instance Part Properties",
+        "ABB_STANDARD"
+      ],
+      [
+        "empty property set name",
+        "ABB_STANDARD"
+      ]
+    ],
+    "ABB_STATION_NAME": [
+      [
+        "Instance Part Properties",
+        "ABB_STATION_NAME"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_STATION_NAME"
+      ]
+    ],
+    "ABB_SUPPLIER": [
+      [
+        "Instance Part Properties",
+        "ABB_SUPPLIER"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "ABB_SUPPLIER"
+      ]
+    ],
+    "ABB_UNIT": [
+      [
+        "Instance Part Properties",
+        "ABB_UNIT"
+      ],
+      [
+        "ABB4ModelRevision Master",
+        "ABB_UNIT"
+      ]
+    ],
+    "ABOVEGROUND": [
+      [
+        "Pset_BuildingStoreyCommon",
+        "AboveGround"
+      ]
+    ],
+    "ABSORPTANCE": [
+      [
+        "Analytical Properties",
+        "Absorptance"
+      ]
+    ],
+    "ACCESSIBILITYPERFORMANCE": [
+      [
+        "PSet_Revit_Type_Other",
+        "AccessibilityPerformance"
+      ]
+    ],
+    "ACTUAL_LIGHTING_LOAD": [
+      [
+        "Energy Analysis",
+        "Actual Lighting Load"
+      ]
+    ],
+    "ACTUAL_LIGHTING_LOAD_PER_AREA": [
+      [
+        "Energy Analysis",
+        "Actual Lighting Load per area"
+      ]
+    ],
+    "ACTUAL_NUMBER_OF_RISERS": [
+      [
+        "Dimensions",
+        "Actual Number of Risers"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Actual Number of Risers"
+      ]
+    ],
+    "ACTUAL_NUMBER_OF_TREADS": [
+      [
+        "Dimensions",
+        "Actual Number of Treads"
+      ]
+    ],
+    "ACTUAL_POWER_LOAD": [
+      [
+        "Energy Analysis",
+        "Actual Power Load"
+      ]
+    ],
+    "ACTUAL_POWER_LOAD_PER_AREA": [
+      [
+        "Energy Analysis",
+        "Actual Power Load per area"
+      ]
+    ],
+    "ACTUAL_RISER_HEIGHT": [
+      [
+        "Dimensions",
+        "Actual Riser Height"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Actual Riser Height"
+      ]
+    ],
+    "ACTUAL_RUN_WIDTH": [
+      [
+        "Dimensions",
+        "Actual Run Width"
+      ]
+    ],
+    "ACTUAL_TREAD_DEPTH": [
+      [
+        "Dimensions",
+        "Actual Tread Depth"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Actual Tread Depth"
+      ]
+    ],
+    "ADOPT_ROOM_APPROACH_FOR_FRC_CALCULATION": [
+      [
+        "Other",
+        "Adopt_Room_Approach_for_FRC_Calculation"
+      ]
+    ],
+    "ADOPT_ROOM_APPROACH_FOR_UFA_CALCULATION": [
+      [
+        "Other",
+        "Adopt_Room_Approach_for_UFA_Calculation"
+      ]
+    ],
+    "ANALYZE_AS": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Analyze As"
+      ]
+    ],
+    "ANGLE": [
+      [
+        "Constraints",
+        "Angle"
+      ],
+      [
+        "Horizontal Grid",
+        "Angle"
+      ],
+      [
+        "Vertical Grid",
+        "Angle"
+      ]
+    ],
+    "ANGLED_JOINS": [
+      [
+        "Construction(Type)",
+        "Angled Joins"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Angled Joins"
+      ]
+    ],
+    "APPLICATIONFULLNAME": [
+      [
+        "IFCAPPLICATION",
+        "APPLICATIONFULLNAME"
+      ]
+    ],
+    "APPLICATIONIDENTIFIER": [
+      [
+        "IFCAPPLICATION",
+        "APPLICATIONIDENTIFIER"
+      ]
+    ],
+    "APPLY_NOSING_PROFILE": [
+      [
+        "PSet_Revit_Type_Treads",
+        "Apply Nosing Profile"
+      ],
+      [
+        "Treads",
+        "Apply Nosing Profile"
+      ]
+    ],
+    "AREA": [
+      [
+        "Dimensions",
+        "Area"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Area"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Area"
+      ],
+      [
+        "Quantities",
+        "Area"
+      ]
+    ],
+    "AREA_PER_PERSON": [
+      [
+        "Energy Analysis",
+        "Area per Person"
+      ]
+    ],
+    "ARRAY_WIDTH": [
+      [
+        "Other(Type)",
+        "Array Width"
+      ]
+    ],
+    "ASSEMBLYPLACE": [
+      [
+        "IFC",
+        "ASSEMBLYPLACE"
+      ],
+      [
+        "IFCFURNITURETYPE",
+        "ASSEMBLYPLACE"
+      ]
+    ],
+    "ASSEMBLY_CODE": [
+      [
+        "Identity Data",
+        "Assembly Code"
+      ],
+      [
+        "Identity Data(Type)",
+        "Assembly Code"
+      ]
+    ],
+    "ASSEMBLY_DESCRIPTION": [
+      [
+        "Identity Data",
+        "Assembly Description"
+      ],
+      [
+        "Identity Data(Type)",
+        "Assembly Description"
+      ]
+    ],
+    "ASSETACCOUNTINGTYPE": [
+      [
+        "PSet_Revit_Type_Other",
+        "AssetAccountingType"
+      ]
+    ],
+    "ASSETIDENTIFIER": [
+      [
+        "PSet_Revit_Other",
+        "AssetIdentifier"
+      ]
+    ],
+    "ATTACHMENT_JUSTIFICATION_AT_TOP": [
+      [
+        "Construction",
+        "Attachment Justification At Top"
+      ]
+    ],
+    "AUTHOR": [
+      [
+        "Identity Data",
+        "Author"
+      ]
+    ],
+    "AUTOMATIC_ROOM_COMPUTATION_HEIGHT": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Automatic Room Computation Height"
+      ]
+    ],
+    "B": [
+      [
+        "Dimensions",
+        "b"
+      ]
+    ],
+    "BACKSPLASH_VISIBILITY": [
+      [
+        "PSet_Revit_Construction",
+        "Backsplash Visibility"
+      ]
+    ],
+    "BALUSTER_OFFSET": [
+      [
+        "Construction(Type)",
+        "Baluster Offset"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Baluster Offset"
+      ]
+    ],
+    "BARCODE": [
+      [
+        "PSet_Revit_Other",
+        "BarCode"
+      ]
+    ],
+    "BASE_CONSTRAINT": [
+      [
+        "Constraints",
+        "Base Constraint"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Base Constraint"
+      ]
+    ],
+    "BASE_CUT_STYLE": [
+      [
+        "Construction",
+        "Base Cut Style"
+      ]
+    ],
+    "BASE_EXTENSION": [
+      [
+        "Construction",
+        "Base Extension"
+      ]
+    ],
+    "BASE_EXTENSION_DISTANCE": [
+      [
+        "Constraints",
+        "Base Extension Distance"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Base Extension Distance"
+      ]
+    ],
+    "BASE_IS_ATTACHED": [
+      [
+        "Constraints",
+        "Base is Attached"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Base is Attached"
+      ]
+    ],
+    "BASE_LEVEL": [
+      [
+        "Constraints",
+        "Base Level"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Base Level"
+      ]
+    ],
+    "BASE_LIGHTING_LOAD_ON": [
+      [
+        "Energy Analysis",
+        "Base Lighting Load on"
+      ]
+    ],
+    "BASE_OFFSET": [
+      [
+        "Constraints",
+        "Base Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Base Offset"
+      ]
+    ],
+    "BASE_OFFSET_FROM_LEVEL": [
+      [
+        "PSet_Revit_Constraints",
+        "Base Offset From Level"
+      ]
+    ],
+    "BASE_POWER_LOAD_ON": [
+      [
+        "Energy Analysis",
+        "Base Power Load on"
+      ]
+    ],
+    "BEAM_DEPTH": [
+      [
+        "Dimensions",
+        "Beam Depth"
+      ]
+    ],
+    "BEAM_MATERIAL": [
+      [
+        "PSet_Revit_Materials and Finishes",
+        "Beam Material"
+      ]
+    ],
+    "BEAM_TYPE": [
+      [
+        "Pattern",
+        "Beam Type"
+      ]
+    ],
+    "BEAM_TYPE_NO_FAMILY_NAME": [
+      [
+        "Pattern",
+        "Beam Type (No Family Name)"
+      ]
+    ],
+    "BEAM_WIDTH": [
+      [
+        "Dimensions",
+        "Beam Width"
+      ]
+    ],
+    "BEGIN_WITH_RISER": [
+      [
+        "Construction",
+        "Begin with Riser"
+      ],
+      [
+        "PSet_Revit_Type_Risers",
+        "Begin with Riser"
+      ]
+    ],
+    "BF": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "bf"
+      ]
+    ],
+    "BLOCK_NAME": [
+      [
+        "Instance Part Properties",
+        "BLOCK_NAME"
+      ],
+      [
+        "DXF_DWG",
+        "BLOCK_NAME"
+      ]
+    ],
+    "BOLT_SPACING": [
+      [
+        "Dimensions",
+        "Bolt Spacing"
+      ]
+    ],
+    "BOLT_SPACING_1_LONGER_FLANGE": [
+      [
+        "Dimensions",
+        "Bolt Spacing 1 Longer Flange"
+      ]
+    ],
+    "BOLT_SPACING_2_LONGER_FLANGE": [
+      [
+        "Dimensions",
+        "Bolt Spacing 2 Longer Flange"
+      ]
+    ],
+    "BOLT_SPACING_SHORTER_FLANGE": [
+      [
+        "Dimensions",
+        "Bolt Spacing Shorter Flange"
+      ]
+    ],
+    "BOTTOM_WIDTH": [
+      [
+        "Dimensions",
+        "Bottom Width"
+      ]
+    ],
+    "BREAK_SYMBOL_IN_PLAN": [
+      [
+        "PSet_Revit_Type_Graphics",
+        "Break Symbol in Plan"
+      ]
+    ],
+    "BROWSER_FILTER": [
+      [
+        "Instance Part Properties",
+        "BROWSER_FILTER"
+      ],
+      [
+        "empty property set name",
+        "BROWSER_FILTER"
+      ]
+    ],
+    "BUILDING_NAME": [
+      [
+        "Identity Data",
+        "Building Name"
+      ]
+    ],
+    "BUILDING_STORY": [
+      [
+        "Identity Data",
+        "Building Story"
+      ]
+    ],
+    "CAD_MASS_UNITS": [
+      [
+        "empty property set name",
+        "CAD_MASS_UNITS"
+      ]
+    ],
+    "CALLOUT": [
+      [
+        "Instance Part Properties",
+        "CALLOUT"
+      ]
+    ],
+    "CATEGORY": [
+      [
+        "Other",
+        "Category"
+      ],
+      [
+        "Other(Type)",
+        "Category"
+      ],
+      [
+        "Pset_ProductRequirements",
+        "Category"
+      ]
+    ],
+    "CATEGORY_CODE": [
+      [
+        "PSet_Revit_Other",
+        "Category Code"
+      ]
+    ],
+    "CATEGORY_DESCRIPTION": [
+      [
+        "PSet_Revit_Other",
+        "Category Description"
+      ]
+    ],
+    "CEILINGCOVERING": [
+      [
+        "PSet_Revit_Other",
+        "CeilingCovering"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "CeilingCovering"
+      ]
+    ],
+    "CENTERLINE_SPACING": [
+      [
+        "Pattern",
+        "Centerline Spacing"
+      ]
+    ],
+    "CENTER_MARK_VISIBLE": [
+      [
+        "Graphics",
+        "Center Mark Visible"
+      ]
+    ],
+    "CENTROID_HORIZONTAL": [
+      [
+        "Structural Section Geometry",
+        "Centroid Horizontal"
+      ]
+    ],
+    "CENTROID_VERTICAL": [
+      [
+        "Structural Section Geometry",
+        "Centroid Vertical"
+      ]
+    ],
+    "CHAMFER": [
+      [
+        "Constraints",
+        "Chamfer"
+      ]
+    ],
+    "CHAMFER_ADJUSTMENT": [
+      [
+        "Other",
+        "Chamfer adjustment"
+      ]
+    ],
+    "CHAMFER_RECTANGULAR": [
+      [
+        "Constraints",
+        "Chamfer Rectangular"
+      ]
+    ],
+    "CHAMFER_ROUND": [
+      [
+        "Constraints",
+        "Chamfer Round"
+      ]
+    ],
+    "CHAMFER_SIZE": [
+      [
+        "Dimensions",
+        "Chamfer Size"
+      ]
+    ],
+    "CHAMFER_SIZE_ACTUAL": [
+      [
+        "Other",
+        "Chamfer Size actual"
+      ]
+    ],
+    "CHANGEACTION": [
+      [
+        "IFCOWNERHISTORY",
+        "CHANGEACTION"
+      ]
+    ],
+    "CHECKED_BY": [
+      [
+        "Text",
+        "Checked By"
+      ]
+    ],
+    "CHIEF_ARCHITECT": [
+      [
+        "Other",
+        "Chief Architect"
+      ]
+    ],
+    "CHORD_THICKNESS": [
+      [
+        "Dimensions",
+        "Chord Thickness"
+      ]
+    ],
+    "CIRCULATIONZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "CirculationZoneName"
+      ]
+    ],
+    "CLASS": [
+      [
+        "Instance Part Properties",
+        "CLASS"
+      ],
+      [
+        "empty property set name",
+        "CLASS"
+      ]
+    ],
+    "CLASSIFICATION_CODE": [
+      [
+        "PSet_Revit_Type_Other",
+        "Classification Code"
+      ]
+    ],
+    "CLASSIFICATION_DESCRIPTION": [
+      [
+        "PSet_Revit_Type_Other",
+        "Classification Description"
+      ]
+    ],
+    "CLEAR_WEB_HEIGHT": [
+      [
+        "Dimensions",
+        "Clear Web Height"
+      ]
+    ],
+    "CLIENT_NAME": [
+      [
+        "Other",
+        "Client Name"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Client Name"
+      ]
+    ],
+    "COARSE_SCALE_FILL_COLOR": [
+      [
+        "Graphics",
+        "Coarse Scale Fill Color"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Coarse Scale Fill Color"
+      ]
+    ],
+    "COARSE_SCALE_FILL_PATTERN": [
+      [
+        "Graphics",
+        "Coarse Scale Fill Pattern"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Coarse Scale Fill Pattern"
+      ]
+    ],
+    "COATING": [
+      [
+        "Structural",
+        "Coating"
+      ]
+    ],
+    "COBIE": [
+      [
+        "IFC",
+        "COBie"
+      ]
+    ],
+    "CODEPERFORMANCE": [
+      [
+        "PSet_Revit_Type_Other",
+        "CodePerformance"
+      ]
+    ],
+    "CODE_NAME": [
+      [
+        "Identity Data",
+        "Code Name"
+      ]
+    ],
+    "COLOR": [
+      [
+        "Graphics",
+        "Color"
+      ],
+      [
+        "Graphics(Type)",
+        "Color"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Color"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Color"
+      ]
+    ],
+    "COLUMN_HEIGHT": [
+      [
+        "Dimensions",
+        "Column Height"
+      ]
+    ],
+    "COLUMN_LOCATION_MARK": [
+      [
+        "Constraints",
+        "Column Location Mark"
+      ]
+    ],
+    "COLUMN_STYLE": [
+      [
+        "Constraints",
+        "Column Style"
+      ]
+    ],
+    "COMBUSTIBLE": [
+      [
+        "Pset_SlabCommon",
+        "Combustible"
+      ]
+    ],
+    "COMMENTS": [
+      [
+        "Identity Data",
+        "Comments"
+      ]
+    ],
+    "COMPARTMENTATION": [
+      [
+        "Pset_SlabCommon",
+        "Compartmentation"
+      ]
+    ],
+    "COMPOSITIONTYPE": [
+      [
+        "IFC",
+        "COMPOSITIONTYPE"
+      ]
+    ],
+    "COMPUTATION_HEIGHT": [
+      [
+        "Dimensions",
+        "Computation Height"
+      ]
+    ],
+    "CONFIGURATIONTYPE": [
+      [
+        "PSet_Revit_Type_Other",
+        "ConfigurationType"
+      ]
+    ],
+    "CONSTITUENTS": [
+      [
+        "PSet_Revit_Type_Other",
+        "Constituents"
+      ]
+    ],
+    "CONSTRUCTIONTYPE": [
+      [
+        "IFCDOORSTYLE",
+        "CONSTRUCTIONTYPE"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "CONSTRUCTIONTYPE"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "ConstructionType"
+      ]
+    ],
+    "CONSTRUCTION_TYPE": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Construction Type"
+      ]
+    ],
+    "CORD_LEG": [
+      [
+        "Dimensions",
+        "Cord Leg"
+      ]
+    ],
+    "CORE_THICKNESS": [
+      [
+        "Dimensions",
+        "Core Thickness"
+      ]
+    ],
+    "CORNER_MULLION": [
+      [
+        "Construction",
+        "Corner Mullion"
+      ]
+    ],
+    "COUNTER_THICKNESS": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Counter Thickness"
+      ]
+    ],
+    "CREATIONDATE": [
+      [
+        "IFCOWNERHISTORY",
+        "CREATIONDATE"
+      ]
+    ],
+    "CROSS_SECTION": [
+      [
+        "Cross-Section Definition",
+        "Cross-Section"
+      ]
+    ],
+    "CROSS_SECTION_ROTATION": [
+      [
+        "Constraints",
+        "Cross-Section Rotation"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Cross-Section Rotation"
+      ]
+    ],
+    "CURVED_EDGE_CONDITION": [
+      [
+        "Slab Shape Edit",
+        "Curved Edge Condition"
+      ]
+    ],
+    "CUTOFF_OFFSET": [
+      [
+        "PSet_Revit_Constraints",
+        "Cutoff Offset"
+      ]
+    ],
+    "CUT_LENGTH": [
+      [
+        "PSet_Revit_Structural",
+        "Cut Length"
+      ],
+      [
+        "Structural",
+        "Cut Length"
+      ]
+    ],
+    "CUT_MARK_TYPE": [
+      [
+        "Graphics(Type)",
+        "Cut Mark Type"
+      ]
+    ],
+    "CY": [
+      [
+        "Dimensions",
+        "Cy"
+      ]
+    ],
+    "D": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "d"
+      ]
+    ],
+    "DB_PART_DESC": [
+      [
+        "Instance Part Properties",
+        "DB_PART_DESC"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "DB_PART_DESC"
+      ]
+    ],
+    "DB_PART_MFKID": [
+      [
+        "Instance Part Properties",
+        "DB_PART_MFKID"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "DB_PART_MFKID"
+      ]
+    ],
+    "DB_PART_NAME": [
+      [
+        "Instance Part Properties",
+        "DB_PART_NAME"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "DB_PART_NAME"
+      ]
+    ],
+    "DB_PART_NO": [
+      [
+        "Instance Part Properties",
+        "DB_PART_NO"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "DB_PART_NO"
+      ]
+    ],
+    "DB_PART_REV": [
+      [
+        "Instance Part Properties",
+        "DB_PART_REV"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "DB_PART_REV"
+      ]
+    ],
+    "DB_PART_TYPE": [
+      [
+        "Instance Part Properties",
+        "DB_PART_TYPE"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "DB_PART_TYPE"
+      ]
+    ],
+    "DB_SEED_PART_USED": [
+      [
+        "Instance Part Properties",
+        "DB_SEED_PART_USED"
+      ],
+      [
+        "DB Part",
+        "DB_SEED_PART_USED"
+      ]
+    ],
+    "DB_SEQUENCE_NO": [
+      [
+        "Instance Part Properties",
+        "DB_SEQUENCE_NO"
+      ]
+    ],
+    "DEFAULT_ELEVATION": [
+      [
+        "Constraints",
+        "Default Elevation"
+      ],
+      [
+        "Constraints(Type)",
+        "Default Elevation"
+      ]
+    ],
+    "DEFAULT_END_EXTENSION_LENGTH": [
+      [
+        "Dimensions(Type)",
+        "Default End Extension Length"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Default End Extension Length"
+      ]
+    ],
+    "DEFAULT_EXTERIOR_ANGLE": [
+      [
+        "Cross-Section Definition",
+        "Default Exterior Angle"
+      ]
+    ],
+    "DEFAULT_INTERIOR_ANGLE": [
+      [
+        "Cross-Section Definition",
+        "Default Interior Angle"
+      ]
+    ],
+    "DEFAULT_SILL_HEIGHT": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Default Sill Height"
+      ]
+    ],
+    "DEFAULT_THICKNESS": [
+      [
+        "Construction",
+        "Default Thickness"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Default Thickness"
+      ]
+    ],
+    "DEFORMABLE_PART": [
+      [
+        "Instance Part Properties",
+        "DEFORMABLE_PART"
+      ],
+      [
+        "empty property set name",
+        "DEFORMABLE_PART"
+      ]
+    ],
+    "DEPTH": [
+      [
+        "Dimensions",
+        "Depth"
+      ],
+      [
+        "Pset_ProvisionForVoid",
+        "Depth"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Depth"
+      ]
+    ],
+    "DESCRIPTION": [
+      [
+        "IFC",
+        "DESCRIPTION"
+      ],
+      [
+        "Identity Data",
+        "Description"
+      ],
+      [
+        "Identity Data(Type)",
+        "Description"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfSlab",
+        "Description"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfWall",
+        "Description"
+      ]
+    ],
+    "DESIGNED_BY": [
+      [
+        "Text",
+        "Designed By"
+      ]
+    ],
+    "DESIRED_NUMBER_OF_RISERS": [
+      [
+        "Dimensions",
+        "Desired Number of Risers"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Desired Number of Risers"
+      ]
+    ],
+    "DESIRED_STAIR_HEIGHT": [
+      [
+        "Constraints",
+        "Desired Stair Height"
+      ]
+    ],
+    "DIAMETER": [
+      [
+        "Instance Part Properties",
+        "DIAMETER"
+      ],
+      [
+        "empty property set name",
+        "DIAMETER"
+      ],
+      [
+        "Dimensions",
+        "_Diameter"
+      ]
+    ],
+    "DIRECTIONSENSE": [
+      [
+        "IFCMATERIALLAYERSETUSAGE",
+        "DIRECTIONSENSE"
+      ]
+    ],
+    "DISCIPLINE": [
+      [
+        "Instance Part Properties",
+        "DISCIPLINE"
+      ]
+    ],
+    "DOMESTIC_ACCOMMODATION_LIFT_SHAFT_CONCESSION_BASED_ON_TOTAL_DOMESTIC_GFA_ONLY": [
+      [
+        "Other",
+        "Domestic_Accommodation_Lift_Shaft_Concession_based_on_total_domestic_GFA_only"
+      ]
+    ],
+    "DOOR_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Door Material"
+      ]
+    ],
+    "DOWN_ARROW": [
+      [
+        "PSet_Revit_Graphics",
+        "Down arrow"
+      ]
+    ],
+    "DOWN_LABEL": [
+      [
+        "Graphics",
+        "Down label"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "Down label"
+      ]
+    ],
+    "DOWN_TEXT": [
+      [
+        "Graphics",
+        "Down text"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "Down text"
+      ]
+    ],
+    "DO_NOT_BREAK_AT_INSERTS": [
+      [
+        "Dimensions(Type)",
+        "Do Not Break At Inserts"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Do Not Break At Inserts"
+      ]
+    ],
+    "DRAWING_TITLE_PREFIX": [
+      [
+        "Text",
+        "Drawing Title Prefix."
+      ]
+    ],
+    "DRAWN_BY": [
+      [
+        "Text",
+        "Drawn By"
+      ]
+    ],
+    "ECCENTRICITY": [
+      [
+        "Constraints",
+        "Eccentricity"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Eccentricity"
+      ]
+    ],
+    "EDITED_BY": [
+      [
+        "Identity Data",
+        "Edited by"
+      ]
+    ],
+    "ELASTIC_MODULUS_STRONG_AXIS": [
+      [
+        "Structural Analysis",
+        "Elastic Modulus strong axis"
+      ]
+    ],
+    "ELASTIC_MODULUS_WEAK_AXIS": [
+      [
+        "Structural Analysis",
+        "Elastic Modulus weak axis"
+      ]
+    ],
+    "ELEMENTTYPE": [
+      [
+        "IFCFURNITURETYPE",
+        "ELEMENTTYPE"
+      ]
+    ],
+    "ELEVATION": [
+      [
+        "IFC",
+        "ELEVATION"
+      ],
+      [
+        "Constraints",
+        "Elevation"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Elevation"
+      ]
+    ],
+    "ELEVATIONOFREFHEIGHT": [
+      [
+        "IFC",
+        "ELEVATIONOFREFHEIGHT"
+      ]
+    ],
+    "ELEVATIONOFTERRAIN": [
+      [
+        "IFC",
+        "ELEVATIONOFTERRAIN"
+      ]
+    ],
+    "ELEVATION_AT_BOTTOM": [
+      [
+        "Dimensions",
+        "Elevation at Bottom"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Elevation at Bottom"
+      ]
+    ],
+    "ELEVATION_AT_BOTTOM_CORE": [
+      [
+        "Dimensions",
+        "Elevation at Bottom Core"
+      ]
+    ],
+    "ELEVATION_AT_BOTTOM_SURVEY": [
+      [
+        "Dimensions",
+        "Elevation at Bottom Survey"
+      ]
+    ],
+    "ELEVATION_AT_TOP": [
+      [
+        "Dimensions",
+        "Elevation at Top"
+      ]
+    ],
+    "ELEVATION_AT_TOP_CORE": [
+      [
+        "Dimensions",
+        "Elevation at Top Core"
+      ]
+    ],
+    "ELEVATION_AT_TOP_SURVEY": [
+      [
+        "Dimensions",
+        "Elevation at Top Survey"
+      ]
+    ],
+    "ELEVATION_BASE": [
+      [
+        "Constraints",
+        "Elevation Base"
+      ],
+      [
+        "Constraints(Type)",
+        "Elevation Base"
+      ],
+      [
+        "PSet_Revit_Type_Constraints",
+        "Elevation Base"
+      ]
+    ],
+    "ELEVATION_FROM_LEVEL": [
+      [
+        "Constraints",
+        "Elevation from Level"
+      ]
+    ],
+    "EMBED_SYMBOL": [
+      [
+        "Layers(Type)",
+        "Embed Symbol"
+      ]
+    ],
+    "EMBED_SYMBOL_OFFSET_H": [
+      [
+        "Layers(Type)",
+        "Embed Symbol Offset H"
+      ]
+    ],
+    "EMBED_SYMBOL_OFFSET_V": [
+      [
+        "Layers(Type)",
+        "Embed Symbol Offset V"
+      ]
+    ],
+    "ENABLE_ANALYTICAL_MODEL": [
+      [
+        "PSet_Revit_Analytical Model",
+        "Enable Analytical Model"
+      ],
+      [
+        "Structural",
+        "Enable Analytical Model"
+      ]
+    ],
+    "ENABLE_ANGLE_OVERRIDES": [
+      [
+        "Cross-Section Definition",
+        "Enable Angle Overrides"
+      ]
+    ],
+    "END_ATTACHMENT_DISTANCE": [
+      [
+        "Structural",
+        "End Attachment Distance"
+      ]
+    ],
+    "END_ATTACHMENT_TYPE": [
+      [
+        "Structural",
+        "End Attachment Type"
+      ]
+    ],
+    "END_EXTENSION": [
+      [
+        "Construction",
+        "End Extension"
+      ],
+      [
+        "Geometric Position",
+        "End Extension"
+      ],
+      [
+        "PSet_Revit_Construction",
+        "End Extension"
+      ]
+    ],
+    "END_EXTENSION_CALCULATION": [
+      [
+        "PSet_Revit_Other",
+        "End Extension Calculation"
+      ]
+    ],
+    "END_FX": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Fx"
+      ]
+    ],
+    "END_FY": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Fy"
+      ]
+    ],
+    "END_FZ": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Fz"
+      ]
+    ],
+    "END_JOIN_CUTBACK": [
+      [
+        "Geometric Position",
+        "End Join Cutback"
+      ]
+    ],
+    "END_LEVEL_OFFSET": [
+      [
+        "Constraints",
+        "End Level Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "End Level Offset"
+      ]
+    ],
+    "END_MX": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Mx"
+      ]
+    ],
+    "END_MY": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End My"
+      ]
+    ],
+    "END_MZ": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Mz"
+      ]
+    ],
+    "END_OFFSET": [
+      [
+        "Construction",
+        "End Offset"
+      ]
+    ],
+    "END_OF_ATTACHMENT_TO_REFERENCE_COLUMN": [
+      [
+        "Structural",
+        "End of Attachment to Reference Column"
+      ]
+    ],
+    "END_PANEL": [
+      [
+        "Other",
+        "End Panel"
+      ]
+    ],
+    "END_RELEASE": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "End Release"
+      ]
+    ],
+    "END_WITH_RISER": [
+      [
+        "Construction",
+        "End with Riser"
+      ],
+      [
+        "PSet_Revit_Type_Risers",
+        "End with Riser"
+      ]
+    ],
+    "ENFORCE_PIECE_PART": [
+      [
+        "Instance Part Properties",
+        "ENFORCE_PIECE_PART"
+      ],
+      [
+        "empty property set name",
+        "ENFORCE_PIECE_PART"
+      ]
+    ],
+    "ESTIMATED_REINFORCEMENT_VOLUME": [
+      [
+        "Structural",
+        "Estimated Reinforcement Volume"
+      ]
+    ],
+    "EXACT_WEIGHT": [
+      [
+        "Structural",
+        "Exact Weight"
+      ]
+    ],
+    "EXISTING_PART_BLOCK": [
+      [
+        "Instance Part Properties",
+        "EXISTING_PART_BLOCK"
+      ]
+    ],
+    "EXPECTEDLIFE": [
+      [
+        "PSet_Revit_Type_Other",
+        "ExpectedLife"
+      ]
+    ],
+    "EXTENDTOSTRUCTURE": [
+      [
+        "Pset_WallCommon",
+        "ExtendToStructure"
+      ]
+    ],
+    "EXTEND_BELOW_BASE": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Extend Below Base"
+      ]
+    ],
+    "EXTEND_BELOW_RISER_BASE": [
+      [
+        "Construction",
+        "Extend Below Riser Base"
+      ]
+    ],
+    "EXTERIOR_ANGLE": [
+      [
+        "Cross-Section Definition",
+        "Exterior Angle"
+      ]
+    ],
+    "EXTRUSION_END": [
+      [
+        "Constraints",
+        "Extrusion End"
+      ]
+    ],
+    "EXTRUSION_START": [
+      [
+        "Constraints",
+        "Extrusion Start"
+      ]
+    ],
+    "FAMILY": [
+      [
+        "Other",
+        "Family"
+      ]
+    ],
+    "FAMILYNAME": [
+      [
+        "IFCPERSON",
+        "FAMILYNAME"
+      ]
+    ],
+    "FAMILY_AND_TYPE": [
+      [
+        "Other",
+        "Family and Type"
+      ]
+    ],
+    "FAMILY_NAME": [
+      [
+        "Other",
+        "Family Name"
+      ],
+      [
+        "Other(Type)",
+        "Family Name"
+      ]
+    ],
+    "FASCIA_DEPTH": [
+      [
+        "Construction",
+        "Fascia Depth"
+      ],
+      [
+        "PSet_Revit_Construction",
+        "Fascia Depth"
+      ]
+    ],
+    "FEATURES": [
+      [
+        "PSet_Revit_Type_Other",
+        "Features"
+      ]
+    ],
+    "FINISH": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Finish"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Finish"
+      ]
+    ],
+    "FIREALARMZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "FireAlarmZoneName"
+      ]
+    ],
+    "FIRERATING": [
+      [
+        "Pset_DoorCommon",
+        "FireRating"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "FireRating"
+      ],
+      [
+        "Pset_WindowCommon",
+        "FireRating"
+      ]
+    ],
+    "FIRE_RATING": [
+      [
+        "PSet_Revit_Type_Identity Data",
+        "Fire Rating"
+      ]
+    ],
+    "FIXED_SPACING": [
+      [
+        "Pattern",
+        "Fixed Spacing"
+      ]
+    ],
+    "FLANGE_FILLET": [
+      [
+        "Structural Section Geometry",
+        "Flange Fillet"
+      ]
+    ],
+    "FLANGE_THICKNESS": [
+      [
+        "Structural Section Geometry",
+        "Flange Thickness"
+      ]
+    ],
+    "FLANGE_THICKNESS_LOCATION": [
+      [
+        "Structural Section Geometry",
+        "Flange Thickness Location"
+      ]
+    ],
+    "FLIP": [
+      [
+        "Adaptive Component",
+        "Flip"
+      ]
+    ],
+    "FLIP_SECTION_PROFILE": [
+      [
+        "Dimensions(Type)",
+        "Flip Section Profile"
+      ]
+    ],
+    "FLOORCOVERING": [
+      [
+        "PSet_Revit_Other",
+        "FloorCovering"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "FloorCovering"
+      ]
+    ],
+    "FOUNDATION_OFFSET": [
+      [
+        "Dimensions",
+        "Foundation Offset"
+      ]
+    ],
+    "FOUNDATION_OFFSET_ACTUAL": [
+      [
+        "Other",
+        "Foundation Offset actual"
+      ]
+    ],
+    "FOUNDATION_THICKNESS": [
+      [
+        "Dimensions",
+        "Foundation Thickness"
+      ],
+      [
+        "Dimensions(Type)",
+        "Foundation Thickness"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Foundation Thickness"
+      ]
+    ],
+    "FRAME_EXTERIOR_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Frame Exterior Material"
+      ]
+    ],
+    "FRAME_INTERIOR_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Frame Interior Material"
+      ]
+    ],
+    "FRAME_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Frame Material"
+      ]
+    ],
+    "FS_ADOPT_OLD_CODE_1996": [
+      [
+        "Other",
+        "FS_adopt_old_code_1996"
+      ]
+    ],
+    "FUNCTION": [
+      [
+        "Construction",
+        "Function"
+      ],
+      [
+        "Construction(Type)",
+        "Function"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Function"
+      ]
+    ],
+    "F_3D": [
+      [
+        "Constraints",
+        "3D"
+      ]
+    ],
+    "GENERATE_JT": [
+      [
+        "Instance Part Properties",
+        "GENERATE_JT"
+      ],
+      [
+        "empty property set name",
+        "GENERATE_JT"
+      ]
+    ],
+    "GIVENNAME": [
+      [
+        "IFCPERSON",
+        "GIVENNAME"
+      ]
+    ],
+    "GLASS_PANE_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Glass Pane Material"
+      ]
+    ],
+    "GLAZINGAREAFRACTION": [
+      [
+        "PSet_Revit_Type_Other",
+        "GlazingAreaFraction"
+      ]
+    ],
+    "GLOBALID": [
+      [
+        "Instance Part Properties",
+        "GLOBALID"
+      ],
+      [
+        "IFC",
+        "GLOBALID"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "GLOBALID"
+      ],
+      [
+        "ABB4HVDCDesign",
+        "GLOBALID"
+      ],
+      [
+        "ABB4ModelRevision Master",
+        "GLOBALID"
+      ],
+      [
+        "empty property set name",
+        "GLOBALID"
+      ],
+      [
+        "Adaptive Component",
+        "GLOBALID"
+      ],
+      [
+        "Analysis Results",
+        "GLOBALID"
+      ],
+      [
+        "Analytical Properties",
+        "GLOBALID"
+      ],
+      [
+        "Calculation Rules(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat Classification",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "GLOBALID"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "GLOBALID"
+      ],
+      [
+        "Constraints",
+        "GLOBALID"
+      ],
+      [
+        "Constraints(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Construction",
+        "GLOBALID"
+      ],
+      [
+        "Construction(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Cross-Section Definition",
+        "GLOBALID"
+      ],
+      [
+        "DB Component Instance",
+        "GLOBALID"
+      ],
+      [
+        "DB Part",
+        "GLOBALID"
+      ],
+      [
+        "Dimensions",
+        "GLOBALID"
+      ],
+      [
+        "Dimensions(Type)",
+        "GLOBALID"
+      ],
+      [
+        "DXF_DWG",
+        "GLOBALID"
+      ],
+      [
+        "Energy Analysis",
+        "GLOBALID"
+      ],
+      [
+        "Geometric Position",
+        "GLOBALID"
+      ],
+      [
+        "Graphics",
+        "GLOBALID"
+      ],
+      [
+        "Graphics(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Handrail 1(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Handrail 2(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Horizontal Grid",
+        "GLOBALID"
+      ],
+      [
+        "Identity Data",
+        "GLOBALID"
+      ],
+      [
+        "Identity Data(Type)",
+        "GLOBALID"
+      ],
+      [
+        "IFCBEAMTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCBUILDINGELEMENTPROXYTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCCOLUMNTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCDOORLININGPROPERTIES",
+        "GLOBALID"
+      ],
+      [
+        "IFCDOORSTYLE",
+        "GLOBALID"
+      ],
+      [
+        "IFCFURNITURETYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCMEMBERTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCRAMPFLIGHTTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCSLABTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCSTAIRFLIGHTTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCWALLTYPE",
+        "GLOBALID"
+      ],
+      [
+        "IFCWINDOWLININGPROPERTIES",
+        "GLOBALID"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "GLOBALID"
+      ],
+      [
+        "Layers(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Mass Properties Configuration Context",
+        "GLOBALID"
+      ],
+      [
+        "Materials",
+        "GLOBALID"
+      ],
+      [
+        "Materials and Finishes",
+        "GLOBALID"
+      ],
+      [
+        "Materials and Finishes(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Other",
+        "GLOBALID"
+      ],
+      [
+        "Other(Type)",
+        "GLOBALID"
+      ],
+      [
+        "owning_user",
+        "GLOBALID"
+      ],
+      [
+        "Pattern",
+        "GLOBALID"
+      ],
+      [
+        "Phasing",
+        "GLOBALID"
+      ],
+      [
+        "ProfileProperties",
+        "GLOBALID"
+      ],
+      [
+        "Pset_AirSideSystemInformation",
+        "GLOBALID"
+      ],
+      [
+        "Pset_BeamCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_BuildingCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_BuildingElementProxyCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_BuildingStoreyCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ColumnCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_CoveringCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_CurtainWallCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_DoorCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ElementShading",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ManufacturerTypeInformation",
+        "GLOBALID"
+      ],
+      [
+        "Pset_MemberCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_PlateCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ProductRequirements",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ProvisionForVoid",
+        "GLOBALID"
+      ],
+      [
+        "Pset_QuantityTakeOff",
+        "GLOBALID"
+      ],
+      [
+        "Pset_RailingCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_RampCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_RampFlightCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarCountOfIndependentFooting",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfBeam",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfColumn",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfContinuousFooting",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfSlab",
+        "GLOBALID"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfWall",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Analytical Model",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Construction",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Identity Data",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Materials and Finishes",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Other",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Phasing",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Structural",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Structural Analysis",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Constraints",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Identity Data",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Risers",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Stringers",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Structural",
+        "GLOBALID"
+      ],
+      [
+        "PSet_Revit_Type_Treads",
+        "GLOBALID"
+      ],
+      [
+        "Pset_RoofCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_SlabCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_StairCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_WallCommon",
+        "GLOBALID"
+      ],
+      [
+        "Pset_WindowCommon",
+        "GLOBALID"
+      ],
+      [
+        "Quantities",
+        "GLOBALID"
+      ],
+      [
+        "Risers",
+        "GLOBALID"
+      ],
+      [
+        "Rolled-Up Mass Properties",
+        "GLOBALID"
+      ],
+      [
+        "Routing System Defined",
+        "GLOBALID"
+      ],
+      [
+        "Slab Shape Edit",
+        "GLOBALID"
+      ],
+      [
+        "Structural",
+        "GLOBALID"
+      ],
+      [
+        "Structural Analysis",
+        "GLOBALID"
+      ],
+      [
+        "Structural Section Geometry",
+        "GLOBALID"
+      ],
+      [
+        "Structural(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Supports(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Text",
+        "GLOBALID"
+      ],
+      [
+        "Top Rail(Type)",
+        "GLOBALID"
+      ],
+      [
+        "Treads",
+        "GLOBALID"
+      ],
+      [
+        "Vertical Grid",
+        "GLOBALID"
+      ]
+    ],
+    "GRADE": [
+      [
+        "PSet_Revit_Type_Other",
+        "Grade"
+      ]
+    ],
+    "GROSSAREA": [
+      [
+        "Quantities",
+        "GrossArea"
+      ]
+    ],
+    "GROSSCEILINGAREA": [
+      [
+        "Quantities",
+        "GrossCeilingArea"
+      ]
+    ],
+    "GROSSFLOORAREA": [
+      [
+        "Quantities",
+        "GrossFloorArea"
+      ]
+    ],
+    "GROSSFOOTPRINTAREA": [
+      [
+        "Quantities",
+        "GrossFootprintArea"
+      ]
+    ],
+    "GROSSPERIMETER": [
+      [
+        "Quantities",
+        "GrossPerimeter"
+      ]
+    ],
+    "GROSSSIDEAREA": [
+      [
+        "Quantities",
+        "GrossSideArea"
+      ]
+    ],
+    "GROSSVOLUME": [
+      [
+        "Quantities",
+        "GrossVolume"
+      ]
+    ],
+    "GSA_BIM_AREA": [
+      [
+        "Quantities",
+        "GSA BIM Area"
+      ]
+    ],
+    "GUID": [
+      [
+        "Item",
+        "GUID"
+      ]
+    ],
+    "H": [
+      [
+        "Dimensions",
+        "h"
+      ]
+    ],
+    "HANDLE_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Handle Material"
+      ]
+    ],
+    "HAS_ASSOCIATION": [
+      [
+        "Identity Data",
+        "Has Association"
+      ]
+    ],
+    "HD": [
+      [
+        "Dimensions",
+        "HD"
+      ]
+    ],
+    "HEADROOM": [
+      [
+        "Pset_RampFlightCommon",
+        "HeadRoom"
+      ]
+    ],
+    "HEAD_HEIGHT": [
+      [
+        "Other",
+        "Head Height"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Head Height"
+      ]
+    ],
+    "HEAT_LOAD_VALUES": [
+      [
+        "Energy Analysis",
+        "Heat Load Values"
+      ]
+    ],
+    "HEAT_TRANSFER_COEFFICIENT_U": [
+      [
+        "Analytical Properties",
+        "Heat Transfer Coefficient (U)"
+      ]
+    ],
+    "HEIGHT": [
+      [
+        "Dimensions",
+        "Height"
+      ],
+      [
+        "Dimensions(Type)",
+        "_Height"
+      ],
+      [
+        "Handrail 1(Type)",
+        "Height"
+      ],
+      [
+        "Pset_ProvisionForVoid",
+        "Height"
+      ],
+      [
+        "Pset_RailingCommon",
+        "Height"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Height"
+      ],
+      [
+        "Quantities",
+        "Height"
+      ],
+      [
+        "Structural Section Geometry",
+        "Height"
+      ],
+      [
+        "Top Rail(Type)",
+        "Height"
+      ]
+    ],
+    "HEIGHT_OFFSET_FROM_LEVEL": [
+      [
+        "Constraints",
+        "Height Offset From Level"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Height Offset From Level"
+      ]
+    ],
+    "HIDDEN": [
+      [
+        "Item",
+        "Hidden"
+      ]
+    ],
+    "HISTORICPRESERVATIONZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "HistoricPreservationZoneName"
+      ]
+    ],
+    "HORIZONTAL_PROJECTION": [
+      [
+        "PSet_Revit_Analytical Model",
+        "Horizontal Projection"
+      ]
+    ],
+    "HOST": [
+      [
+        "Constraints",
+        "Host"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Host"
+      ]
+    ],
+    "HOST_ID": [
+      [
+        "Other",
+        "Host Id"
+      ]
+    ],
+    "HOST_THICK": [
+      [
+        "Other(Type)",
+        "Host Thick"
+      ]
+    ],
+    "HOTEL_ACCOMMODATION_LIFT_SHAFT_CONCESSION_BASED_ON_TOTAL_HOTEL_GFA_ONLY": [
+      [
+        "Other",
+        "Hotel_Accommodation_Lift_Shaft_Concession_Based_on_total_hotel_GFA_only"
+      ]
+    ],
+    "HT": [
+      [
+        "Dimensions",
+        "Ht"
+      ],
+      [
+        "Dimensions",
+        "HT"
+      ]
+    ],
+    "ICON": [
+      [
+        "Item",
+        "Icon"
+      ]
+    ],
+    "ID": [
+      [
+        "IFCPERSON",
+        "ID"
+      ]
+    ],
+    "IDENTIFICATION": [
+      [
+        "Classification:Uniformat Classification",
+        "IDENTIFICATION"
+      ]
+    ],
+    "INSTALLATIONDATE": [
+      [
+        "PSet_Revit_Other",
+        "InstallationDate"
+      ]
+    ],
+    "INTERIOROREXTERIORSPACE": [
+      [
+        "IFC",
+        "INTERIOROREXTERIORSPACE"
+      ]
+    ],
+    "INTERIOR_ANGLE": [
+      [
+        "Cross-Section Definition",
+        "Interior Angle"
+      ]
+    ],
+    "INTPANELARRAYLENGTH": [
+      [
+        "Other",
+        "IntPanelArrayLength"
+      ]
+    ],
+    "INTPANELARRAYNUM": [
+      [
+        "Other",
+        "IntPanelArrayNum"
+      ]
+    ],
+    "INTPANELWIDTH": [
+      [
+        "Other",
+        "IntPanelWidth"
+      ]
+    ],
+    "ISEXTERNAL": [
+      [
+        "Pset_BeamCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_ColumnCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_CoveringCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_CurtainWallCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_DoorCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_MemberCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_PlateCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_RailingCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_RampCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_RoofCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_SlabCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_StairCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_WallCommon",
+        "IsExternal"
+      ],
+      [
+        "Pset_WindowCommon",
+        "IsExternal"
+      ]
+    ],
+    "ISFIREEXIT": [
+      [
+        "PSet_Revit_Type_Other",
+        "IsFireExit"
+      ]
+    ],
+    "ISLANDMARKED": [
+      [
+        "Pset_BuildingCommon",
+        "IsLandmarked"
+      ]
+    ],
+    "ISSUED_DATE": [
+      [
+        "Text",
+        "Issued Date"
+      ]
+    ],
+    "ITEMREFERENCE": [
+      [
+        "Classification:Uniformat:A1010100",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "ITEMREFERENCE"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "ITEMREFERENCE"
+      ]
+    ],
+    "ITEM_DESIGNATION": [
+      [
+        "Instance Part Properties",
+        "ITEM DESIGNATION"
+      ]
+    ],
+    "IX": [
+      [
+        "Structural",
+        "Ix"
+      ]
+    ],
+    "JOIN_STATUS": [
+      [
+        "Geometric Position",
+        "Join Status"
+      ]
+    ],
+    "JT_PROP_MEASUREMENT_UNITS": [
+      [
+        "empty property set name",
+        "JT_PROP_MEASUREMENT_UNITS"
+      ]
+    ],
+    "JUSTIFICATION": [
+      [
+        "Horizontal Grid",
+        "Justification"
+      ],
+      [
+        "Pattern",
+        "Justification"
+      ],
+      [
+        "Vertical Grid",
+        "Justification"
+      ]
+    ],
+    "K": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "k"
+      ]
+    ],
+    "KEYNOTE": [
+      [
+        "Identity Data",
+        "Keynote"
+      ]
+    ],
+    "KR": [
+      [
+        "Dimensions",
+        "kr"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "kr"
+      ]
+    ],
+    "LANDING_CARRIAGE_HEIGHT": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Landing Carriage Height"
+      ]
+    ],
+    "LANDING_HEIGHT_ADJUSTMENT": [
+      [
+        "Construction(Type)",
+        "Landing Height Adjustment"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Landing Height Adjustment"
+      ]
+    ],
+    "LANDING_OVERLAP": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Landing Overlap"
+      ]
+    ],
+    "LANDING_TYPE": [
+      [
+        "Construction(Type)",
+        "Landing Type"
+      ]
+    ],
+    "LASTMODIFIEDDATE": [
+      [
+        "IFCOWNERHISTORY",
+        "LASTMODIFIEDDATE"
+      ]
+    ],
+    "LATENT_HEAT_GAIN_PER_PERSON": [
+      [
+        "Energy Analysis",
+        "Latent Heat Gain per person"
+      ]
+    ],
+    "LATERAL_JUSTIFICATION": [
+      [
+        "PSet_Revit_Constraints",
+        "Lateral Justification"
+      ]
+    ],
+    "LATERAL_OFFSET": [
+      [
+        "Handrail 1(Type)",
+        "Lateral Offset"
+      ]
+    ],
+    "LAYER": [
+      [
+        "Instance Part Properties",
+        "LAYER"
+      ],
+      [
+        "Item",
+        "Layer"
+      ],
+      [
+        "empty property set name",
+        "LAYER"
+      ]
+    ],
+    "LAYERSETDIRECTION": [
+      [
+        "IFCMATERIALLAYERSETUSAGE",
+        "LAYERSETDIRECTION"
+      ]
+    ],
+    "LAYERTHICKNESS": [
+      [
+        "IFCMATERIALLAYER",
+        "LAYERTHICKNESS"
+      ]
+    ],
+    "LAYOUT_RULE": [
+      [
+        "Pattern",
+        "Layout Rule"
+      ]
+    ],
+    "LEFT_LATERAL_OFFSET": [
+      [
+        "Supports(Type)",
+        "Left Lateral Offset"
+      ]
+    ],
+    "LEFT_STRINGER": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Left Stringer"
+      ]
+    ],
+    "LEFT_SUPPORT": [
+      [
+        "Supports(Type)",
+        "Left Support"
+      ]
+    ],
+    "LEFT_SUPPORT_TYPE": [
+      [
+        "Supports(Type)",
+        "Left Support Type"
+      ]
+    ],
+    "LEG_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Leg Material"
+      ]
+    ],
+    "LENGTH": [
+      [
+        "Instance Part Properties",
+        "LENGTH"
+      ],
+      [
+        "empty property set name",
+        "LENGTH"
+      ],
+      [
+        "Dimensions",
+        "Length"
+      ],
+      [
+        "Dimensions",
+        "_Length"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Length"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Length"
+      ],
+      [
+        "Quantities",
+        "Length"
+      ],
+      [
+        "Routing System Defined",
+        "LENGTH"
+      ]
+    ],
+    "LEVEL": [
+      [
+        "Constraints",
+        "Level"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Level"
+      ]
+    ],
+    "LEVEL_OFFSET": [
+      [
+        "Constraints",
+        "Level Offset"
+      ]
+    ],
+    "LIGHTINGZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "LightingZoneName"
+      ]
+    ],
+    "LIGHTING_LOAD_UNITS": [
+      [
+        "Energy Analysis",
+        "Lighting Load Units"
+      ]
+    ],
+    "LIMIT_OFFSET": [
+      [
+        "Constraints",
+        "Limit Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Limit Offset"
+      ]
+    ],
+    "LINE_PATTERN": [
+      [
+        "Graphics",
+        "Line Pattern"
+      ],
+      [
+        "Graphics(Type)",
+        "Line Pattern"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Line Pattern"
+      ]
+    ],
+    "LINE_WEIGHT": [
+      [
+        "Graphics",
+        "Line Weight"
+      ],
+      [
+        "Graphics(Type)",
+        "Line Weight"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Line Weight"
+      ]
+    ],
+    "LOADBEARING": [
+      [
+        "Pset_BeamCommon",
+        "LoadBearing"
+      ],
+      [
+        "Pset_ColumnCommon",
+        "LoadBearing"
+      ],
+      [
+        "Pset_MemberCommon",
+        "LoadBearing"
+      ],
+      [
+        "Pset_PlateCommon",
+        "LoadBearing"
+      ],
+      [
+        "Pset_SlabCommon",
+        "LoadBearing"
+      ],
+      [
+        "Pset_WallCommon",
+        "LoadBearing"
+      ]
+    ],
+    "LOADCAPACITY": [
+      [
+        "PSet_Revit_Other",
+        "LoadCapacity"
+      ]
+    ],
+    "LOCATION": [
+      [
+        "Classification:Uniformat Classification",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "LOCATION"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "LOCATION"
+      ]
+    ],
+    "LOCATION_LINE": [
+      [
+        "Constraints",
+        "Location Line"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Location Line"
+      ]
+    ],
+    "LONGNAME": [
+      [
+        "IFC",
+        "LONGNAME"
+      ]
+    ],
+    "LOWER_END_CUT": [
+      [
+        "Constraints",
+        "Lower End Cut"
+      ]
+    ],
+    "LR": [
+      [
+        "Other",
+        "Lr"
+      ]
+    ],
+    "M": [
+      [
+        "Structural",
+        "M"
+      ]
+    ],
+    "MAKE_BUY": [
+      [
+        "Instance Part Properties",
+        "MAKE_BUY"
+      ],
+      [
+        "empty property set name",
+        "MAKE_BUY"
+      ]
+    ],
+    "MANUFACTURER": [
+      [
+        "Pset_ManufacturerTypeInformation",
+        "Manufacturer"
+      ],
+      [
+        "PSet_Revit_Type_Identity Data",
+        "Manufacturer"
+      ]
+    ],
+    "MARK": [
+      [
+        "Identity Data",
+        "Mark"
+      ],
+      [
+        "PSet_Revit_Identity Data",
+        "Mark"
+      ]
+    ],
+    "MATERIAL": [
+      [
+        "Item",
+        "Material"
+      ],
+      [
+        "Materials and Finishes",
+        "Material"
+      ],
+      [
+        "Materials and Finishes(Type)",
+        "Material"
+      ],
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Material"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Material"
+      ]
+    ],
+    "MATERIAL_MISSING_ASSIGNMENTS": [
+      [
+        "Instance Part Properties",
+        "MATERIAL_MISSING_ASSIGNMENTS"
+      ],
+      [
+        "empty property set name",
+        "MATERIAL_MISSING_ASSIGNMENTS"
+      ]
+    ],
+    "MATTRESS_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Mattress Material"
+      ]
+    ],
+    "MAXIMUM_INCLINE_LENGTH": [
+      [
+        "Dimensions(Type)",
+        "Maximum Incline Length"
+      ]
+    ],
+    "MAXIMUM_RIDGE_HEIGHT": [
+      [
+        "PSet_Revit_Construction",
+        "Maximum Ridge Height"
+      ]
+    ],
+    "MAXIMUM_RISER_HEIGHT": [
+      [
+        "Calculation Rules(Type)",
+        "Maximum Riser Height"
+      ],
+      [
+        "PSet_Revit_Type_Risers",
+        "Maximum Riser Height"
+      ]
+    ],
+    "MAXIMUM_SPACING": [
+      [
+        "Pattern",
+        "Maximum Spacing"
+      ]
+    ],
+    "METHODOFMEASUREMENT": [
+      [
+        "Quantities",
+        "METHODOFMEASUREMENT"
+      ]
+    ],
+    "MIDDLE_STRINGERS": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Middle Stringers"
+      ]
+    ],
+    "MIDDLE_SUPPORT": [
+      [
+        "Supports(Type)",
+        "Middle Support"
+      ]
+    ],
+    "MIDDLE_SUPPORT_NUMBER": [
+      [
+        "Supports(Type)",
+        "Middle Support Number"
+      ]
+    ],
+    "MINIMUM_RUN_WIDTH": [
+      [
+        "Calculation Rules(Type)",
+        "Minimum Run Width"
+      ]
+    ],
+    "MINIMUM_TREAD_DEPTH": [
+      [
+        "Calculation Rules(Type)",
+        "Minimum Tread Depth"
+      ],
+      [
+        "PSet_Revit_Type_Treads",
+        "Minimum Tread Depth"
+      ]
+    ],
+    "MODELLABEL": [
+      [
+        "PSet_Revit_Type_Other",
+        "ModelLabel"
+      ]
+    ],
+    "MODELREFERENCE": [
+      [
+        "PSet_Revit_Type_Other",
+        "ModelReference"
+      ]
+    ],
+    "MODEL_NAME": [
+      [
+        "Instance Part Properties",
+        "MODEL_NAME"
+      ],
+      [
+        "empty property set name",
+        "MODEL_NAME"
+      ]
+    ],
+    "MODIFY": [
+      [
+        "Instance Part Properties",
+        "MODIFY"
+      ],
+      [
+        "empty property set name",
+        "MODIFY"
+      ]
+    ],
+    "MOE_CAPACITY_CALCULATED_ROOM_BY_ROOM": [
+      [
+        "Other",
+        "MOE_capacity_calculated_room_by_room"
+      ]
+    ],
+    "MOMENT_OF_INERTIA_STRONG_AXIS": [
+      [
+        "Structural Analysis",
+        "Moment of Inertia strong axis"
+      ]
+    ],
+    "MOMENT_OF_INERTIA_WEAK_AXIS": [
+      [
+        "Structural Analysis",
+        "Moment of Inertia weak axis"
+      ]
+    ],
+    "MONOLITHIC_MATERIAL": [
+      [
+        "Materials and Finishes",
+        "Monolithic Material"
+      ]
+    ],
+    "MONOLITHIC_STAIRS": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Monolithic Stairs"
+      ]
+    ],
+    "MONOLITHIC_THICKNESS": [
+      [
+        "Construction",
+        "Monolithic Thickness"
+      ]
+    ],
+    "MOVES_WITH_GRIDS": [
+      [
+        "Constraints",
+        "Moves With Grids"
+      ]
+    ],
+    "MOVES_WITH_NEARBY_ELEMENTS": [
+      [
+        "Constraints",
+        "Moves With Nearby Elements"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Moves With Nearby Elements"
+      ]
+    ],
+    "MOVE_BASE_WITH_GRIDS": [
+      [
+        "Constraints",
+        "Move Base With Grids"
+      ]
+    ],
+    "MOVE_TOP_WITH_GRIDS": [
+      [
+        "Constraints",
+        "Move Top With Grids"
+      ]
+    ],
+    "NAME": [
+      [
+        "Item",
+        "Name"
+      ],
+      [
+        "IFC",
+        "NAME"
+      ],
+      [
+        "empty property set name",
+        "Name"
+      ],
+      [
+        "Classification:Uniformat Classification",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "NAME"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "NAME"
+      ],
+      [
+        "Identity Data",
+        "Name"
+      ],
+      [
+        "IFCBEAMTYPE",
+        "NAME"
+      ],
+      [
+        "IFCBUILDINGELEMENTPROXYTYPE",
+        "NAME"
+      ],
+      [
+        "IFCCOLUMNTYPE",
+        "NAME"
+      ],
+      [
+        "IFCDOORLININGPROPERTIES",
+        "NAME"
+      ],
+      [
+        "IFCDOORSTYLE",
+        "NAME"
+      ],
+      [
+        "IFCFURNITURETYPE",
+        "NAME"
+      ],
+      [
+        "IFCMEMBERTYPE",
+        "NAME"
+      ],
+      [
+        "IFCORGANIZATION",
+        "NAME"
+      ],
+      [
+        "IFCRAMPFLIGHTTYPE",
+        "NAME"
+      ],
+      [
+        "IFCSLABTYPE",
+        "NAME"
+      ],
+      [
+        "IFCSTAIRFLIGHTTYPE",
+        "NAME"
+      ],
+      [
+        "IFCWALLTYPE",
+        "NAME"
+      ],
+      [
+        "IFCWINDOWLININGPROPERTIES",
+        "NAME"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "NAME"
+      ],
+      [
+        "Pset_AirSideSystemInformation",
+        "Name"
+      ],
+      [
+        "Pset_ProductRequirements",
+        "Name"
+      ],
+      [
+        "PSet_Revit_Identity Data",
+        "Name"
+      ],
+      [
+        "Quantities",
+        "NAME"
+      ]
+    ],
+    "NETAREA": [
+      [
+        "Quantities",
+        "NetArea"
+      ]
+    ],
+    "NETFLOORAREA": [
+      [
+        "Quantities",
+        "NetFloorArea"
+      ]
+    ],
+    "NETVOLUME": [
+      [
+        "Quantities",
+        "NetVolume"
+      ]
+    ],
+    "NOMINALHEIGHT": [
+      [
+        "PSet_Revit_Type_Other",
+        "NominalHeight"
+      ]
+    ],
+    "NOMINALLENGTH": [
+      [
+        "PSet_Revit_Type_Other",
+        "NominalLength"
+      ]
+    ],
+    "NOMINALWIDTH": [
+      [
+        "PSet_Revit_Type_Other",
+        "NominalWidth"
+      ]
+    ],
+    "NOMINAL_WEIGHT": [
+      [
+        "Structural Analysis",
+        "Nominal Weight"
+      ]
+    ],
+    "NOSINGLENGTH": [
+      [
+        "Pset_StairFlightCommon",
+        "NosingLength"
+      ]
+    ],
+    "NOSING_LENGTH": [
+      [
+        "PSet_Revit_Type_Treads",
+        "Nosing Length"
+      ],
+      [
+        "Treads",
+        "Nosing Length"
+      ]
+    ],
+    "NOSING_PROFILE": [
+      [
+        "PSet_Revit_Type_Treads",
+        "Nosing Profile"
+      ]
+    ],
+    "NUMBER": [
+      [
+        "Horizontal Grid",
+        "Number"
+      ],
+      [
+        "Identity Data",
+        "Number"
+      ],
+      [
+        "PSet_Revit_Identity Data",
+        "Number"
+      ],
+      [
+        "Vertical Grid",
+        "Number"
+      ]
+    ],
+    "NUMBEROFRISER": [
+      [
+        "IFC",
+        "NUMBEROFRISER"
+      ],
+      [
+        "Pset_StairCommon",
+        "NumberOfRiser"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "NumberOfRiser"
+      ]
+    ],
+    "NUMBEROFSTOREYS": [
+      [
+        "Pset_BuildingCommon",
+        "NumberOfStoreys"
+      ]
+    ],
+    "NUMBEROFTREADS": [
+      [
+        "IFC",
+        "NUMBEROFTREADS"
+      ],
+      [
+        "Pset_StairCommon",
+        "NumberOfTreads"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "NumberOfTreads"
+      ]
+    ],
+    "NUMBER_OF_PEOPLE": [
+      [
+        "Energy Analysis",
+        "Number of People"
+      ]
+    ],
+    "NUMBER_OF_REPORTS": [
+      [
+        "Instance Part Properties",
+        "NUMBER_OF_REPORTS"
+      ]
+    ],
+    "NX_AREA": [
+      [
+        "Instance Part Properties",
+        "NX_Area"
+      ],
+      [
+        "Materials",
+        "NX_Area"
+      ]
+    ],
+    "NX_AREASOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_AreaSource"
+      ],
+      [
+        "Materials",
+        "NX_AreaSource"
+      ]
+    ],
+    "NX_ARRANGEMENT": [
+      [
+        "Instance Part Properties",
+        "NX_Arrangement"
+      ],
+      [
+        "Mass Properties Configuration Context",
+        "NX_Arrangement"
+      ]
+    ],
+    "NX_COMPONENTGROUP": [
+      [
+        "Instance Part Properties",
+        "NX_ComponentGroup"
+      ],
+      [
+        "Mass Properties Configuration Context",
+        "NX_ComponentGroup"
+      ]
+    ],
+    "NX_DENSITY": [
+      [
+        "Instance Part Properties",
+        "NX_Density"
+      ],
+      [
+        "Materials",
+        "NX_Density"
+      ]
+    ],
+    "NX_DENSITYSOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_DensitySource"
+      ],
+      [
+        "Materials",
+        "NX_DensitySource"
+      ]
+    ],
+    "NX_MASS": [
+      [
+        "Instance Part Properties",
+        "NX_Mass"
+      ],
+      [
+        "Materials",
+        "NX_Mass"
+      ]
+    ],
+    "NX_MASSPROPROLLUPCENTEROFMASSSOURCE": [
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupCenterOfMassSource"
+      ]
+    ],
+    "NX_MASSPROPROLLUPCENTEROFMASSX": [
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupCenterOfMassX"
+      ]
+    ],
+    "NX_MASSPROPROLLUPCENTEROFMASSY": [
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupCenterOfMassY"
+      ]
+    ],
+    "NX_MASSPROPROLLUPCENTEROFMASSZ": [
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupCenterOfMassZ"
+      ]
+    ],
+    "NX_MASSPROPROLLUPMASS": [
+      [
+        "Instance Part Properties",
+        "NX_MassPropRollupMass"
+      ],
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupMass"
+      ]
+    ],
+    "NX_MASSPROPROLLUPMASSSOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_MassPropRollupMassSource"
+      ],
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupMassSource"
+      ]
+    ],
+    "NX_MASSPROPROLLUPVOLUME": [
+      [
+        "Instance Part Properties",
+        "NX_MassPropRollupVolume"
+      ],
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupVolume"
+      ]
+    ],
+    "NX_MASSPROPROLLUPVOLUMESOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_MassPropRollupVolumeSource"
+      ],
+      [
+        "Rolled-Up Mass Properties",
+        "NX_MassPropRollupVolumeSource"
+      ]
+    ],
+    "NX_MASSSOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_MassSource"
+      ],
+      [
+        "Materials",
+        "NX_MassSource"
+      ]
+    ],
+    "NX_MATERIAL": [
+      [
+        "Instance Part Properties",
+        "NX_Material"
+      ],
+      [
+        "Materials",
+        "NX_Material"
+      ]
+    ],
+    "NX_MATERIALMISSINGASSIGNMENTS": [
+      [
+        "Instance Part Properties",
+        "NX_MaterialMissingAssignments"
+      ],
+      [
+        "Materials",
+        "NX_MaterialMissingAssignments"
+      ]
+    ],
+    "NX_MATERIALMULTIPLEASSIGNED": [
+      [
+        "Instance Part Properties",
+        "NX_MaterialMultipleAssigned"
+      ],
+      [
+        "Materials",
+        "NX_MaterialMultipleAssigned"
+      ]
+    ],
+    "NX_REFERENCESET": [
+      [
+        "Instance Part Properties",
+        "NX_ReferenceSet"
+      ],
+      [
+        "Mass Properties Configuration Context",
+        "NX_ReferenceSet"
+      ]
+    ],
+    "NX_VOLUME": [
+      [
+        "Instance Part Properties",
+        "NX_Volume"
+      ],
+      [
+        "Materials",
+        "NX_Volume"
+      ]
+    ],
+    "NX_VOLUMESOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_VolumeSource"
+      ],
+      [
+        "Materials",
+        "NX_VolumeSource"
+      ]
+    ],
+    "NX_WEIGHT": [
+      [
+        "Instance Part Properties",
+        "NX_Weight"
+      ],
+      [
+        "Materials",
+        "NX_Weight"
+      ]
+    ],
+    "NX_WEIGHTSOURCE": [
+      [
+        "Instance Part Properties",
+        "NX_WeightSource"
+      ],
+      [
+        "Materials",
+        "NX_WeightSource"
+      ]
+    ],
+    "OBJECTTYPE": [
+      [
+        "IFC",
+        "OBJECTTYPE"
+      ]
+    ],
+    "OCCUPANCYZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "OccupancyZoneName"
+      ]
+    ],
+    "OFFSET": [
+      [
+        "Constraints",
+        "Offset"
+      ],
+      [
+        "Horizontal Grid",
+        "Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Offset"
+      ],
+      [
+        "Vertical Grid",
+        "Offset"
+      ]
+    ],
+    "OFFSETFROMREFERENCELINE": [
+      [
+        "IFCMATERIALLAYERSETUSAGE",
+        "OFFSETFROMREFERENCELINE"
+      ]
+    ],
+    "OFFSET_FROM_ATTACHMENT_AT_TOP": [
+      [
+        "Construction",
+        "Offset From Attachment At Top"
+      ]
+    ],
+    "OFFSET_FROM_HOST": [
+      [
+        "Constraints",
+        "Offset from Host"
+      ]
+    ],
+    "OFFSET_FROM_PATH": [
+      [
+        "Constraints",
+        "Offset from Path"
+      ]
+    ],
+    "OFFSET_FROM_SURFACE": [
+      [
+        "Dimensions",
+        "Offset from Surface"
+      ]
+    ],
+    "OFFSET_FROM_SURFACE_ACTUAL": [
+      [
+        "Other",
+        "Offset from Surface actual"
+      ]
+    ],
+    "OMNICLASS_NUMBER": [
+      [
+        "Identity Data",
+        "OmniClass Number"
+      ],
+      [
+        "PSet_Revit_Type_Identity Data",
+        "OmniClass Number"
+      ]
+    ],
+    "OMNICLASS_TABLE_13_CATEGORY": [
+      [
+        "PSet_Revit_Identity Data",
+        "OmniClass Table 13 Category"
+      ]
+    ],
+    "OMNICLASS_TITLE": [
+      [
+        "Identity Data",
+        "OmniClass Title"
+      ],
+      [
+        "PSet_Revit_Type_Identity Data",
+        "OmniClass Title"
+      ]
+    ],
+    "OPEN_STRINGER_OFFSET": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Open Stringer Offset"
+      ]
+    ],
+    "OPERATIONTYPE": [
+      [
+        "IFC",
+        "OPERATIONTYPE"
+      ],
+      [
+        "IFCDOORSTYLE",
+        "OPERATIONTYPE"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "OPERATIONTYPE"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "OperationType"
+      ]
+    ],
+    "ORGANIZATION_NAME": [
+      [
+        "Identity Data",
+        "Organization Name"
+      ]
+    ],
+    "ORIENTATION": [
+      [
+        "Constraints",
+        "Orientation"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Orientation"
+      ]
+    ],
+    "OS_PART_NAME": [
+      [
+        "Instance Part Properties",
+        "OS_PART_NAME"
+      ],
+      [
+        "empty property set name",
+        "OS_PART_NAME"
+      ]
+    ],
+    "OVERALLHEIGHT": [
+      [
+        "IFC",
+        "OVERALLHEIGHT"
+      ]
+    ],
+    "OVERALLWIDTH": [
+      [
+        "IFC",
+        "OVERALLWIDTH"
+      ]
+    ],
+    "PAINT_AREA": [
+      [
+        "Structural",
+        "Paint Area"
+      ]
+    ],
+    "PANEL": [
+      [
+        "Other",
+        "Panel"
+      ]
+    ],
+    "PANELAREALENGTH": [
+      [
+        "Other",
+        "PanelAreaLength"
+      ]
+    ],
+    "PANELARRAYLENGTH": [
+      [
+        "Other",
+        "PanelArrayLength"
+      ]
+    ],
+    "PANELARRAYNUM": [
+      [
+        "Other",
+        "PanelArrayNum"
+      ]
+    ],
+    "PANELWIDTH": [
+      [
+        "Other",
+        "PanelWidth"
+      ]
+    ],
+    "PANEL_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Panel Material"
+      ]
+    ],
+    "PARAMETERTAKESPRECEDENCE": [
+      [
+        "IFCDOORSTYLE",
+        "PARAMETERTAKESPRECEDENCE"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "PARAMETERTAKESPRECEDENCE"
+      ]
+    ],
+    "PARTITIONINGTYPE": [
+      [
+        "IFC",
+        "PARTITIONINGTYPE"
+      ]
+    ],
+    "PERIMETER": [
+      [
+        "Dimensions",
+        "Perimeter"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Perimeter"
+      ],
+      [
+        "Quantities",
+        "Perimeter"
+      ],
+      [
+        "Structural Analysis",
+        "Perimeter"
+      ]
+    ],
+    "PHASE": [
+      [
+        "IFC",
+        "PHASE"
+      ],
+      [
+        "Phasing",
+        "Phase"
+      ],
+      [
+        "PSet_Revit_Phasing",
+        "Phase"
+      ]
+    ],
+    "PHASE_CREATED": [
+      [
+        "Phasing",
+        "Phase Created"
+      ],
+      [
+        "PSet_Revit_Phasing",
+        "Phase Created"
+      ]
+    ],
+    "PHASE_ID": [
+      [
+        "Other",
+        "Phase Id"
+      ]
+    ],
+    "PILE_EMBEDMENT": [
+      [
+        "Dimensions",
+        "Pile Embedment"
+      ]
+    ],
+    "PILE_TYPE": [
+      [
+        "Construction",
+        "Pile Type"
+      ]
+    ],
+    "PITCHANGLE": [
+      [
+        "Pset_SlabCommon",
+        "PitchAngle"
+      ]
+    ],
+    "PLASTIC_MODULUS_STRONG_AXIS": [
+      [
+        "Structural Analysis",
+        "Plastic Modulus strong axis"
+      ]
+    ],
+    "PLASTIC_MODULUS_WEAK_AXIS": [
+      [
+        "Structural Analysis",
+        "Plastic Modulus weak axis"
+      ]
+    ],
+    "PLENUM_LIGHTING_CONTRIBUTION": [
+      [
+        "Energy Analysis",
+        "Plenum Lighting Contribution"
+      ]
+    ],
+    "PLIBPARTTYPE": [
+      [
+        "Instance Part Properties",
+        "PLibPartType"
+      ]
+    ],
+    "PLINTH_DEPTH": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Plinth Depth"
+      ]
+    ],
+    "PLINTH_HEIGHT": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Plinth Height"
+      ]
+    ],
+    "POSITION": [
+      [
+        "Construction",
+        "Position"
+      ],
+      [
+        "Handrail 1(Type)",
+        "Position"
+      ],
+      [
+        "Handrail 2(Type)",
+        "Position"
+      ]
+    ],
+    "POWER_LOAD_UNITS": [
+      [
+        "Energy Analysis",
+        "Power Load Units"
+      ]
+    ],
+    "PREDEFINEDTYPE": [
+      [
+        "IFC",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCBEAMTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCBUILDINGELEMENTPROXYTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCCOLUMNTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCMEMBERTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCRAMPFLIGHTTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCSLABTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCSTAIRFLIGHTTYPE",
+        "PREDEFINEDTYPE"
+      ],
+      [
+        "IFCWALLTYPE",
+        "PREDEFINEDTYPE"
+      ]
+    ],
+    "PREPARED_BY": [
+      [
+        "Instance Part Properties",
+        "PREPARED_BY"
+      ],
+      [
+        "owning_user",
+        "PREPARED_BY"
+      ]
+    ],
+    "PRINCIPAL_AXES_ANGLE": [
+      [
+        "Structural Analysis",
+        "Principal Axes Angle"
+      ]
+    ],
+    "PRODUCTIONYEAR": [
+      [
+        "PSet_Revit_Type_Other",
+        "ProductionYear"
+      ]
+    ],
+    "PROJECTEDAREA": [
+      [
+        "Pset_RoofCommon",
+        "ProjectedArea"
+      ]
+    ],
+    "PROJECT_ADDRESS": [
+      [
+        "Other",
+        "Project Address"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Project Address"
+      ]
+    ],
+    "PROJECT_ISSUE_DATE": [
+      [
+        "Other",
+        "Project Issue Date"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Project Issue Date"
+      ]
+    ],
+    "PROJECT_NAME": [
+      [
+        "Other",
+        "Project Name"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Project Name"
+      ]
+    ],
+    "PROJECT_NO": [
+      [
+        "Other",
+        "Project No."
+      ]
+    ],
+    "PROJECT_NUMBER": [
+      [
+        "Other",
+        "Project Number"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Project Number"
+      ]
+    ],
+    "PROJECT_STATUS": [
+      [
+        "Other",
+        "Project Status"
+      ],
+      [
+        "PSet_Revit_Other",
+        "Project Status"
+      ]
+    ],
+    "R": [
+      [
+        "Dimensions",
+        "r"
+      ]
+    ],
+    "RAFTER_CUT": [
+      [
+        "Construction",
+        "Rafter Cut"
+      ],
+      [
+        "PSet_Revit_Construction",
+        "Rafter Cut"
+      ]
+    ],
+    "RAILING_HEIGHT": [
+      [
+        "Construction(Type)",
+        "Railing Height"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Railing Height"
+      ]
+    ],
+    "RAIL_CONNECTIONS": [
+      [
+        "Construction(Type)",
+        "Rail Connections"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Rail Connections"
+      ]
+    ],
+    "RAIL_WIDTH_BASE": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Rail Width - Base"
+      ]
+    ],
+    "RAIL_WIDTH_TOP": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Rail Width - Top"
+      ]
+    ],
+    "RAMP_MATERIAL": [
+      [
+        "Materials and Finishes(Type)",
+        "Ramp Material"
+      ]
+    ],
+    "RAMP_MAX_SLOPE_1_X": [
+      [
+        "Dimensions(Type)",
+        "Ramp Max Slope (1/x)"
+      ]
+    ],
+    "REBAR_COVER": [
+      [
+        "Structural",
+        "Rebar Cover"
+      ]
+    ],
+    "REBAR_COVER_BOTTOM_FACE": [
+      [
+        "PSet_Revit_Structural",
+        "Rebar Cover - Bottom Face"
+      ],
+      [
+        "Structural",
+        "Rebar Cover - Bottom Face"
+      ]
+    ],
+    "REBAR_COVER_EXTERIOR_FACE": [
+      [
+        "PSet_Revit_Structural",
+        "Rebar Cover - Exterior Face"
+      ],
+      [
+        "Structural",
+        "Rebar Cover - Exterior Face"
+      ]
+    ],
+    "REBAR_COVER_INTERIOR_FACE": [
+      [
+        "PSet_Revit_Structural",
+        "Rebar Cover - Interior Face"
+      ],
+      [
+        "Structural",
+        "Rebar Cover - Interior Face"
+      ]
+    ],
+    "REBAR_COVER_OTHER_FACES": [
+      [
+        "PSet_Revit_Structural",
+        "Rebar Cover - Other Faces"
+      ],
+      [
+        "Structural",
+        "Rebar Cover - Other Faces"
+      ]
+    ],
+    "REBAR_COVER_TOP_FACE": [
+      [
+        "PSet_Revit_Structural",
+        "Rebar Cover - Top Face"
+      ],
+      [
+        "Structural",
+        "Rebar Cover - Top Face"
+      ]
+    ],
+    "REBAR_VOLUME": [
+      [
+        "Analysis Results",
+        "Rebar Volume"
+      ]
+    ],
+    "RECOMMENDED_PRESSURE": [
+      [
+        "Instance Part Properties",
+        "RECOMMENDED_PRESSURE"
+      ]
+    ],
+    "REFELEVATION": [
+      [
+        "IFC",
+        "REFELEVATION"
+      ]
+    ],
+    "REFERENCE": [
+      [
+        "Pset_BeamCommon",
+        "Reference"
+      ],
+      [
+        "Pset_BuildingCommon",
+        "Reference"
+      ],
+      [
+        "Pset_BuildingElementProxyCommon",
+        "Reference"
+      ],
+      [
+        "Pset_ColumnCommon",
+        "Reference"
+      ],
+      [
+        "Pset_CoveringCommon",
+        "Reference"
+      ],
+      [
+        "Pset_CurtainWallCommon",
+        "Reference"
+      ],
+      [
+        "Pset_DoorCommon",
+        "Reference"
+      ],
+      [
+        "Pset_MemberCommon",
+        "Reference"
+      ],
+      [
+        "Pset_PlateCommon",
+        "Reference"
+      ],
+      [
+        "Pset_QuantityTakeOff",
+        "Reference"
+      ],
+      [
+        "Pset_RailingCommon",
+        "Reference"
+      ],
+      [
+        "Pset_RampCommon",
+        "Reference"
+      ],
+      [
+        "Pset_RampFlightCommon",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarCountOfIndependentFooting",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfBeam",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfColumn",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfContinuousFooting",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfSlab",
+        "Reference"
+      ],
+      [
+        "Pset_ReinforcementBarPitchOfWall",
+        "Reference"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Reference"
+      ],
+      [
+        "Pset_RoofCommon",
+        "Reference"
+      ],
+      [
+        "Pset_SlabCommon",
+        "Reference"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "Reference"
+      ],
+      [
+        "Pset_StairCommon",
+        "Reference"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "Reference"
+      ],
+      [
+        "Pset_WallCommon",
+        "Reference"
+      ],
+      [
+        "Pset_WindowCommon",
+        "Reference"
+      ]
+    ],
+    "REFERENCEDSOURCE_EDITION": [
+      [
+        "Classification:Uniformat Classification",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "REFERENCEDSOURCE:EDITION"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "REFERENCEDSOURCE:EDITION"
+      ]
+    ],
+    "REFERENCEDSOURCE_NAME": [
+      [
+        "Classification:Uniformat Classification",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "REFERENCEDSOURCE:NAME"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "REFERENCEDSOURCE:NAME"
+      ]
+    ],
+    "REFERENCEDSOURCE_SOURCE": [
+      [
+        "Classification:Uniformat Classification",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:A1010100",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:A1010110",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:B10",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:B1010",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:B1010350",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:B1010400",
+        "REFERENCEDSOURCE:SOURCE"
+      ],
+      [
+        "Classification:Uniformat:B2010",
+        "REFERENCEDSOURCE:SOURCE"
+      ]
+    ],
+    "REFERENCE_LEVEL": [
+      [
+        "Constraints",
+        "Reference Level"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Reference Level"
+      ]
+    ],
+    "REFERENCE_LEVEL_ELEVATION": [
+      [
+        "Constraints",
+        "Reference Level Elevation"
+      ]
+    ],
+    "REFLATITUDE": [
+      [
+        "IFC",
+        "REFLATITUDE"
+      ]
+    ],
+    "REFLONGITUDE": [
+      [
+        "IFC",
+        "REFLONGITUDE"
+      ]
+    ],
+    "RELATED_TO_MASS": [
+      [
+        "Constraints",
+        "Related to Mass"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Related to Mass"
+      ]
+    ],
+    "RELATIVE_BASE_HEIGHT": [
+      [
+        "Constraints",
+        "Relative Base Height"
+      ]
+    ],
+    "RELATIVE_HEIGHT": [
+      [
+        "Constraints",
+        "Relative Height"
+      ]
+    ],
+    "RELATIVE_TOP_HEIGHT": [
+      [
+        "Constraints",
+        "Relative Top Height"
+      ]
+    ],
+    "REPLACEMENTCOST": [
+      [
+        "PSet_Revit_Type_Other",
+        "ReplacementCost"
+      ]
+    ],
+    "REQUIRED": [
+      [
+        "Item",
+        "Required"
+      ]
+    ],
+    "REUSE_CONSTRAINT_FACE_CHECKER": [
+      [
+        "Instance Part Properties",
+        "reuse_constraint_face_checker"
+      ],
+      [
+        "empty property set name",
+        "reuse_constraint_face_checker"
+      ]
+    ],
+    "REUSE_PART_CHECKER": [
+      [
+        "Instance Part Properties",
+        "reuse_part_checker"
+      ],
+      [
+        "empty property set name",
+        "reuse_part_checker"
+      ]
+    ],
+    "REUSE_PART_QUALITY_CHECKER": [
+      [
+        "Instance Part Properties",
+        "reuse_part_quality_checker"
+      ],
+      [
+        "empty property set name",
+        "reuse_part_quality_checker"
+      ]
+    ],
+    "RIGHT_LATERAL_OFFSET": [
+      [
+        "Supports(Type)",
+        "Right Lateral Offset"
+      ]
+    ],
+    "RIGHT_STRINGER": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Right Stringer"
+      ]
+    ],
+    "RIGHT_SUPPORT": [
+      [
+        "Supports(Type)",
+        "Right Support"
+      ]
+    ],
+    "RIGHT_SUPPORT_TYPE": [
+      [
+        "Supports(Type)",
+        "Right Support Type"
+      ]
+    ],
+    "RIGID_LINKS": [
+      [
+        "PSet_Revit_Analytical Model",
+        "Rigid Links"
+      ]
+    ],
+    "RISER": [
+      [
+        "Risers",
+        "Riser"
+      ]
+    ],
+    "RISERHEIGHT": [
+      [
+        "IFC",
+        "RISERHEIGHT"
+      ],
+      [
+        "Pset_StairCommon",
+        "RiserHeight"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "RiserHeight"
+      ]
+    ],
+    "RISER_MATERIAL": [
+      [
+        "Materials and Finishes",
+        "Riser Material"
+      ],
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Riser Material"
+      ]
+    ],
+    "RISER_THICKNESS": [
+      [
+        "PSet_Revit_Type_Risers",
+        "Riser Thickness"
+      ],
+      [
+        "Risers",
+        "Riser Thickness"
+      ]
+    ],
+    "RISER_TO_TREAD_CONNECTION": [
+      [
+        "PSet_Revit_Type_Risers",
+        "Riser to Tread Connection"
+      ],
+      [
+        "Risers",
+        "Riser To Tread Connection"
+      ]
+    ],
+    "RISER_TYPE": [
+      [
+        "PSet_Revit_Type_Risers",
+        "Riser Type"
+      ]
+    ],
+    "ROOMTAG": [
+      [
+        "PSet_Revit_Other",
+        "RoomTag"
+      ]
+    ],
+    "ROOM_BOUNDING": [
+      [
+        "Constraints",
+        "Room Bounding"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Room Bounding"
+      ]
+    ],
+    "ROUGHNESS": [
+      [
+        "Analytical Properties",
+        "Roughness"
+      ],
+      [
+        "Pset_ElementShading",
+        "Roughness"
+      ]
+    ],
+    "RUN_HEIGHT": [
+      [
+        "Constraints",
+        "Run Height"
+      ]
+    ],
+    "RUN_TYPE": [
+      [
+        "Construction(Type)",
+        "Run Type"
+      ]
+    ],
+    "S": [
+      [
+        "Dimensions",
+        "s"
+      ]
+    ],
+    "SAME_AS_RUN": [
+      [
+        "Treads",
+        "Same as Run"
+      ]
+    ],
+    "SANFIT_CAPACITY_CALCULATED_ROOM_BY_ROOM": [
+      [
+        "Other",
+        "Sanfit_capacity_calculated_room_by_room"
+      ]
+    ],
+    "SANFIT_COMPLY_PNAP_297": [
+      [
+        "Other",
+        "SanFit_Comply_PNAP_297"
+      ]
+    ],
+    "SASH": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Sash"
+      ]
+    ],
+    "SASH_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Sash Material"
+      ]
+    ],
+    "SCHEDULE_LEVEL": [
+      [
+        "Constraints",
+        "Schedule Level"
+      ]
+    ],
+    "SEAT_DEPTH": [
+      [
+        "Dimensions",
+        "Seat Depth"
+      ]
+    ],
+    "SEAT_LENGTH": [
+      [
+        "Dimensions",
+        "Seat Length"
+      ]
+    ],
+    "SEAT_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Seat Material"
+      ]
+    ],
+    "SECTION": [
+      [
+        "ProfileProperties",
+        "Section"
+      ]
+    ],
+    "SECTIONFAMILY": [
+      [
+        "ProfileProperties",
+        "SectionFamily"
+      ]
+    ],
+    "SECTION_AREA": [
+      [
+        "Structural Analysis",
+        "Section Area"
+      ]
+    ],
+    "SECTION_COMPONENT": [
+      [
+        "Instance Part Properties",
+        "SECTION-COMPONENT"
+      ],
+      [
+        "DB Component Instance",
+        "SECTION-COMPONENT"
+      ]
+    ],
+    "SECTION_NAME_KEY": [
+      [
+        "Identity Data",
+        "Section Name Key"
+      ]
+    ],
+    "SECTION_SHAPE": [
+      [
+        "Structural",
+        "Section Shape"
+      ]
+    ],
+    "SECURITY_LEVEL": [
+      [
+        "Instance Part Properties",
+        "Security Level"
+      ],
+      [
+        "ABB4HVDCDesignRevision",
+        "Security Level"
+      ]
+    ],
+    "SENIOR_ARCHITECT": [
+      [
+        "Other",
+        "Senior Architect"
+      ]
+    ],
+    "SENSIBLE_HEAT_GAIN_PER_PERSON": [
+      [
+        "Energy Analysis",
+        "Sensible Heat Gain per person"
+      ]
+    ],
+    "SERIALNUMBER": [
+      [
+        "PSet_Revit_Other",
+        "SerialNumber"
+      ]
+    ],
+    "SHAPE": [
+      [
+        "Construction(Type)",
+        "Shape"
+      ],
+      [
+        "Pset_ProvisionForVoid",
+        "Shape"
+      ],
+      [
+        "PSet_Revit_Type_Other",
+        "Shape"
+      ],
+      [
+        "Structural",
+        "Shape"
+      ]
+    ],
+    "SHAPETYPE": [
+      [
+        "IFC",
+        "SHAPETYPE"
+      ]
+    ],
+    "SHOW_UP_ARROW_IN_ALL_VIEWS": [
+      [
+        "Graphics",
+        "Show Up arrow in all views"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "Show Up arrow in all views"
+      ]
+    ],
+    "SILL_HEIGHT": [
+      [
+        "Constraints",
+        "Sill Height"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Sill Height"
+      ]
+    ],
+    "SINK_LOCATION": [
+      [
+        "PSet_Revit_Dimensions",
+        "Sink Location"
+      ]
+    ],
+    "SINK_LOCATION_TO_WALL": [
+      [
+        "PSet_Revit_Dimensions",
+        "Sink Location To Wall"
+      ]
+    ],
+    "SINK_OPENING_DEPTH": [
+      [
+        "PSet_Revit_Dimensions",
+        "Sink Opening Depth"
+      ]
+    ],
+    "SINK_OPENING_WIDTH": [
+      [
+        "PSet_Revit_Dimensions",
+        "Sink Opening Width"
+      ]
+    ],
+    "SIZE": [
+      [
+        "PSet_Revit_Type_Other",
+        "Size"
+      ]
+    ],
+    "SIZEABLE": [
+      [
+        "IFCDOORSTYLE",
+        "SIZEABLE"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "SIZEABLE"
+      ]
+    ],
+    "SLANTED": [
+      [
+        "Risers",
+        "Slanted"
+      ]
+    ],
+    "SLOPE": [
+      [
+        "Dimensions",
+        "Slope"
+      ],
+      [
+        "Pset_BeamCommon",
+        "Slope"
+      ],
+      [
+        "Pset_ColumnCommon",
+        "Slope"
+      ],
+      [
+        "Pset_MemberCommon",
+        "Slope"
+      ],
+      [
+        "Pset_RampFlightCommon",
+        "Slope"
+      ]
+    ],
+    "SLOPED_FLANGE_ANGLE": [
+      [
+        "Structural Section Geometry",
+        "Sloped Flange Angle"
+      ]
+    ],
+    "SOURCE_FILE": [
+      [
+        "Item",
+        "Source File"
+      ]
+    ],
+    "SPAN": [
+      [
+        "Pset_BeamCommon",
+        "Span"
+      ],
+      [
+        "Pset_MemberCommon",
+        "Span"
+      ]
+    ],
+    "SPECIFICATION": [
+      [
+        "Instance Part Properties",
+        "SPECIFICATION"
+      ]
+    ],
+    "SPECIFIED_LIGHTING_LOAD": [
+      [
+        "Energy Analysis",
+        "Specified Lighting Load"
+      ]
+    ],
+    "SPECIFIED_LIGHTING_LOAD_PER_AREA": [
+      [
+        "Energy Analysis",
+        "Specified Lighting Load per area"
+      ]
+    ],
+    "SPECIFIED_POWER_LOAD": [
+      [
+        "Energy Analysis",
+        "Specified Power Load"
+      ]
+    ],
+    "SPECIFIED_POWER_LOAD_PER_AREA": [
+      [
+        "Energy Analysis",
+        "Specified Power Load per area"
+      ]
+    ],
+    "STAMP": [
+      [
+        "Instance Part Properties",
+        "STAMP"
+      ],
+      [
+        "empty property set name",
+        "STAMP"
+      ]
+    ],
+    "START_ATTACHMENT_DISTANCE": [
+      [
+        "Structural",
+        "Start Attachment Distance"
+      ]
+    ],
+    "START_ATTACHMENT_TYPE": [
+      [
+        "Structural",
+        "Start Attachment Type"
+      ]
+    ],
+    "START_EXTENSION": [
+      [
+        "Construction",
+        "Start Extension"
+      ],
+      [
+        "Geometric Position",
+        "Start Extension"
+      ],
+      [
+        "PSet_Revit_Construction",
+        "Start Extension"
+      ]
+    ],
+    "START_EXTENSION_CALCULATION": [
+      [
+        "PSet_Revit_Other",
+        "Start Extension Calculation"
+      ]
+    ],
+    "START_FX": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Fx"
+      ]
+    ],
+    "START_FY": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Fy"
+      ]
+    ],
+    "START_FZ": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Fz"
+      ]
+    ],
+    "START_JOIN_CUTBACK": [
+      [
+        "Geometric Position",
+        "Start Join Cutback"
+      ]
+    ],
+    "START_LEVEL_OFFSET": [
+      [
+        "Constraints",
+        "Start Level Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Start Level Offset"
+      ]
+    ],
+    "START_MX": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Mx"
+      ]
+    ],
+    "START_MY": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start My"
+      ]
+    ],
+    "START_MZ": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Mz"
+      ]
+    ],
+    "START_OFFSET": [
+      [
+        "Construction",
+        "Start Offset"
+      ]
+    ],
+    "START_OF_ATTACHMENT_TO_REFERENCE_COLUMN": [
+      [
+        "Structural",
+        "Start of Attachment to Reference Column"
+      ]
+    ],
+    "START_RELEASE": [
+      [
+        "PSet_Revit_Structural Analysis",
+        "Start Release"
+      ]
+    ],
+    "STICK_SYMBOL_LOCATION": [
+      [
+        "PSet_Revit_Structural",
+        "Stick Symbol Location"
+      ],
+      [
+        "Structural",
+        "Stick Symbol Location"
+      ]
+    ],
+    "STILE_WIDTH_HINGE": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Stile Width - Hinge"
+      ]
+    ],
+    "STILE_WIDTH_LATCH": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Stile Width - Latch"
+      ]
+    ],
+    "STRINGER_CARRIAGE_HEIGHT": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Stringer Carriage Height"
+      ]
+    ],
+    "STRINGER_HEIGHT": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Stringer Height"
+      ]
+    ],
+    "STRINGER_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Stringer Material"
+      ]
+    ],
+    "STRINGER_THICKNESS": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Stringer Thickness"
+      ]
+    ],
+    "STRUCTURAL": [
+      [
+        "Identity Data",
+        "Structural"
+      ],
+      [
+        "PSet_Revit_Structural",
+        "Structural"
+      ],
+      [
+        "Structural",
+        "Structural"
+      ]
+    ],
+    "STRUCTURAL_DEPTH": [
+      [
+        "Construction",
+        "Structural Depth"
+      ]
+    ],
+    "STRUCTURAL_DEPTH_ON_LANDING": [
+      [
+        "Dimensions(Type)",
+        "Structural Depth On Landing"
+      ]
+    ],
+    "STRUCTURAL_DEPTH_ON_RUN": [
+      [
+        "Dimensions(Type)",
+        "Structural Depth On Run"
+      ]
+    ],
+    "STRUCTURAL_MATERIAL": [
+      [
+        "Materials and Finishes",
+        "Structural Material"
+      ],
+      [
+        "Materials and Finishes(Type)",
+        "Structural Material"
+      ]
+    ],
+    "STRUCTURAL_USAGE": [
+      [
+        "PSet_Revit_Structural",
+        "Structural Usage"
+      ],
+      [
+        "PSet_Revit_Structural Analysis",
+        "Structural Usage"
+      ],
+      [
+        "PSet_Revit_Type_Structural",
+        "Structural Usage"
+      ],
+      [
+        "Structural",
+        "Structural Usage"
+      ],
+      [
+        "Structural(Type)",
+        "Structural Usage"
+      ]
+    ],
+    "STUDS_EDGE_COVER": [
+      [
+        "Dimensions(Type)",
+        "Studs Edge Cover"
+      ]
+    ],
+    "STUDS_END_COVER": [
+      [
+        "Dimensions(Type)",
+        "Studs End Cover"
+      ]
+    ],
+    "STUD_LENGTH": [
+      [
+        "Dimensions(Type)",
+        "Stud Length"
+      ]
+    ],
+    "STUD_ROW_QTY": [
+      [
+        "Construction(Type)",
+        "Stud Row QTY"
+      ]
+    ],
+    "SUSTAINABILITYPERFORMANCE": [
+      [
+        "PSet_Revit_Type_Other",
+        "SustainabilityPerformance"
+      ]
+    ],
+    "SUTD_COLUMN_QTY": [
+      [
+        "Construction(Type)",
+        "Sutd Column QTY"
+      ]
+    ],
+    "SYMBOL": [
+      [
+        "Graphics",
+        "Symbol"
+      ],
+      [
+        "Graphics(Type)",
+        "Symbol"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Symbol"
+      ]
+    ],
+    "SYMBOL_AT_END_1_DEFAULT": [
+      [
+        "Graphics",
+        "Symbol at End 1 Default"
+      ],
+      [
+        "Graphics(Type)",
+        "Symbol at End 1 Default"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Symbol at End 1 Default"
+      ]
+    ],
+    "SYMBOL_AT_END_2_DEFAULT": [
+      [
+        "Graphics",
+        "Symbol at End 2 Default"
+      ],
+      [
+        "Graphics(Type)",
+        "Symbol at End 2 Default"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Symbol at End 2 Default"
+      ]
+    ],
+    "T": [
+      [
+        "Dimensions",
+        "t"
+      ]
+    ],
+    "TAG": [
+      [
+        "IFC",
+        "TAG"
+      ],
+      [
+        "IFCBEAMTYPE",
+        "TAG"
+      ],
+      [
+        "IFCBUILDINGELEMENTPROXYTYPE",
+        "TAG"
+      ],
+      [
+        "IFCCOLUMNTYPE",
+        "TAG"
+      ],
+      [
+        "IFCDOORSTYLE",
+        "TAG"
+      ],
+      [
+        "IFCFURNITURETYPE",
+        "TAG"
+      ],
+      [
+        "IFCMEMBERTYPE",
+        "TAG"
+      ],
+      [
+        "IFCRAMPFLIGHTTYPE",
+        "TAG"
+      ],
+      [
+        "IFCSLABTYPE",
+        "TAG"
+      ],
+      [
+        "IFCSTAIRFLIGHTTYPE",
+        "TAG"
+      ],
+      [
+        "IFCWALLTYPE",
+        "TAG"
+      ],
+      [
+        "IFCWINDOWSTYLE",
+        "TAG"
+      ]
+    ],
+    "TAGNUMBER": [
+      [
+        "PSet_Revit_Other",
+        "TagNumber"
+      ]
+    ],
+    "TAG_NEW_MEMBERS_IN_VIEW": [
+      [
+        "Identity Data",
+        "Tag new members in view"
+      ]
+    ],
+    "TANGENT_JOINS": [
+      [
+        "Construction(Type)",
+        "Tangent Joins"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Tangent Joins"
+      ]
+    ],
+    "TC_INSTANTIATE": [
+      [
+        "Instance Part Properties",
+        "TC-INSTANTIATE"
+      ],
+      [
+        "empty property set name",
+        "TC-INSTANTIATE"
+      ]
+    ],
+    "TEMPLATE_PART": [
+      [
+        "Instance Part Properties",
+        "TEMPLATE_PART"
+      ],
+      [
+        "empty property set name",
+        "TEMPLATE_PART"
+      ]
+    ],
+    "TEXT_FONT": [
+      [
+        "Graphics(Type)",
+        "Text Font"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Text Font"
+      ]
+    ],
+    "TEXT_SIZE": [
+      [
+        "Graphics(Type)",
+        "Text Size"
+      ],
+      [
+        "PSet_Revit_Type_Graphics",
+        "Text Size"
+      ]
+    ],
+    "TF": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "tf"
+      ]
+    ],
+    "THERMALTRANSMITTANCE": [
+      [
+        "Pset_CoveringCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_DoorCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_PlateCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_RoofCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_SlabCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_WallCommon",
+        "ThermalTransmittance"
+      ],
+      [
+        "Pset_WindowCommon",
+        "ThermalTransmittance"
+      ]
+    ],
+    "THERMAL_MASS": [
+      [
+        "Analytical Properties",
+        "Thermal Mass"
+      ],
+      [
+        "Analytical Properties",
+        "Thermal mass"
+      ]
+    ],
+    "THERMAL_RESISTANCE_R": [
+      [
+        "Analytical Properties",
+        "Thermal Resistance (R)"
+      ]
+    ],
+    "THICKNESS": [
+      [
+        "Construction",
+        "Thickness"
+      ],
+      [
+        "Construction(Type)",
+        "Thickness"
+      ],
+      [
+        "Dimensions",
+        "Thickness"
+      ],
+      [
+        "Dimensions(Type)",
+        "_Thickness"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Thickness"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Thickness"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Thickness"
+      ]
+    ],
+    "THREAD": [
+      [
+        "Instance Part Properties",
+        "THREAD"
+      ],
+      [
+        "empty property set name",
+        "THREAD"
+      ]
+    ],
+    "TOP_CONSTRAINT": [
+      [
+        "Constraints",
+        "Top Constraint"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Top Constraint"
+      ]
+    ],
+    "TOP_CUT_STYLE": [
+      [
+        "Construction",
+        "Top Cut Style"
+      ]
+    ],
+    "TOP_EXTENSION": [
+      [
+        "Construction",
+        "Top Extension"
+      ]
+    ],
+    "TOP_EXTENSION_DISTANCE": [
+      [
+        "Constraints",
+        "Top Extension Distance"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Top Extension Distance"
+      ]
+    ],
+    "TOP_INSERTION": [
+      [
+        "Constraints",
+        "Top Insertion"
+      ]
+    ],
+    "TOP_IS_ATTACHED": [
+      [
+        "Constraints",
+        "Top is Attached"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Top is Attached"
+      ]
+    ],
+    "TOP_LEVEL": [
+      [
+        "Constraints",
+        "Top Level"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Top Level"
+      ]
+    ],
+    "TOP_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Top Material"
+      ]
+    ],
+    "TOP_OFFSET": [
+      [
+        "Constraints",
+        "Top Offset"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Top Offset"
+      ]
+    ],
+    "TOP_OFFSET_NEGATIVE": [
+      [
+        "Other",
+        "Top Offset negative"
+      ]
+    ],
+    "TOP_OFFSET_POSITIVE": [
+      [
+        "Other",
+        "Top Offset positive"
+      ]
+    ],
+    "TOP_OF_CABINET": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Top Of Cabinet"
+      ]
+    ],
+    "TOP_WEB_FILLET": [
+      [
+        "Structural Section Geometry",
+        "Top Web Fillet"
+      ]
+    ],
+    "TOP_WIDTH": [
+      [
+        "Dimensions",
+        "Top Width"
+      ]
+    ],
+    "TORSIONAL_MODULUS": [
+      [
+        "Structural Analysis",
+        "Torsional Modulus"
+      ]
+    ],
+    "TORSIONAL_MOMENT_OF_INERTIA": [
+      [
+        "Structural Analysis",
+        "Torsional Moment of Inertia"
+      ]
+    ],
+    "TOTALAREA": [
+      [
+        "Pset_RoofCommon",
+        "TotalArea"
+      ]
+    ],
+    "TOTALTHICKNESS": [
+      [
+        "Pset_CoveringCommon",
+        "TotalThickness"
+      ]
+    ],
+    "TOTAL_DEPTH": [
+      [
+        "Dimensions(Type)",
+        "Total Depth"
+      ]
+    ],
+    "TOTAL_HEAT_GAIN_PER_PERSON": [
+      [
+        "Energy Analysis",
+        "Total Heat Gain per person"
+      ]
+    ],
+    "TOTAL_THICKNESS": [
+      [
+        "Dimensions",
+        "Total Thickness"
+      ]
+    ],
+    "TREAD": [
+      [
+        "Treads",
+        "Tread"
+      ]
+    ],
+    "TREADLENGTH": [
+      [
+        "IFC",
+        "TREADLENGTH"
+      ],
+      [
+        "Pset_StairCommon",
+        "TreadLength"
+      ],
+      [
+        "Pset_StairFlightCommon",
+        "TreadLength"
+      ]
+    ],
+    "TREADLENGTHATINNERSIDE": [
+      [
+        "Pset_StairFlightCommon",
+        "TreadLengthAtInnerSide"
+      ]
+    ],
+    "TREADLENGTHATOFFSET": [
+      [
+        "Pset_StairFlightCommon",
+        "TreadLengthAtOffset"
+      ]
+    ],
+    "TREAD_MATERIAL": [
+      [
+        "Materials and Finishes",
+        "Tread Material"
+      ],
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Tread Material"
+      ]
+    ],
+    "TREAD_RISER_START_NUMBER": [
+      [
+        "Dimensions",
+        "Tread/Riser Start Number"
+      ]
+    ],
+    "TREAD_THICKNESS": [
+      [
+        "PSet_Revit_Type_Treads",
+        "Tread Thickness"
+      ],
+      [
+        "Treads",
+        "Tread Thickness"
+      ]
+    ],
+    "TRIM_EXTERIOR_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Trim Exterior Material"
+      ]
+    ],
+    "TRIM_INTERIOR_MATERIAL": [
+      [
+        "PSet_Revit_Type_Materials and Finishes",
+        "Trim Interior Material"
+      ]
+    ],
+    "TRIM_PROJECTION_EXT": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Trim Projection Ext"
+      ]
+    ],
+    "TRIM_PROJECTION_INT": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Trim Projection Int"
+      ]
+    ],
+    "TRIM_STRINGERS_AT_TOP": [
+      [
+        "PSet_Revit_Type_Stringers",
+        "Trim Stringers at Top"
+      ]
+    ],
+    "TRIM_SUPPORT_AT_UPPER": [
+      [
+        "Constraints",
+        "Trim Support at Upper"
+      ]
+    ],
+    "TRIM_WIDTH": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Trim Width"
+      ]
+    ],
+    "TW": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "tw"
+      ]
+    ],
+    "TYPE": [
+      [
+        "Item",
+        "Type"
+      ],
+      [
+        "Handrail 1(Type)",
+        "Type"
+      ],
+      [
+        "Other",
+        "Type"
+      ],
+      [
+        "Top Rail(Type)",
+        "Type"
+      ]
+    ],
+    "TYPE_COMMENTS": [
+      [
+        "Identity Data",
+        "Type Comments"
+      ]
+    ],
+    "TYPE_ID": [
+      [
+        "Other",
+        "Type Id"
+      ]
+    ],
+    "TYPE_MARK": [
+      [
+        "Identity Data",
+        "Type Mark"
+      ],
+      [
+        "PSet_Revit_Type_Identity Data",
+        "Type Mark"
+      ]
+    ],
+    "TYPE_NAME": [
+      [
+        "Identity Data",
+        "Type Name"
+      ],
+      [
+        "Identity Data(Type)",
+        "Type Name"
+      ]
+    ],
+    "UNBOUNDED_HEIGHT": [
+      [
+        "Dimensions",
+        "Unbounded Height"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Unbounded Height"
+      ]
+    ],
+    "UNCONNECTED_HEIGHT": [
+      [
+        "Constraints",
+        "Unconnected Height"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Unconnected Height"
+      ]
+    ],
+    "UNDERSIDE_OF_WINDER": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Underside of Winder"
+      ]
+    ],
+    "UNDERSIDE_SURFACE": [
+      [
+        "Construction",
+        "Underside Surface"
+      ]
+    ],
+    "UNIT": [
+      [
+        "Item",
+        "Unit"
+      ]
+    ],
+    "UPPER_END_CUT": [
+      [
+        "Constraints",
+        "Upper End Cut"
+      ]
+    ],
+    "UPPER_LIMIT": [
+      [
+        "Constraints",
+        "Upper Limit"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Upper Limit"
+      ]
+    ],
+    "UP_ARROW": [
+      [
+        "PSet_Revit_Graphics",
+        "Up arrow"
+      ]
+    ],
+    "UP_LABEL": [
+      [
+        "Graphics",
+        "Up label"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "Up label"
+      ]
+    ],
+    "UP_TEXT": [
+      [
+        "Graphics",
+        "Up text"
+      ],
+      [
+        "PSet_Revit_Graphics",
+        "Up text"
+      ]
+    ],
+    "USE_LANDING_HEIGHT_ADJUSTMENT": [
+      [
+        "Construction(Type)",
+        "Use Landing Height Adjustment"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Use Landing Height Adjustment"
+      ]
+    ],
+    "USE_TOP_RAIL": [
+      [
+        "Top Rail(Type)",
+        "Use Top Rail"
+      ]
+    ],
+    "VARIABLE_PANEL": [
+      [
+        "Other",
+        "Variable Panel"
+      ]
+    ],
+    "VENTILATIONZONENAME": [
+      [
+        "PSet_Revit_Other",
+        "VentilationZoneName"
+      ]
+    ],
+    "VERSION": [
+      [
+        "IFCAPPLICATION",
+        "VERSION"
+      ]
+    ],
+    "VERTICAL_MEMBER_VISIBILITY": [
+      [
+        "Constraints",
+        "Vertical Member Visibility"
+      ]
+    ],
+    "VERTICAL_PROJECTION": [
+      [
+        "PSet_Revit_Analytical Model",
+        "Vertical Projection"
+      ]
+    ],
+    "VOLUME": [
+      [
+        "Dimensions",
+        "Volume"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Volume"
+      ]
+    ],
+    "W": [
+      [
+        "PSet_Revit_Type_Structural",
+        "W"
+      ],
+      [
+        "Structural",
+        "W"
+      ]
+    ],
+    "WAISTTHICKNESS": [
+      [
+        "Pset_StairFlightCommon",
+        "WaistThickness"
+      ]
+    ],
+    "WALKINGLINEOFFSET": [
+      [
+        "Pset_StairFlightCommon",
+        "WalkingLineOffset"
+      ]
+    ],
+    "WALLCOVERING": [
+      [
+        "PSet_Revit_Other",
+        "WallCovering"
+      ],
+      [
+        "Pset_SpaceCommon",
+        "WallCovering"
+      ]
+    ],
+    "WALL_CLOSURE": [
+      [
+        "PSet_Revit_Type_Construction",
+        "Wall Closure"
+      ]
+    ],
+    "WARPING_CONSTANT": [
+      [
+        "Structural Analysis",
+        "Warping Constant"
+      ]
+    ],
+    "WARRANTYDESCRIPTION": [
+      [
+        "PSet_Revit_Type_Other",
+        "WarrantyDescription"
+      ]
+    ],
+    "WARRANTYDURATIONLABOR": [
+      [
+        "PSet_Revit_Type_Other",
+        "WarrantyDurationLabor"
+      ]
+    ],
+    "WARRANTYDURATIONPARTS": [
+      [
+        "PSet_Revit_Type_Other",
+        "WarrantyDurationParts"
+      ]
+    ],
+    "WARRANTYGUARANTORLABOR": [
+      [
+        "PSet_Revit_Type_Other",
+        "WarrantyGuarantorLabor"
+      ]
+    ],
+    "WARRANTYGUARANTORPARTS": [
+      [
+        "PSet_Revit_Type_Other",
+        "WarrantyGuarantorParts"
+      ]
+    ],
+    "WARRANTYSTARTDATE": [
+      [
+        "PSet_Revit_Other",
+        "WarrantyStartDate"
+      ]
+    ],
+    "WEB_FILLET": [
+      [
+        "Structural Section Geometry",
+        "Web Fillet"
+      ]
+    ],
+    "WEB_THICKNESS": [
+      [
+        "Dimensions",
+        "Web Thickness"
+      ],
+      [
+        "Structural Section Geometry",
+        "Web Thickness"
+      ]
+    ],
+    "WEIGHT": [
+      [
+        "Instance Part Properties",
+        "WEIGHT"
+      ],
+      [
+        "empty property set name",
+        "WEIGHT"
+      ],
+      [
+        "Structural",
+        "Weight"
+      ]
+    ],
+    "WIDTH": [
+      [
+        "Construction",
+        "Width"
+      ],
+      [
+        "Dimensions",
+        "Width"
+      ],
+      [
+        "Dimensions(Type)",
+        "Width"
+      ],
+      [
+        "Dimensions(Type)",
+        "_Width"
+      ],
+      [
+        "Pset_ProvisionForVoid",
+        "Width"
+      ],
+      [
+        "PSet_Revit_Dimensions",
+        "Width"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Width"
+      ],
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Width"
+      ],
+      [
+        "Quantities",
+        "Width"
+      ],
+      [
+        "Structural Section Geometry",
+        "Width"
+      ]
+    ],
+    "WIDTH_MEASURED_AT": [
+      [
+        "Cross-Section Definition",
+        "Width Measured At"
+      ]
+    ],
+    "WIDTH_ON_SIDE_1": [
+      [
+        "Dimensions",
+        "Width on side 1"
+      ]
+    ],
+    "WIDTH_ON_SIDE_2": [
+      [
+        "Dimensions",
+        "Width on side 2"
+      ]
+    ],
+    "WINDOW_INSET": [
+      [
+        "PSet_Revit_Type_Dimensions",
+        "Window Inset"
+      ]
+    ],
+    "WORKSET": [
+      [
+        "Identity Data",
+        "Workset"
+      ],
+      [
+        "Identity Data(Type)",
+        "Workset"
+      ]
+    ],
+    "WORK_PLANE": [
+      [
+        "Constraints",
+        "Work Plane"
+      ],
+      [
+        "PSet_Revit_Constraints",
+        "Work Plane"
+      ]
+    ],
+    "WR": [
+      [
+        "Other",
+        "Wr"
+      ]
+    ],
+    "WRAPPING_AT_ENDS": [
+      [
+        "Construction",
+        "Wrapping at Ends"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Wrapping at Ends"
+      ]
+    ],
+    "WRAPPING_AT_INSERTS": [
+      [
+        "Construction",
+        "Wrapping at Inserts"
+      ],
+      [
+        "PSet_Revit_Type_Construction",
+        "Wrapping at Inserts"
+      ]
+    ],
+    "WT": [
+      [
+        "Structural",
+        "Wt"
+      ]
+    ],
+    "YZ_JUSTIFICATION": [
+      [
+        "Geometric Position",
+        "yz Justification"
+      ]
+    ],
+    "Y_JUSTIFICATION": [
+      [
+        "Geometric Position",
+        "y Justification"
+      ]
+    ],
+    "Y_OFFSET_VALUE": [
+      [
+        "Geometric Position",
+        "y Offset Value"
+      ]
+    ],
+    "ZX": [
+      [
+        "Structural",
+        "Zx"
+      ]
+    ],
+    "Z_DIRECTION_JUSTIFICATION": [
+      [
+        "PSet_Revit_Constraints",
+        "z-Direction Justification"
+      ]
+    ],
+    "Z_DIRECTION_OFFSET_VALUE": [
+      [
+        "PSet_Revit_Constraints",
+        "z-Direction Offset Value"
+      ]
+    ],
+    "Z_JUSTIFICATION": [
+      [
+        "Geometric Position",
+        "z Justification"
+      ]
+    ],
+    "Z_OFFSET_VALUE": [
+      [
+        "Geometric Position",
+        "z Offset Value"
+      ]
+    ]
+  }
+}
