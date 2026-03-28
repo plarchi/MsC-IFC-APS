@@ -5,8 +5,8 @@ import sqlite3
 ROOT = Path(__file__).resolve().parents[1]
 JSON_DIR = ROOT / "JSON_Edit"
 SQL_DIR = ROOT / "SQL"
-DB_PATH = SQL_DIR / "IFCData.db"
-SQL_FILE = SQL_DIR / "IFCData.sql"
+DB_PATH = SQL_DIR / "IFCModelData.db"
+SQL_FILE = SQL_DIR / "IFCModelData.sql"
 
 JSON_FILES = [
     "ASTIDC-STAN-HE-EPD-MVB1-M-E-0002.json",
@@ -14,25 +14,51 @@ JSON_FILES = [
     "ASTIDC-STAN-HE-MPD-TXBP1-M-M-0001.json",
 ]
 
-# DB column -> (category, displayName)
+# DB column -> prioritized list of (category, displayName)
 FIELD_MAP = {
-    "SOURCE_FILE": ("Item", "Source File"),
-    "NAME": ("Item", "Name"),
-    "TYPE": ("Item", "Type"),
-    "UNIT": ("Item", "Unit"),
-    "GUID": ("Item", "GUID"),
-    "GLOBAL_ID": ("IFC", "GlobalId"),
-    "OBJECT_TYPE": ("IFC", "ObjectType"),
-    "MATERIAL": ("Item", "Material"),
-    "NX_AREA": ("Materials", "NX_Area"),
-    "NX_VOLUME": ("Materials", "NX_Volume"),
-    "NX_VOLUME_SOURCE": ("Materials", "NX_VolumeSource"),
-    "NX_WEIGHT": ("Materials", "NX_Weight"),
-    "NX_WEIGHT_SOURCE": ("Materials", "NX_WeightSource"),
+    "SOURCE_FILE": [
+        ("Item", "Source File"),
+    ],
+    "NAME": [
+        ("Item", "Name"),
+    ],
+    "TYPE": [
+        ("Item", "Type"),
+    ],
+    "UNIT": [
+        ("Item", "Unit"),
+    ],
+    "GUID": [
+        ("Item", "GUID"),
+    ],
+    "GLOBAL_ID": [
+        ("IFC", "GlobalId"),
+    ],
+    "OBJECT_TYPE": [
+        ("IFC", "ObjectType"),
+    ],
+    "MATERIAL": [
+        ("Item", "Material"),
+    ],
+    "NX_AREA": [
+        ("Materials", "NX_Area"),
+    ],
+    "NX_VOLUME": [
+        ("Materials", "NX_Volume"),
+    ],
+    "NX_VOLUME_SOURCE": [
+        ("Materials", "NX_VolumeSource"),
+    ],
+    "NX_WEIGHT": [
+        ("Materials", "NX_Weight"),
+    ],
+    "NX_WEIGHT_SOURCE": [
+        ("Materials", "NX_WeightSource"),
+    ],
 }
 
 CREATE_SQL = """
-CREATE TABLE IF NOT EXISTS IFCItems (
+CREATE TABLE IF NOT EXISTS IFCModelData (
     ID               INTEGER PRIMARY KEY AUTOINCREMENT,
     SOURCE_FILE      TEXT,
     NAME             TEXT,
@@ -51,6 +77,14 @@ CREATE TABLE IF NOT EXISTS IFCItems (
 """
 
 
+def get_first_value(prop_lookup: dict, candidates: list[tuple[str, str]]):
+    for category, display_name in candidates:
+        value = prop_lookup.get((category, display_name), None)
+        if value is not None and str(value).strip() != "":
+            return value
+    return None
+
+
 def build_rows(items: list[dict]) -> list[tuple]:
     rows = []
     for item in items:
@@ -60,7 +94,7 @@ def build_rows(items: list[dict]) -> list[tuple]:
             display_name = str(prop.get("displayName", "")).strip()
             prop_lookup[(category, display_name)] = prop.get("value", None)
 
-        row = tuple(prop_lookup.get((cat, name), None) for cat, name in FIELD_MAP.values())
+        row = tuple(get_first_value(prop_lookup, candidates) for candidates in FIELD_MAP.values())
         rows.append(row)
     return rows
 
@@ -76,12 +110,12 @@ def main() -> None:
     conn.commit()
 
     # Clean reload so reruns do not duplicate data.
-    cur.execute("DELETE FROM IFCItems")
+    cur.execute("DELETE FROM IFCModelData")
     conn.commit()
 
     col_names = ", ".join(FIELD_MAP.keys())
     placeholders = ", ".join("?" for _ in FIELD_MAP)
-    insert_sql = f"INSERT INTO IFCItems ({col_names}) VALUES ({placeholders})"
+    insert_sql = f"INSERT INTO IFCModelData ({col_names}) VALUES ({placeholders})"
 
     total_inserted = 0
     for path in json_paths:
@@ -114,11 +148,11 @@ def main() -> None:
         print(f"SQL file not found: {SQL_FILE}")
 
     # Verification checks.
-    cur.execute("SELECT COUNT(*) FROM IFCItems")
+    cur.execute("SELECT COUNT(*) FROM IFCModelData")
     row_count = cur.fetchone()[0]
-    print(f"Verification row count in IFCItems: {row_count:,}")
+    print(f"Verification row count in IFCModelData: {row_count:,}")
 
-    cur.execute("SELECT SOURCE_FILE, NAME, TYPE, GLOBAL_ID, NX_AREA FROM IFCItems LIMIT 5")
+    cur.execute("SELECT SOURCE_FILE, NAME, TYPE, GLOBAL_ID, NX_AREA FROM IFCModelData LIMIT 5")
     sample_rows = cur.fetchall()
     print("Sample rows:")
     for row in sample_rows:
