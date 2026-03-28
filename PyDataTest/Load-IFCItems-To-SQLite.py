@@ -3,7 +3,7 @@ import json
 import sqlite3
 
 ROOT = Path(__file__).resolve().parents[1]
-JSON_DIR = ROOT / "JSON Whole Model"
+JSON_DIR = ROOT / "JSON_Edit"
 SQL_DIR = ROOT / "SQL"
 DB_PATH = SQL_DIR / "IFCData.db"
 SQL_FILE = SQL_DIR / "IFCData.sql"
