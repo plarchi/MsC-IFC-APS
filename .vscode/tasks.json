@@ -37,6 +37,15 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "rebuild IFCAllData.db",
+            "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "type": "process",
+            "args": [
+                "${workspaceFolder}\\PyToSQL\\Rebuild-IFCAllData.py"
+            ],
+            "problemMatcher": []
         }
     ]
 }
