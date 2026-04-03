@@ -1,9 +1,21 @@
 import { initViewer, loadModel, setupExtractDataButton, setupExtractWholeModelButton, setupLoadTransformedDataButton } from './viewer.js';
 
-initViewer(document.getElementById('preview')).then(viewer => {
-    setupExtractDataButton(viewer);
-    setupExtractWholeModelButton(viewer);
-    setupLoadTransformedDataButton(viewer);
+let viewerPromise;
+
+function ensureViewer() {
+    if (!viewerPromise) {
+        viewerPromise = initViewer(document.getElementById('preview')).then(viewer => {
+            setupExtractDataButton(viewer);
+            setupExtractWholeModelButton(viewer);
+            setupLoadTransformedDataButton(viewer);
+            return viewer;
+        });
+    }
+
+    return viewerPromise;
+}
+
+ensureViewer().then(viewer => {
     const urn = window.location.hash?.substring(1);
     setupModelSelection(viewer, urn);
     setupModelUpload(viewer);
