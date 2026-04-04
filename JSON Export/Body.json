@@ -27,16 +27,16 @@
   {
     "category": "Item",
     "displayName": "Material",
-    "value": ""
+    "value": "Brick, Common,Fiberglass Batt,Concrete Masonry Units _Low Density,Plaster"
   },
   {
     "category": "Item",
     "displayName": "Source File",
-    "value": "Ifc2x3_Duplex_Mechanical.ifc"
+    "value": "Ifc4_SampleHouse.ifc"
   },
   {
     "category": "Item",
     "displayName": "Layer",
-    "value": "Level 2"
+    "value": "Ground Floor"
   }
 ]

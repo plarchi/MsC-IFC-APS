@@ -1,0 +1,286 @@
+[
+  {
+    "category": "Item",
+    "displayName": "Name",
+    "value": "Basic Roof:Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr:286419"
+  },
+  {
+    "category": "Item",
+    "displayName": "Type",
+    "value": "IFCROOF"
+  },
+  {
+    "category": "Item",
+    "displayName": "GUID",
+    "value": "e67aebc3-0bcc-49d1-b719-e4b4dff20ac4"
+  },
+  {
+    "category": "Item",
+    "displayName": "Icon",
+    "value": "Group"
+  },
+  {
+    "category": "Item",
+    "displayName": "Hidden",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Required",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Material",
+    "value": "Concrete, Sand/Cement Screed"
+  },
+  {
+    "category": "Item",
+    "displayName": "Source File",
+    "value": "Ifc4_SampleHouse.ifc"
+  },
+  {
+    "category": "Item",
+    "displayName": "Layer",
+    "value": "Roof"
+  },
+  {
+    "category": "IFC",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPvBJVyWh4"
+  },
+  {
+    "category": "IFC",
+    "displayName": "NAME",
+    "value": "Basic Roof:Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr:286419"
+  },
+  {
+    "category": "IFC",
+    "displayName": "OBJECTTYPE",
+    "value": "Basic Roof:Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr:45441"
+  },
+  {
+    "category": "IFC",
+    "displayName": "TAG",
+    "value": "286419"
+  },
+  {
+    "category": "IFC",
+    "displayName": "PREDEFINEDTYPE",
+    "value": "NOTDEFINED"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPxqtVyWh4"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "IsExternal",
+    "value": "TRUE"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "Reference",
+    "value": "Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "TotalArea",
+    "value": "117.430"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "ProjectedArea",
+    "value": "108.118"
+  },
+  {
+    "category": "Pset_RoofCommon",
+    "displayName": "ThermalTransmittance",
+    "value": "7.806"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPug3VyWh4"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Related to Mass",
+    "value": "FALSE"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Room Bounding",
+    "value": "TRUE"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Extrusion End",
+    "value": "-14145.000"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Extrusion Start",
+    "value": "695.982"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Level Offset",
+    "value": "0.000"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Reference Level",
+    "value": "Level: Roof"
+  },
+  {
+    "category": "Constraints",
+    "displayName": "Work Plane",
+    "value": "Basic Wall : Wall-Ext_102Bwk-75Ins-100LBlk-12P"
+  },
+  {
+    "category": "Construction",
+    "displayName": "GLOBALID",
+    "value": [
+      "3cUkl32yn9qRSPuh3VyWh4",
+      "2ru7YPT4T9MuTpPyKFRzuB"
+    ]
+  },
+  {
+    "category": "Construction",
+    "displayName": "Fascia Depth",
+    "value": "0.000"
+  },
+  {
+    "category": "Construction",
+    "displayName": "Rafter Cut",
+    "value": "Plumb Cut"
+  },
+  {
+    "category": "Construction",
+    "displayName": "Default Thickness",
+    "value": "116.500"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPuhRVyWh4"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "Area",
+    "value": "117.430"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "Thickness",
+    "value": "116.500"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "Volume",
+    "value": "13.653"
+  },
+  {
+    "category": "Other",
+    "displayName": "GLOBALID",
+    "value": [
+      "2DJmbMaUf4SOop$XdFOv3J",
+      "3vW8iW$BD0tu9c7SgjytMt"
+    ]
+  },
+  {
+    "category": "Other",
+    "displayName": "Category",
+    "value": [
+      "Roofs",
+      "Roofs"
+    ]
+  },
+  {
+    "category": "Other",
+    "displayName": "Family",
+    "value": "Basic Roof: Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  },
+  {
+    "category": "Other",
+    "displayName": "Family and Type",
+    "value": "Basic Roof: Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  },
+  {
+    "category": "Other",
+    "displayName": "Type",
+    "value": "Basic Roof: Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  },
+  {
+    "category": "Other",
+    "displayName": "Type Id",
+    "value": "Basic Roof: Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  },
+  {
+    "category": "Other",
+    "displayName": "Family Name",
+    "value": "Basic Roof"
+  },
+  {
+    "category": "Phasing",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPuhlVyWh4"
+  },
+  {
+    "category": "Phasing",
+    "displayName": "Phase Created",
+    "value": "New Construction"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "GLOBALID",
+    "value": "2ru7YPT4T9MuTpPvmFRzuB"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Roughness",
+    "value": "3"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Absorptance",
+    "value": "0.700"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Heat Transfer Coefficient (U)",
+    "value": "7.806"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Thermal mass",
+    "value": "171350.000"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Thermal Resistance (R)",
+    "value": "0.128"
+  },
+  {
+    "category": "Graphics",
+    "displayName": "GLOBALID",
+    "value": "2ru7YPT4T9MuTpPyGFRzuB"
+  },
+  {
+    "category": "Graphics",
+    "displayName": "Coarse Scale Fill Color",
+    "value": "0"
+  },
+  {
+    "category": "Identity Data",
+    "displayName": "GLOBALID",
+    "value": "2ru7YPT4T9MuTpPy0FRzuB"
+  },
+  {
+    "category": "Identity Data",
+    "displayName": "Type Name",
+    "value": "Roof_Flat-4Felt-150Ins-50Scr-150Conc-12Plr"
+  }
+]
