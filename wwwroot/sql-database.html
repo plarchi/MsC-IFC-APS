@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Database</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn.autodesk.io/favicon.ico">
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      color: #1f2d3d;
+      font-family: ArtifaktElement, sans-serif;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border: 1px solid #b8c8dc;
+      border-radius: 999px;
+      color: #113a67;
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #113a67;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: #53657a;
+      font-size: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d8e2ef;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(17, 58, 103, 0.08);
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #183b63;
+    }
+
+    .chart-image {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .summary {
+      margin: 0;
+      color: #41556d;
+      font-weight: 700;
+      white-space: pre-line;
+    }
+
+    .table-shell {
+      overflow-x: auto;
+    }
+
+    .table-shell .dataframe {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .table-shell .dataframe th,
+    .table-shell .dataframe td {
+      border: 1px solid #d8e2ef;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .table-shell .dataframe thead th {
+      background: #eef4fb;
+      color: #173e6b;
+      position: sticky;
+      top: 0;
+    }
+
+    .status {
+      color: #41556d;
+      font-size: 15px;
+    }
+
+    .status.error {
+      color: #922;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <h1>SQL Database</h1>
+        <p class="subtitle">Saved output from IFCAllData-Query-COBie.ipynb.</p>
+      </div>
+      <a class="back-link" href="/home.html">Back to Home</a>
+    </div>
+
+    <section class="card">
+      <h2 id="chartTitle">IFCAllData-COBie Bubble Chart by Name</h2>
+      <p id="chartSummary" class="summary">Loading notebook summary...</p>
+      <img id="chartImage" class="chart-image" alt="IFCAllData-COBie Bubble Chart by Name">
+    </section>
+
+    <section class="card">
+      <h2>Bubble Chart Data Table</h2>
+      <div id="tableStatus" class="status">Loading notebook table...</div>
+      <div id="tableContainer" class="table-shell" hidden></div>
+    </section>
+  </main>
+
+  <script src="/sql-database.js?v=1" type="module"></script>
+</body>
+</html>

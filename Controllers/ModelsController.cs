@@ -20,6 +20,7 @@ public class ModelsController : ControllerBase
 {
     public record BucketObject(string name, string urn);
     public record RevisedIfcObject(string name);
+    public record SqlDatabaseNotebookResponse(string Title, string HtmlTable, string Summary);
     public record RevisedComparisonRow(
         string ExistingModelName,
         string EditedName,
@@ -76,6 +77,31 @@ public class ModelsController : ControllerBase
     {
         _aps = aps;
         _env = env;
+    }
+
+    [HttpGet("sql-database-cobie")]
+    public IActionResult GetSqlDatabaseCobieNotebookContent()
+    {
+        if (!TryReadSqlDatabaseCobieNotebookOutputs(out var htmlTable, out var summaryText, out _, out var errorMessage))
+        {
+            return NotFound(errorMessage);
+        }
+
+        return Ok(new SqlDatabaseNotebookResponse(
+            Title: "IFCAllData-COBie Bubble Chart by Name",
+            HtmlTable: htmlTable!,
+            Summary: summaryText ?? string.Empty));
+    }
+
+    [HttpGet("sql-database-cobie-chart")]
+    public IActionResult GetSqlDatabaseCobieNotebookChart()
+    {
+        if (!TryReadSqlDatabaseCobieNotebookOutputs(out _, out _, out var chartBytes, out var errorMessage))
+        {
+            return NotFound(errorMessage);
+        }
+
+        return File(chartBytes!, "image/png");
     }
 
     [HttpGet()]
@@ -268,6 +294,101 @@ public class ModelsController : ControllerBase
 
         var fileBytes = System.IO.File.ReadAllBytes(chartPath);
         return File(fileBytes, "image/png");
+    }
+
+    private bool TryReadSqlDatabaseCobieNotebookOutputs(
+        out string htmlTable,
+        out string summaryText,
+        out byte[] chartBytes,
+        out string errorMessage)
+    {
+        htmlTable = null;
+        summaryText = null;
+        chartBytes = null;
+        errorMessage = null;
+
+        var notebookPath = Path.Combine(_env.ContentRootPath, "PyQueryDB", "IFCAllData-Query-COBie.ipynb");
+        if (!System.IO.File.Exists(notebookPath))
+        {
+            errorMessage = "Notebook file not found.";
+            return false;
+        }
+
+        try
+        {
+            var notebookRoot = JsonNode.Parse(System.IO.File.ReadAllText(notebookPath));
+            var cells = notebookRoot?["cells"]?.AsArray();
+            var chartCell = cells?
+                .Reverse()
+                .FirstOrDefault(cell => string.Equals(cell?["cell_type"]?.GetValue<string>(), "code", StringComparison.Ordinal));
+            var outputs = chartCell?["outputs"]?.AsArray();
+
+            if (outputs is null || outputs.Count == 0)
+            {
+                errorMessage = "Notebook output is not available.";
+                return false;
+            }
+
+            foreach (var output in outputs)
+            {
+                var data = output?["data"];
+                if (data is not null)
+                {
+                    if (htmlTable is null)
+                    {
+                        var htmlNode = data["text/html"];
+                        var htmlValue = ReadNotebookText(htmlNode);
+                        if (!string.IsNullOrWhiteSpace(htmlValue))
+                        {
+                            htmlTable = htmlValue;
+                        }
+                    }
+
+                    if (chartBytes is null)
+                    {
+                        var imageNode = data["image/png"];
+                        var base64Image = ReadNotebookText(imageNode);
+                        if (!string.IsNullOrWhiteSpace(base64Image))
+                        {
+                            chartBytes = Convert.FromBase64String(base64Image);
+                        }
+                    }
+                }
+
+                if (summaryText is null)
+                {
+                    var textNode = output?["text"];
+                    var outputText = ReadNotebookText(textNode);
+                    if (!string.IsNullOrWhiteSpace(outputText))
+                    {
+                        summaryText = outputText.Trim();
+                    }
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(htmlTable) || chartBytes is null)
+            {
+                errorMessage = "Notebook chart output is incomplete.";
+                return false;
+            }
+
+            return true;
+        }
+        catch
+        {
+            errorMessage = "Failed to read notebook output.";
+            return false;
+        }
+    }
+
+    private static string ReadNotebookText(JsonNode node)
+    {
+        return node switch
+        {
+            null => null,
+            JsonArray array => string.Concat(array.Select(item => item?.GetValue<string>() ?? string.Empty)),
+            _ => node.GetValue<string>()
+        };
     }
 
     private static List<CobieImplementationRow> BuildCobieImplementationRows(JsonElement beforeRoot, JsonElement afterRoot, out int totalChangedModelElements)
