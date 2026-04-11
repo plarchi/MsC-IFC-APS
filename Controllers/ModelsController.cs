@@ -13,6 +13,7 @@ using System.Threading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.Sqlite;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -20,7 +21,8 @@ public class ModelsController : ControllerBase
 {
     public record BucketObject(string name, string urn);
     public record RevisedIfcObject(string name);
-    public record SqlDatabaseNotebookResponse(string Title, string HtmlTable, string Summary);
+    public record SqlDatabaseCobieRow(string Name, int RowCount, int CobieCount);
+    public record SqlDatabaseNotebookResponse(string Title, IEnumerable<SqlDatabaseCobieRow> Rows, string Summary);
     public record RevisedComparisonRow(
         string ExistingModelName,
         string EditedName,
@@ -87,9 +89,14 @@ public class ModelsController : ControllerBase
             return NotFound(errorMessage);
         }
 
+        if (!TryReadSqlDatabaseCobieRows(out var rows, out var sqlErrorMessage))
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, sqlErrorMessage);
+        }
+
         return Ok(new SqlDatabaseNotebookResponse(
             Title: "IFCAllData-COBie Bubble Chart by Name",
-            HtmlTable: htmlTable!,
+            Rows: rows,
             Summary: summaryText ?? string.Empty));
     }
 
@@ -377,6 +384,58 @@ public class ModelsController : ControllerBase
         catch
         {
             errorMessage = "Failed to read notebook output.";
+            return false;
+        }
+    }
+
+    private bool TryReadSqlDatabaseCobieRows(out List<SqlDatabaseCobieRow> rows, out string errorMessage)
+    {
+        rows = new List<SqlDatabaseCobieRow>();
+        errorMessage = null;
+
+        var dbPath = Path.Combine(_env.ContentRootPath, "SQL", "IFCAllData.db");
+        if (!System.IO.File.Exists(dbPath))
+        {
+            errorMessage = "IFCAllData.db was not found.";
+            return false;
+        }
+
+        try
+        {
+            var connectionString = new SqliteConnectionStringBuilder
+            {
+                DataSource = dbPath,
+                Mode = SqliteOpenMode.ReadOnly
+            }.ToString();
+
+            using var connection = new SqliteConnection(connectionString);
+            connection.Open();
+
+            using var command = connection.CreateCommand();
+            command.CommandText = @"
+                SELECT
+                    TRIM(NAME) AS NAME,
+                    COUNT(*) AS ROW_COUNT,
+                    SUM(CASE WHEN TRIM(COALESCE(COBie, '')) <> '' THEN 1 ELSE 0 END) AS COBIE_COUNT
+                FROM ""IFCAllData-COBie""
+                WHERE TRIM(COALESCE(NAME, '')) <> ''
+                GROUP BY TRIM(NAME)
+                ORDER BY ROW_COUNT DESC, TRIM(NAME)";
+
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                rows.Add(new SqlDatabaseCobieRow(
+                    Name: reader.IsDBNull(0) ? string.Empty : reader.GetString(0),
+                    RowCount: reader.IsDBNull(1) ? 0 : reader.GetInt32(1),
+                    CobieCount: reader.IsDBNull(2) ? 0 : reader.GetInt32(2)));
+            }
+
+            return true;
+        }
+        catch
+        {
+            errorMessage = "Failed to query IFCAllData.db.";
             return false;
         }
     }

@@ -18,10 +18,11 @@ async function loadSqlDatabasePage() {
     chartTitle.textContent = payload.title || 'IFCAllData-COBie Bubble Chart by Name';
     chartSummary.textContent = payload.summary || 'Saved notebook output loaded.';
 
-    tableContainer.innerHTML = payload.htmlTable || '';
-    tableContainer.hidden = !payload.htmlTable;
-    tableStatus.hidden = Boolean(payload.htmlTable);
-    if (!payload.htmlTable) {
+    const rows = Array.isArray(payload.rows) ? payload.rows : [];
+    renderSqlDatabaseTable(tableContainer, rows);
+    tableContainer.hidden = rows.length === 0;
+    tableStatus.hidden = rows.length > 0;
+    if (rows.length === 0) {
       tableStatus.textContent = 'No notebook table output is available.';
       tableStatus.classList.add('error');
     }
@@ -36,6 +37,39 @@ async function loadSqlDatabasePage() {
     tableStatus.textContent = 'Could not load notebook table.';
     tableStatus.classList.add('error');
   }
+}
+
+function renderSqlDatabaseTable(container, rows) {
+  container.innerHTML = '';
+
+  const table = document.createElement('table');
+  table.className = 'dataframe';
+
+  const thead = document.createElement('thead');
+  const headRow = document.createElement('tr');
+  for (const header of ['Name', 'Row Count', 'COBie Count']) {
+    const th = document.createElement('th');
+    th.textContent = header;
+    headRow.appendChild(th);
+  }
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  for (const row of rows) {
+    const tr = document.createElement('tr');
+
+    for (const value of [row.name, row.rowCount, row.cobieCount]) {
+      const td = document.createElement('td');
+      td.textContent = value;
+      tr.appendChild(td);
+    }
+
+    tbody.appendChild(tr);
+  }
+
+  table.appendChild(tbody);
+  container.appendChild(table);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
