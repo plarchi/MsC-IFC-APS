@@ -143205,14 +143205,14 @@
     ]
   },
   {
-    "Name": "M_Casement:819mm x 759mm:819mm x 759mm:148607",
+    "Name": "WDW-CSM-AEC-Metal",
     "DbId": 701,
     "ExternalId": "0/0/0/1/27",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Casement:819mm x 759mm:819mm x 759mm:148607"
+        "value": "WDW-CSM-AEC-Metal"
       },
       {
         "category": "Item",
@@ -143687,14 +143687,14 @@
     ]
   },
   {
-    "Name": "M_Casement:819mm x 759mm:819mm x 759mm:149736",
+    "Name": "WDW-CSM-AEC-Metal",
     "DbId": 705,
     "ExternalId": "0/0/0/1/31",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Casement:819mm x 759mm:819mm x 759mm:149736"
+        "value": "WDW-CSM-AEC-Metal"
       },
       {
         "category": "Item",
@@ -144169,14 +144169,14 @@
     ]
   },
   {
-    "Name": "M_Casement:819mm x 759mm:819mm x 759mm:180994",
+    "Name": "WDW-CSM-AEC-Metal",
     "DbId": 724,
     "ExternalId": "0/0/0/1/50",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Casement:819mm x 759mm:819mm x 759mm:180994"
+        "value": "WDW-CSM-AEC-Metal"
       },
       {
         "category": "Item",
@@ -144651,14 +144651,14 @@
     ]
   },
   {
-    "Name": "M_Casement:819mm x 759mm:819mm x 759mm:181548",
+    "Name": "WDW-CSM-AEC-Metal",
     "DbId": 727,
     "ExternalId": "0/0/0/1/53",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Casement:819mm x 759mm:819mm x 759mm:181548"
+        "value": "WDW-CSM-AEC-Metal"
       },
       {
         "category": "Item",
@@ -147475,14 +147475,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 699,
     "ExternalId": "0/0/0/1/25",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -147957,14 +147957,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 703,
     "ExternalId": "0/0/0/1/29",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -148439,14 +148439,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 721,
     "ExternalId": "0/0/0/1/47",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -148921,14 +148921,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 725,
     "ExternalId": "0/0/0/1/51",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -149403,14 +149403,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 35,
     "ExternalId": "0/0/0/0/26",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -149885,14 +149885,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 36,
     "ExternalId": "0/0/0/0/27",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -150367,14 +150367,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:146885",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 39,
     "ExternalId": "0/0/0/0/30",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:750mm x 2200mm:750mm x 2200mm:146885"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -150849,14 +150849,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:147051",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 40,
     "ExternalId": "0/0/0/0/31",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:750mm x 2200mm:750mm x 2200mm:147051"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -151331,14 +151331,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:181930",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 729,
     "ExternalId": "0/0/0/1/55",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:750mm x 2200mm:750mm x 2200mm:181930"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -151813,14 +151813,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:182101",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 730,
     "ExternalId": "0/0/0/1/56",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:750mm x 2200mm:750mm x 2200mm:182101"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -152295,14 +152295,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:147994",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 700,
     "ExternalId": "0/0/0/1/26",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:147994"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -152777,14 +152777,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:148722",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 702,
     "ExternalId": "0/0/0/1/28",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:148722"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -153259,14 +153259,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:149537",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 704,
     "ExternalId": "0/0/0/1/30",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:149537"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -153741,14 +153741,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:149924",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 706,
     "ExternalId": "0/0/0/1/32",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:149924"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -154223,14 +154223,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:180663",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 722,
     "ExternalId": "0/0/0/1/48",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:180663"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -154705,14 +154705,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:180864",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 723,
     "ExternalId": "0/0/0/1/49",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:180864"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -155187,14 +155187,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:181285",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 726,
     "ExternalId": "0/0/0/1/52",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:181285"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -155669,14 +155669,14 @@
     ]
   },
   {
-    "Name": "M_Fixed:819mm x 759mm:819mm x 759mm:181583",
+    "Name": "WDW-FXD-AEC-Metal",
     "DbId": 728,
     "ExternalId": "0/0/0/1/54",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Fixed:819mm x 759mm:819mm x 759mm:181583"
+        "value": "WDW-FXD-AEC-Metal"
       },
       {
         "category": "Item",
@@ -163009,14 +163009,14 @@
     ]
   },
   {
-    "Name": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185337",
+    "Name": "WDW-SKY-AEC-Metal",
     "DbId": 1399,
     "ExternalId": "0/0/0/3/6",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185337"
+        "value": "WDW-SKY-AEC-Metal"
       },
       {
         "category": "Item",
@@ -163466,14 +163466,14 @@
     ]
   },
   {
-    "Name": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185718",
+    "Name": "WDW-SKY-AEC-Metal",
     "DbId": 1400,
     "ExternalId": "0/0/0/3/7",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185718"
+        "value": "WDW-SKY-AEC-Metal"
       },
       {
         "category": "Item",
