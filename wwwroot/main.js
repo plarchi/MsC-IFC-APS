@@ -2,6 +2,7 @@ import { initViewer, loadModel, setupExtractDataButton, setupExtractWholeModelBu
 
 let viewerPromise;
 
+// 4.4.3. Setup Viewer for Extract Data Functionality
 function ensureViewer() {
     if (!viewerPromise) {
         viewerPromise = initViewer(document.getElementById('preview')).then(viewer => {
@@ -81,6 +82,7 @@ async function setupModelUpload(viewer) {
     };
 }
 
+// Extract data for whole model - 4.4.3.1 Extract whole model workflow
 async function onModelSelected(viewer, urn) {
     if (window.onModelSelectedTimeout) {
         clearTimeout(window.onModelSelectedTimeout);

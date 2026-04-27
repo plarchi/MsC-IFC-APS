@@ -39,6 +39,7 @@ export function loadModel(viewer, urn) {
     });
 }
 
+// Extract data for selected element - 4.4.3.1 Extract IFC to JSON workflow
 export function setupExtractDataButton(viewer) {
     const btn = document.getElementById('extractDataBtn');
     if (!btn) {
