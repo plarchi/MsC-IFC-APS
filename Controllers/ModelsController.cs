@@ -37,6 +37,18 @@ public class ModelsController : ControllerBase
         string Name,
         string CobieValue);
 
+    public record RevisedFlipNameCount(string Name, int Count);
+
+    public record RevisedFlipSummaryGroup(
+        string Label,
+        string IfcType,
+        int Count,
+        IReadOnlyList<RevisedFlipNameCount> Names);
+
+    public record RevisedFlipSummaryResponse(
+        int TotalCount,
+        IReadOnlyList<RevisedFlipSummaryGroup> Groups);
+
     public class ExtractProperty
     {
         public string DisplayName { get; set; }
@@ -297,6 +309,89 @@ public class ModelsController : ControllerBase
         if (string.IsNullOrWhiteSpace(chartPath))
         {
             return NotFound("No pre-generated hierarchical bubble chart found.");
+        }
+
+        var fileBytes = System.IO.File.ReadAllBytes(chartPath);
+        return File(fileBytes, "image/png");
+    }
+
+    // GET api/models/revised-flip-summary/{fileName}
+    // Returns grouped FLIP summary counts from JSON_Edit for models with FLIP naming flows.
+    [HttpGet("revised-flip-summary/{*fileName}")]
+    public async Task<IActionResult> GetRevisedFlipSummary(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var editedJsonPath = Path.Combine(_env.ContentRootPath, "JSON_Edit", $"{baseName}.json");
+        if (!System.IO.File.Exists(editedJsonPath))
+        {
+            return NotFound("No FLIP summary data currently.");
+        }
+
+        try
+        {
+            var editedJson = await System.IO.File.ReadAllTextAsync(editedJsonPath);
+            using var editedDoc = JsonDocument.Parse(editedJson);
+
+            var groups = BuildRevisedFlipSummary(editedDoc.RootElement, baseName);
+            if (groups.Count == 0)
+            {
+                return NotFound("No FLIP summary data currently.");
+            }
+
+            return Ok(new RevisedFlipSummaryResponse(
+                TotalCount: groups.Sum(group => group.Count),
+                Groups: groups));
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to build FLIP summary data.");
+        }
+    }
+
+    // GET api/models/revised-flip-chart/{fileName}
+    // Serves a pre-generated PNG FLIP chart from GeneratedCharts using common naming patterns.
+    [HttpGet("revised-flip-chart/{*fileName}")]
+    public IActionResult GetRevisedFlipChart(string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return BadRequest("Missing file name.");
+        }
+
+        var safeFileName = Path.GetFileName(fileName);
+        if (string.IsNullOrWhiteSpace(safeFileName) || !safeFileName.EndsWith(".ifc", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Invalid revised IFC file name.");
+        }
+
+        var baseName = Path.GetFileNameWithoutExtension(safeFileName);
+        var chartsFolder = Path.Combine(_env.ContentRootPath, "GeneratedCharts");
+        var candidateNames = new[]
+        {
+            $"{baseName}_flip_standard_donut.png",
+            $"{baseName}-flip-standard-donut.png",
+            $"{baseName}_flip_donut.png",
+            $"{baseName}-flip-donut.png"
+        };
+
+        var chartPath = candidateNames
+            .Select(name => Path.Combine(chartsFolder, name))
+            .FirstOrDefault(System.IO.File.Exists);
+
+        if (string.IsNullOrWhiteSpace(chartPath))
+        {
+            return NotFound("No pre-generated FLIP chart found.");
         }
 
         var fileBytes = System.IO.File.ReadAllBytes(chartPath);
@@ -690,6 +785,78 @@ public class ModelsController : ControllerBase
 
         var normalizedIfc = NormalizeIfcType(ifcType);
         return string.IsNullOrWhiteSpace(normalizedIfc) ? "Unclassified" : normalizedIfc;
+    }
+
+    private static List<RevisedFlipSummaryGroup> BuildRevisedFlipSummary(JsonElement root, string baseName)
+    {
+        var flipTypeDefinitions = GetFlipSummaryTypeDefinitions(baseName);
+        if (flipTypeDefinitions.Count == 0 || root.ValueKind != JsonValueKind.Array)
+        {
+            return new List<RevisedFlipSummaryGroup>();
+        }
+
+        var orderMap = flipTypeDefinitions
+            .Select((entry, index) => new { entry.Key, Index = index })
+            .ToDictionary(x => x.Key, x => x.Index, StringComparer.Ordinal);
+        var labelMap = flipTypeDefinitions
+            .ToDictionary(entry => entry.Key, entry => entry.Value, StringComparer.Ordinal);
+
+        var matchedRows = new List<(string IfcType, string FlipName)>();
+
+        foreach (var item in root.EnumerateArray())
+        {
+            if (item.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            item.TryGetProperty("Properties", out var properties);
+            var typeProp = FindProperty(properties, "Type", "Item") ?? FindProperty(properties, "Type", null);
+            var ifcType = NormalizeIfcType(typeProp?.Value ?? string.Empty);
+            if (!labelMap.ContainsKey(ifcType))
+            {
+                continue;
+            }
+
+            var flipName = Normalize(FindProperty(properties, "Name", "IFC")?.Value);
+            if (string.IsNullOrWhiteSpace(flipName))
+            {
+                continue;
+            }
+
+            matchedRows.Add((IfcType: ifcType, FlipName: flipName));
+        }
+
+        return matchedRows
+            .GroupBy(row => row.IfcType, StringComparer.Ordinal)
+            .OrderBy(group => orderMap.TryGetValue(group.Key, out var order) ? order : int.MaxValue)
+            .Select(group => new RevisedFlipSummaryGroup(
+                Label: labelMap[group.Key],
+                IfcType: group.Key,
+                Count: group.Count(),
+                Names: group
+                    .GroupBy(row => row.FlipName, StringComparer.Ordinal)
+                    .Select(nameGroup => new RevisedFlipNameCount(nameGroup.Key, nameGroup.Count()))
+                    .OrderByDescending(nameGroup => nameGroup.Count)
+                    .ThenBy(nameGroup => nameGroup.Name, StringComparer.Ordinal)
+                    .ToArray()))
+            .ToList();
+    }
+
+    private static IReadOnlyList<KeyValuePair<string, string>> GetFlipSummaryTypeDefinitions(string baseName)
+    {
+        var normalizedBaseName = Normalize(baseName).ToLowerInvariant();
+        if (string.Equals(normalizedBaseName, "snowdon+towers+sample+structural2x3", StringComparison.Ordinal))
+        {
+            return new[]
+            {
+                new KeyValuePair<string, string>("IFCCOLUMN", "Column"),
+                new KeyValuePair<string, string>("IFCBEAM", "Beam"),
+                new KeyValuePair<string, string>("IFCSLAB", "Slab")
+            };
+        }
+
+        return Array.Empty<KeyValuePair<string, string>>();
     }
 
     private static Dictionary<string, int> BuildOrderMap(IEnumerable<string> values)

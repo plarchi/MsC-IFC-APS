@@ -100,6 +100,10 @@ function usesNotebookCobieFlow(fileName) {
   return NOTEBOOK_FLOW_MODELS.has(getModelBaseName(fileName).toLowerCase());
 }
 
+function isSnowdonStructuralModel(fileName) {
+  return getModelBaseName(fileName).toLowerCase() === 'snowdon+towers+sample+structural2x3';
+}
+
 function createRevealSection(animationDelayMs = 0) {
   const section = document.createElement('section');
   section.style.opacity = '0';
@@ -168,6 +172,89 @@ function appendChartSection({
   chartSection.appendChild(loading);
   chartSection.appendChild(img);
   container.appendChild(chartSection);
+}
+
+function appendFlipSummarySections(fileName, container, flipSummary, animationDelayMs = 0) {
+  if (!container || !flipSummary || !Array.isArray(flipSummary.groups) || flipSummary.groups.length === 0) {
+    return;
+  }
+
+  const groups = flipSummary.groups.filter((group) => Number(group?.count ?? 0) > 0);
+  if (groups.length === 0) {
+    return;
+  }
+
+  const totalCount = Number(flipSummary.totalCount ?? 0);
+  appendChartSection({
+    fileName,
+    container,
+    title: 'FLIP Standard Naming Change',
+    endpoint: '/api/models/revised-flip-chart',
+    alt: 'FLIP standard donut chart',
+    animationDelayMs,
+    missingMessage: 'No pre-generated FLIP donut PNG found. Re-run the Snowdon FLIP chart notebook cell to save it.'
+  });
+
+  const countTableSection = createRevealSection(animationDelayMs + 60);
+  countTableSection.style.margin = '0 0 16px 0';
+
+  const countTableTitle = document.createElement('div');
+  countTableTitle.textContent = 'FLIP Standard Total Count';
+  countTableTitle.style.fontWeight = '700';
+  countTableTitle.style.fontSize = '16px';
+  countTableTitle.style.margin = '0 0 10px 0';
+  countTableSection.appendChild(countTableTitle);
+
+  const table = document.createElement('table');
+  table.style.width = '100%';
+  table.style.borderCollapse = 'collapse';
+
+  const thead = document.createElement('thead');
+  const headRow = document.createElement('tr');
+  for (const headerText of ['Category', 'Count']) {
+    const th = document.createElement('th');
+    th.textContent = headerText;
+    th.style.border = '1px solid #ddd';
+    th.style.padding = '6px 8px';
+    th.style.textAlign = 'left';
+    th.style.background = '#f8f8f8';
+    headRow.appendChild(th);
+  }
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  for (const group of groups) {
+    const tr = document.createElement('tr');
+    for (const value of [group.label, group.count]) {
+      const td = document.createElement('td');
+      td.textContent = String(value);
+      td.style.border = '1px solid #ddd';
+      td.style.padding = '6px 8px';
+      td.style.textAlign = 'left';
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+
+  const totalRow = document.createElement('tr');
+  for (const [index, value] of [['Total', totalCount]].entries()) {
+    const td = document.createElement('td');
+    td.textContent = String(value);
+    td.style.border = '1px solid #ddd';
+    td.style.padding = '6px 8px';
+    td.style.textAlign = 'left';
+    td.style.fontWeight = '700';
+    if (index === 0) {
+      td.style.background = '#fafafa';
+    }
+    totalRow.appendChild(td);
+  }
+  tbody.appendChild(totalRow);
+
+  table.appendChild(tbody);
+  countTableSection.appendChild(table);
+  container.appendChild(countTableSection);
 }
 
 function renderComparisonLoading(message) {
@@ -351,7 +438,7 @@ function renderComparisonTable(rows, fileName) {
   content.appendChild(tableSection);
 }
 
-function renderCobieImplementationTable(rows, fileName, totalChangedModelElements = null) {
+function renderCobieImplementationTable(rows, fileName, totalChangedModelElements = null, flipSummary = null) {
   const { title, summary, content } = getComparisonElements();
   if (!content) {
     return;
@@ -468,6 +555,10 @@ function renderCobieImplementationTable(rows, fileName, totalChangedModelElement
   table.appendChild(tbody);
   tableSection.appendChild(table);
   content.appendChild(tableSection);
+
+  if (isSnowdonStructuralModel(fileName)) {
+    appendFlipSummarySections(fileName, content, flipSummary, 220);
+  }
 }
 
 async function loadRevisedComparison(fileName) {
@@ -495,11 +586,23 @@ async function loadRevisedComparison(fileName) {
       ? null
       : Number(totalChangedModelElementsHeader);
     const rows = await resp.json();
+    let flipSummary = null;
+    if (useNotebookFlow && isSnowdonStructuralModel(fileName)) {
+      const flipResp = await fetch(`/api/models/revised-flip-summary/${encodeURIComponent(fileName)}`);
+      if (requestId !== activeComparisonRequestId) {
+        return;
+      }
+      if (flipResp.ok) {
+        flipSummary = await flipResp.json();
+      } else if (flipResp.status !== 404) {
+        throw new Error(await flipResp.text());
+      }
+    }
     if (requestId !== activeComparisonRequestId) {
       return;
     }
     if (useNotebookFlow) {
-      renderCobieImplementationTable(rows, fileName, totalChangedModelElements);
+      renderCobieImplementationTable(rows, fileName, totalChangedModelElements, flipSummary);
     } else {
       renderComparisonTable(rows, fileName);
     }
