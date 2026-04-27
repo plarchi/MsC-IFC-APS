@@ -156151,14 +156151,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 41,
     "ExternalId": "0/0/0/0/32",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -156638,14 +156638,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 42,
     "ExternalId": "0/0/0/0/33",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -157125,14 +157125,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 742,
     "ExternalId": "0/0/0/1/68",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -157612,14 +157612,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 744,
     "ExternalId": "0/0/0/1/70",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -158099,14 +158099,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 707,
     "ExternalId": "0/0/0/1/33",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -158586,14 +158586,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 708,
     "ExternalId": "0/0/0/1/34",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -159073,14 +159073,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 709,
     "ExternalId": "0/0/0/1/35",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -159560,14 +159560,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 710,
     "ExternalId": "0/0/0/1/36",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -160047,14 +160047,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 711,
     "ExternalId": "0/0/0/1/37",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -160534,14 +160534,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 712,
     "ExternalId": "0/0/0/1/38",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -161021,14 +161021,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 37,
     "ExternalId": "0/0/0/0/28",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -161508,14 +161508,14 @@
     ]
   },
   {
-    "Name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 38,
     "ExternalId": "0/0/0/0/29",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -161995,14 +161995,14 @@
     ]
   },
   {
-    "Name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 50,
     "ExternalId": "0/0/0/0/41",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
@@ -162502,14 +162502,14 @@
     ]
   },
   {
-    "Name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975",
+    "Name": "DOR-SGL-AEC-Metal",
     "DbId": 51,
     "ExternalId": "0/0/0/0/42",
     "Properties": [
       {
         "category": "Item",
         "displayName": "Name",
-        "value": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975"
+        "value": "DOR-SGL-AEC-Metal"
       },
       {
         "category": "Item",
