@@ -104,6 +104,18 @@ function isSnowdonStructuralModel(fileName) {
   return getModelBaseName(fileName).toLowerCase() === 'snowdon+towers+sample+structural2x3';
 }
 
+function isDuplexArchitectureModel(fileName) {
+  return getModelBaseName(fileName).toLowerCase() === 'ifc2x3_duplex_architecture';
+}
+
+function isSampleHouseModel(fileName) {
+  return getModelBaseName(fileName).toLowerCase() === 'ifc4_samplehouse';
+}
+
+function supportsFlipSummarySection(fileName) {
+  return isSnowdonStructuralModel(fileName) || isDuplexArchitectureModel(fileName) || isSampleHouseModel(fileName);
+}
+
 function createRevealSection(animationDelayMs = 0) {
   const section = document.createElement('section');
   section.style.opacity = '0';
@@ -192,7 +204,7 @@ function appendFlipSummarySections(fileName, container, flipSummary, animationDe
     endpoint: '/api/models/revised-flip-chart',
     alt: 'FLIP standard donut chart',
     animationDelayMs,
-    missingMessage: 'No pre-generated FLIP donut PNG found. Re-run the Snowdon FLIP chart notebook cell to save it.'
+    missingMessage: 'No pre-generated FLIP donut PNG found. Re-run the model FLIP chart notebook cell to save it.'
   });
 
   const countTableSection = createRevealSection(animationDelayMs + 60);
@@ -556,7 +568,7 @@ function renderCobieImplementationTable(rows, fileName, totalChangedModelElement
   tableSection.appendChild(table);
   content.appendChild(tableSection);
 
-  if (isSnowdonStructuralModel(fileName)) {
+  if (supportsFlipSummarySection(fileName)) {
     appendFlipSummarySections(fileName, content, flipSummary, 220);
   }
 }
@@ -587,7 +599,7 @@ async function loadRevisedComparison(fileName) {
       : Number(totalChangedModelElementsHeader);
     const rows = await resp.json();
     let flipSummary = null;
-    if (useNotebookFlow && isSnowdonStructuralModel(fileName)) {
+    if (useNotebookFlow && supportsFlipSummarySection(fileName)) {
       const flipResp = await fetch(`/api/models/revised-flip-summary/${encodeURIComponent(fileName)}`);
       if (requestId !== activeComparisonRequestId) {
         return;

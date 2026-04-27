@@ -846,6 +846,24 @@ public class ModelsController : ControllerBase
     private static IReadOnlyList<KeyValuePair<string, string>> GetFlipSummaryTypeDefinitions(string baseName)
     {
         var normalizedBaseName = Normalize(baseName).ToLowerInvariant();
+        if (string.Equals(normalizedBaseName, "ifc4_samplehouse", StringComparison.Ordinal))
+        {
+            return new[]
+            {
+                new KeyValuePair<string, string>("IFCDOOR", "Door"),
+                new KeyValuePair<string, string>("IFCWINDOW", "Window")
+            };
+        }
+
+        if (string.Equals(normalizedBaseName, "ifc2x3_duplex_architecture", StringComparison.Ordinal))
+        {
+            return new[]
+            {
+                new KeyValuePair<string, string>("IFCDOOR", "Door"),
+                new KeyValuePair<string, string>("IFCWINDOW", "Window")
+            };
+        }
+
         if (string.Equals(normalizedBaseName, "snowdon+towers+sample+structural2x3", StringComparison.Ordinal))
         {
             return new[]
