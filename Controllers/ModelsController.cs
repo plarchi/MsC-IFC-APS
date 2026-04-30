@@ -1133,7 +1133,7 @@ public class ModelsController : ControllerBase
         return Ok(request);
     }
 
-    // POST api/models/export-element-properties
+    // 4.4.3.2 POST api/models/export-element-properties
     // Uses APS Model Derivative to fetch the selected element's properties on the server,
     // flattens them into an array, and writes them to JSON Export/<ElementName>.json.
     [HttpPost("export-element-properties")]
