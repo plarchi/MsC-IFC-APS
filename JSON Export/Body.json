@@ -32,448 +32,242 @@
   {
     "category": "Item",
     "displayName": "Source File",
-    "value": "Snowdon Towers Sample Structural2x3.ifc"
+    "value": "Ifc4_SampleHouse.ifc"
   },
   {
     "category": "Item",
     "displayName": "Layer",
-    "value": "L1_37_Med"
+    "value": "Ground Floor"
   },
   {
     "category": "IFC",
     "displayName": "GLOBALID",
-    "value": "3ZT5EhLQn6JfRlijT8hpua"
+    "value": "3cUkl32yn9qRSPvBJVyWgM"
   },
   {
     "category": "IFC",
     "displayName": "NAME",
-    "value": "W Shapes-Column:W18x119:608216"
+    "value": "Compound Ceiling:Plain:286337"
   },
   {
     "category": "IFC",
     "displayName": "OBJECTTYPE",
-    "value": "W Shapes-Column:W18x119"
+    "value": "Compound Ceiling:Plain"
   },
   {
     "category": "IFC",
     "displayName": "TAG",
-    "value": "608216"
+    "value": "286337"
   },
   {
-    "category": "Classification:Uniformat:B10",
+    "category": "IFC",
+    "displayName": "PREDEFINEDTYPE",
+    "value": "CEILING"
+  },
+  {
+    "category": "IFCMATERIALLAYERSETUSAGE",
+    "displayName": "LAYERSETDIRECTION",
+    "value": "AXIS3"
+  },
+  {
+    "category": "IFCMATERIALLAYERSETUSAGE",
+    "displayName": "DIRECTIONSENSE",
+    "value": "NEGATIVE"
+  },
+  {
+    "category": "IFCMATERIALLAYERSETUSAGE",
+    "displayName": "OFFSETFROMREFERENCELINE",
+    "value": "0.000"
+  },
+  {
+    "category": "Pset_CoveringCommon",
     "displayName": "GLOBALID",
-    "value": "14g5y7qT$eI02$9ZqpxJv8"
+    "value": "3cUkl32yn9qRSPxrhVyWgM"
   },
   {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "LOCATION",
-    "value": "https://www.csiresources.org/standards/uniformat"
-  },
-  {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "ITEMREFERENCE",
-    "value": "B10"
-  },
-  {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "NAME",
-    "value": "Uniformat"
-  },
-  {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "REFERENCEDSOURCE:SOURCE",
-    "value": "https://www.csiresources.org/standards/uniformat"
-  },
-  {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "REFERENCEDSOURCE:EDITION",
-    "value": "1998"
-  },
-  {
-    "category": "Classification:Uniformat:B10",
-    "displayName": "REFERENCEDSOURCE:NAME",
-    "value": "Uniformat"
-  },
-  {
-    "category": "Pset_ColumnCommon",
-    "displayName": "GLOBALID",
-    "value": [
-      "2rQj5qqFyP9Mjs09wf_gHV",
-      "35SaRvaB6nHiu9EVlJlQpB"
-    ]
-  },
-  {
-    "category": "Pset_ColumnCommon",
-    "displayName": "LoadBearing",
-    "value": [
-      "TRUE",
-      "TRUE"
-    ]
-  },
-  {
-    "category": "Pset_ColumnCommon",
+    "category": "Pset_CoveringCommon",
     "displayName": "IsExternal",
-    "value": [
-      "FALSE",
-      "FALSE"
-    ]
-  },
-  {
-    "category": "Pset_ColumnCommon",
-    "displayName": "Reference",
-    "value": "W18x119"
-  },
-  {
-    "category": "Pset_ProductRequirements",
-    "displayName": "GLOBALID",
-    "value": [
-      "3md0lzBKM9NNETQ9ol4cKP",
-      "0yqGvGcgKUlbAPhbrzqVgP"
-    ]
-  },
-  {
-    "category": "Pset_ProductRequirements",
-    "displayName": "Category",
-    "value": [
-      "Structural Columns",
-      "Structural Columns"
-    ]
-  },
-  {
-    "category": "Pset_QuantityTakeOff",
-    "displayName": "GLOBALID",
-    "value": "1m62NPreCZlmHuVuTW5IjF"
-  },
-  {
-    "category": "Pset_QuantityTakeOff",
-    "displayName": "Reference",
-    "value": "W18x119"
-  },
-  {
-    "category": "Pset_ReinforcementBarPitchOfColumn",
-    "displayName": "GLOBALID",
-    "value": "1yIQ2R0lWy5lvqYgzIiyst"
-  },
-  {
-    "category": "Pset_ReinforcementBarPitchOfColumn",
-    "displayName": "Reference",
-    "value": "W18x119"
-  },
-  {
-    "category": "Other",
-    "displayName": "GLOBALID",
-    "value": [
-      "0BVtue8oaI_rqEv4mvm7es",
-      "3ywHUfUuaB_7rstxoAVD9n"
-    ]
-  },
-  {
-    "category": "Other",
-    "displayName": "Category",
-    "value": [
-      "Structural Columns",
-      "Structural Columns"
-    ]
-  },
-  {
-    "category": "Other",
-    "displayName": "Family Name",
-    "value": "W Shapes-Column"
-  },
-  {
-    "category": "Other",
-    "displayName": "Family",
-    "value": "W Shapes-Column"
-  },
-  {
-    "category": "Other",
-    "displayName": "Family and Type",
-    "value": "W Shapes-Column: W18x119"
-  },
-  {
-    "category": "Other",
-    "displayName": "Type",
-    "value": "W18x119"
-  },
-  {
-    "category": "Other",
-    "displayName": "Type Id",
-    "value": "692016"
-  },
-  {
-    "category": "Dimensions",
-    "displayName": "GLOBALID",
-    "value": [
-      "3feg8exIE4J1ds$Lq9sVGf",
-      "0TrZXBDpGPBvl52G0fzt_J"
-    ]
-  },
-  {
-    "category": "Dimensions",
-    "displayName": "Bolt Spacing",
-    "value": "0.458"
-  },
-  {
-    "category": "Dimensions",
-    "displayName": "Clear Web Height",
-    "value": "0.625"
-  },
-  {
-    "category": "Dimensions",
-    "displayName": "Length",
-    "value": "26.292"
-  },
-  {
-    "category": "Dimensions",
-    "displayName": "Volume",
-    "value": "6.393"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "GLOBALID",
-    "value": [
-      "0ffxJL17ATXxAuc$i1$69P",
-      "1QwDQXoTJa3dJgR46qmsW$"
-    ]
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Assembly Code",
-    "value": "B10"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Assembly Description",
-    "value": "Superstructure"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Code Name",
-    "value": "AISC 15.0"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "OmniClass Number",
-    "value": "23.25.30.11.14.11"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "OmniClass Title",
-    "value": "Columns"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Section Name Key",
-    "value": "W18x119"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Type Name",
-    "value": "W18x119"
-  },
-  {
-    "category": "Identity Data",
-    "displayName": "Has Association",
     "value": "FALSE"
   },
   {
-    "category": "Materials and Finishes",
+    "category": "Pset_CoveringCommon",
+    "displayName": "Reference",
+    "value": "Plain"
+  },
+  {
+    "category": "Pset_CoveringCommon",
+    "displayName": "ThermalTransmittance",
+    "value": "0.550"
+  },
+  {
+    "category": "Quantities",
     "displayName": "GLOBALID",
-    "value": "1QQ$OFRelYzpHP$iKD$DGQ"
+    "value": "2GYJ71m8z2g82Tsd_IMcYq"
   },
   {
-    "category": "Materials and Finishes",
-    "displayName": "Structural Material",
-    "value": "Steel"
-  },
-  {
-    "category": "Structural",
-    "displayName": "GLOBALID",
-    "value": "0QEyJX6lwm7JNZIkV$L_yP"
-  },
-  {
-    "category": "Structural",
-    "displayName": "Section Shape",
-    "value": "6"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "GLOBALID",
-    "value": "0kzYYl47IjTpFCdbgu8b0p"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Principal Axes Angle",
-    "value": "0.000"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Elastic Modulus strong axis",
-    "value": "0.134"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Elastic Modulus weak axis",
-    "value": "0.026"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Moment of Inertia strong axis",
-    "value": "0.001"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Moment of Inertia weak axis",
-    "value": "0.000"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Nominal Weight",
-    "value": "119.000"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Perimeter",
-    "value": "6.770"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Plastic Modulus strong axis",
-    "value": "0.152"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Plastic Modulus weak axis",
-    "value": "0.040"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Section Area",
-    "value": "0.244"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Torsional Moment of Inertia",
-    "value": "0.000"
-  },
-  {
-    "category": "Structural Analysis",
-    "displayName": "Warping Constant",
-    "value": "20300.000"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "GLOBALID",
-    "value": "16OADXLKYV4ztH0UNITodC"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Centroid Horizontal",
-    "value": "0.471"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Centroid Vertical",
-    "value": "0.792"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Flange Thickness",
-    "value": "0.088"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Height",
-    "value": "1.583"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Web Fillet",
-    "value": "0.033"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Web Thickness",
-    "value": "0.055"
-  },
-  {
-    "category": "Structural Section Geometry",
-    "displayName": "Width",
-    "value": "0.942"
-  },
-  {
-    "category": "IFCCOLUMNTYPE",
-    "displayName": "GLOBALID",
-    "value": "03PokK7vL6Ouk0tFrUfOCH"
-  },
-  {
-    "category": "IFCCOLUMNTYPE",
+    "category": "Quantities",
     "displayName": "NAME",
-    "value": "W Shapes-Column:W18x119"
+    "value": "BaseQuantities"
   },
   {
-    "category": "IFCCOLUMNTYPE",
-    "displayName": "TAG",
-    "value": "692016"
-  },
-  {
-    "category": "IFCCOLUMNTYPE",
-    "displayName": "PREDEFINEDTYPE",
-    "value": "COLUMN"
+    "category": "Quantities",
+    "displayName": "GrossCeilingArea",
+    "value": "8.694 mm^2"
   },
   {
     "category": "Constraints",
     "displayName": "GLOBALID",
-    "value": "0fq8cKHtXq2moCfyfS7Jq$"
+    "value": "3cUkl32yn9qRSPug3VyWgM"
   },
   {
     "category": "Constraints",
-    "displayName": "Base Offset",
-    "value": "0.000"
-  },
-  {
-    "category": "Constraints",
-    "displayName": "Column Style",
-    "value": "Vertical"
-  },
-  {
-    "category": "Constraints",
-    "displayName": "Moves With Grids",
+    "displayName": "Room Bounding",
     "value": "TRUE"
   },
   {
     "category": "Constraints",
-    "displayName": "Base Level",
-    "value": "L1_37_Med"
-  },
-  {
-    "category": "Constraints",
     "displayName": "Level",
-    "value": "L1_37_Med"
+    "value": "Level: Ground Floor"
   },
   {
     "category": "Constraints",
-    "displayName": "Column Location Mark",
-    "value": "C-4"
+    "displayName": "Height Offset From Level",
+    "value": "2200.000"
   },
   {
-    "category": "Constraints",
-    "displayName": "Top Level",
-    "value": "L3"
+    "category": "Dimensions",
+    "displayName": "GLOBALID",
+    "value": "3cUkl32yn9qRSPuhRVyWgM"
   },
   {
-    "category": "Constraints",
-    "displayName": "Top Offset",
-    "value": "4.000"
+    "category": "Dimensions",
+    "displayName": "Area",
+    "value": "8.694"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "Perimeter",
+    "value": "12810.000"
+  },
+  {
+    "category": "Dimensions",
+    "displayName": "Volume",
+    "value": "0.496"
+  },
+  {
+    "category": "Other",
+    "displayName": "GLOBALID",
+    "value": [
+      "3K2K60iUT2lPW9zy6Z9NZa",
+      "3JXnJywfD8gvrwOlMEwR2q"
+    ]
+  },
+  {
+    "category": "Other",
+    "displayName": "Category",
+    "value": [
+      "Ceilings",
+      "Ceilings"
+    ]
+  },
+  {
+    "category": "Other",
+    "displayName": "Family",
+    "value": "Compound Ceiling: Plain"
+  },
+  {
+    "category": "Other",
+    "displayName": "Family and Type",
+    "value": "Compound Ceiling: Plain"
+  },
+  {
+    "category": "Other",
+    "displayName": "Type",
+    "value": "Compound Ceiling: Plain"
+  },
+  {
+    "category": "Other",
+    "displayName": "Type Id",
+    "value": "Compound Ceiling: Plain"
+  },
+  {
+    "category": "Other",
+    "displayName": "Family Name",
+    "value": "Compound Ceiling"
   },
   {
     "category": "Phasing",
     "displayName": "GLOBALID",
-    "value": "0oZpHVNWCrcRGo$ewH0oWk"
+    "value": "3cUkl32yn9qRSPuhlVyWgM"
   },
   {
     "category": "Phasing",
     "displayName": "Phase Created",
     "value": "New Construction"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "GLOBALID",
+    "value": "11BHxV0UD3kux7q3snWrkt"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Roughness",
+    "value": "3"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Absorptance",
+    "value": "0.700"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Heat Transfer Coefficient (U)",
+    "value": "0.550"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Thermal mass",
+    "value": "11142.189"
+  },
+  {
+    "category": "Analytical Properties",
+    "displayName": "Thermal Resistance (R)",
+    "value": "1.818"
+  },
+  {
+    "category": "Construction",
+    "displayName": "GLOBALID",
+    "value": "11BHxV0UD3kux7q6InWrkt"
+  },
+  {
+    "category": "Construction",
+    "displayName": "Thickness",
+    "value": "57.000"
+  },
+  {
+    "category": "Graphics",
+    "displayName": "GLOBALID",
+    "value": "11BHxV0UD3kux7q6MnWrkt"
+  },
+  {
+    "category": "Graphics",
+    "displayName": "Coarse Scale Fill Color",
+    "value": "0"
+  },
+  {
+    "category": "Identity Data",
+    "displayName": "GLOBALID",
+    "value": "11BHxV0UD3kux7q66nWrkt"
+  },
+  {
+    "category": "Identity Data",
+    "displayName": "Keynote",
+    "value": "K40"
+  },
+  {
+    "category": "Identity Data",
+    "displayName": "Type Name",
+    "value": "Plain"
   }
 ]

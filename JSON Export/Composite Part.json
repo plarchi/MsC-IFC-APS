@@ -1,0 +1,37 @@
+[
+  {
+    "category": "Item",
+    "displayName": "Type",
+    "value": "Composite Part"
+  },
+  {
+    "category": "Item",
+    "displayName": "Icon",
+    "value": "Geometry"
+  },
+  {
+    "category": "Item",
+    "displayName": "Hidden",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Required",
+    "value": "No"
+  },
+  {
+    "category": "Item",
+    "displayName": "Material",
+    "value": ""
+  },
+  {
+    "category": "Item",
+    "displayName": "Source File",
+    "value": "Ifc4_SampleHouse.ifc"
+  },
+  {
+    "category": "Item",
+    "displayName": "Layer",
+    "value": "Ground Floor"
+  }
+]
