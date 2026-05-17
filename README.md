@@ -27,6 +27,13 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 ## 4. Workflow Section
 ### ETL Workflow
 
+## 4. Example Results for IFC Data
+## 5. From JSON to SQLite
+## 6. Research Value
+## 7. Future Development
+## 8. Installation
+
+
 - Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-simple-viewer-dotnet`
 - Go to the project folder: `cd aps-simple-viewer-dotnet`
 - Install .NET dependencies: `dotnet restore`
