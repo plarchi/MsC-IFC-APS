@@ -7,11 +7,19 @@
 
 This project explores a Data Engineering approach for OpenBIM workflows using Autodesk Platform Services [APS.NET](https://forge.autodesk.com) with [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/), [IFC](https://www.buildingsmart.org/about/openbim/), [JSON](https://www.json.org/json-en.html), Python with [Jupyter Notebook](https://jupyter.org/), and [SQLite](https://sqlite.org/). The platform extracts BIM metadata from IFC models, transforms asset information into structured datasets, and demonstrates how BIM data can evolve from isolated model files into queryable data products suitable for Digital Twins, asset management, and future machine learning applications.
 
-## Overall Architecture
+## 1. Overall Architecture
 
 ![OpenBIM ETL Architecture](Context/openbim_etl_architecture.jpg)
 
-## Development
+## 2. Key Features
+
+IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenShall](https://ifcopenshell.org/)
+OpenBIM JSON transformation workflow
+Python ETL pipeline for BIM asset data
+SQLite relational database integration
+COBie-aligned asset information structure
+Data querying for digital asset management
+Foundation for Digital Twin and Machine Learning workflows
 
 ### Prerequisites
 
