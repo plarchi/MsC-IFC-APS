@@ -1,13 +1,11 @@
 <<<<<<< HEAD
-# MsC OpenBIM ETL Data Engineering Approach
+# MsC OpenBIM ETL Data Engineering Platform
 
 ![platforms](https://img.shields.io/badge/platform-windows%20%7C%20osx%20%7C%20linux-lightgray.svg)
 [![.net](https://img.shields.io/badge/net-6.0-blue.svg)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 [![license](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT)
 
-[Autodesk Platform Services](https://forge.autodesk.com) application built by following
-the [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/) tutorial
-from https://tutorials.autodesk.io.
+This project explores a Data Engineering approach for OpenBIM workflows using Autodesk Platform Services [APS.NET](https://forge.autodesk.com) with [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/), [IFC](https://www.buildingsmart.org/about/openbim/), [JSON](https://www.json.org/json-en.html), Python with [Jupyter Notebook](https://jupyter.org/), and [SQLite](https://sqlite.org/). The platform extracts BIM metadata from IFC models, transforms asset information into structured datasets, and demonstrates how BIM data can evolve from isolated model files into queryable data products suitable for Digital Twins, asset management, and future machine learning applications.
 
 ![thumbnail](thumbnail.png)
 
