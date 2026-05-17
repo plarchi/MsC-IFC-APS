@@ -14,24 +14,18 @@ This project explores a Data Engineering approach for OpenBIM workflows using Au
 ## 2. Key Features
 
 IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenShall](https://ifcopenshell.org/)
-OpenBIM JSON transformation workflow
-Python ETL pipeline for BIM asset data
-SQLite relational database integration
-COBie-aligned asset information structure
-Data querying for digital asset management
-Foundation for Digital Twin and Machine Learning workflows
+- OpenBIM JSON transformation workflow
+- Python ETL pipeline for BIM asset data
+- SQLite relational database integration
+- COBie-aligned asset information structure
+- Data querying for digital asset management
+- Foundation for Digital Twin and Machine Learning workflows
 
-### Prerequisites
+## 3. Tech Stack
 
-- [APS credentials](https://forge.autodesk.com/en/docs/oauth/v2/tutorials/create-app)
-- [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- Command-line terminal such as [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview)
-or [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (should already be available on your system)
 
-> We recommend using [Visual Studio Code](https://code.visualstudio.com) which, among other benefits,
-> provides an [integrated terminal](https://code.visualstudio.com/docs/terminal/basics) as well.
-
-### Setup & Run
+## 4. Workflow Section
+### ETL Workflow
 
 - Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-simple-viewer-dotnet`
 - Go to the project folder: `cd aps-simple-viewer-dotnet`
@@ -59,21 +53,6 @@ with your APS Client ID and Client Secret:
 
 > When using [Visual Studio Code](https://code.visualstudio.com), you can run & debug
 > the application by pressing `F5`.
-
-## Troubleshooting
-
-### Invalid active developer path
-
-If you're getting `invalid active developer path` errors, please follow the steps
-explained in https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a.
-
-### Dev-certs errors
-
-If you're seeing errors related to `dev-certs`, try cleaning any existing certificates
-as explained in https://docs.microsoft.com/en-us/dotnet/core/additional-tools/self-signed-certificates-guide,
-and on macOS and Windows systems, do not forget to use the `--trust` switch.
-
-If you have any other question, please contact us via https://forge.autodesk.com/en/support/get-help.
 
 ## License
 
