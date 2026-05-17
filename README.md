@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MsC OpenBIM ETL Data Engineering Platform
 
 ![platforms](https://img.shields.io/badge/platform-windows%20%7C%20osx%20%7C%20linux-lightgray.svg)
@@ -11,7 +10,8 @@ This project explores a Data Engineering approach for OpenBIM workflows using Au
 
 ![OpenBIM ETL Architecture](Context/openbim_etl_architecture.jpg)
 
-## 2. Key Features
+## 2. Features & Teach Stack
+### Key Features
 
 IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenShall](https://ifcopenshell.org/)
 - OpenBIM JSON transformation workflow
@@ -19,10 +19,21 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 - SQLite relational database integration
 - COBie-aligned asset information structure
 - Data querying for digital asset management
+- Exploratory Data Analysis (EDA) for IFC metadata
 - Foundation for Digital Twin and Machine Learning workflows
 
-## 3. Tech Stack
-
+### Tech Stack
+| Category | Technology |
+|---|---|
+| BIM Platform | [APS.NET](https://forge.autodesk.com) |
+| BIM Format | [IFC](https://www.buildingsmart.org/about/openbim/) / OpenBIM |
+| IFC Library | [IFCOpenShall](https://ifcopenshell.org/) |
+| Backend | C# / [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)|
+| Data Processing | Python with [Jupyter Notebook](https://jupyter.org/) |
+| Database | [SQLite](https://sqlite.org/) |
+| Extracted Data Format | [JSON](https://www.json.org/json-en.html) |
+| Version Control | [GitHub](https://github.com/plarchi/MsC-IFC-APS/tree/main) |
+| Future Integration | [Power BI](https://app.powerbi.com/) / [Azure SQL, Blob and VM](https://azure.microsoft.com/en-us) |
 
 ## 4. Workflow Section
 ### ETL Workflow
