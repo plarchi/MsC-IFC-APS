@@ -246,37 +246,38 @@ This stage demonstrates how OpenBIM workflows can move beyond geometry-centric B
 
 ---
 
-## 7. Research Value
-## 8. Future Development
-## 9. Installation
+## 7. Future Development
+
+![From ISO 19650 to Relational Data](Context/From_ISO19650_to_Relational.png)
+*Figure 13. Future development from ISO 19650 information requirements toward relational BIM Data Lake and Digital Twin platforms.*
+
+The future development of this research extends beyond IFC model transformation into a scalable relational data ecosystem for Digital Twins and intelligent asset management.
+
+Based on the ISO 19650 information hierarchy, this research proposes a future workflow where:
+- Multiple IFC AIM and PIM datasets can form an Organizational Data Lake (ODL)
+- Relational SQLite or cloud databases can evolve into an Asset Data Warehouse (ADW)
+- Curated asset information can support operational analytics and lifecycle management
+- Live sensor and monitoring data can integrate with BIM asset information
+- Digital Twin Platforms (DTP) can be developed using centralized relational BIM data
+- Machine Learning Platforms (MLP) may use historical BIM and sensor datasets for predictive analysis
+
+This research demonstrates an early-stage proof-of-concept for transforming OpenBIM workflows from isolated model files into enterprise-level relational data infrastructure.
+
+The long-term vision is to shift BIM from geometry-centric workflows toward scalable data-centric platforms capable of supporting:
+- smart asset management,
+- operational intelligence,
+- predictive maintenance,
+- and future AI-assisted Digital Twin applications.
+
+The proposed framework also creates future opportunities for integration with:
+- Azure SQL and cloud storage,
+- Power BI dashboards,
+- real-time IoT sensor systems,
+- and city-scale Digital Twin environments.
+
+## 8. Key Review from Python Notebook
 
 
-- Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-simple-viewer-dotnet`
-- Go to the project folder: `cd aps-simple-viewer-dotnet`
-- Install .NET dependencies: `dotnet restore`
-- Open the project folder in a code editor of your choice
-- Create an _appsettings.Development.json_ file in the project folder (if it does not exist already),
-and populate it with the JSON snippet below, replacing `<client-id>` and `<client-secret>`
-with your APS Client ID and Client Secret:
-
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "APS_CLIENT_ID": "<client-id>",
-  "APS_CLIENT_SECRET": "<client-secret>"
-}
-```
-
-- Run the application, either from your code editor, or by running `dotnet run` in terminal
-- Open http://localhost:8080
-
-> When using [Visual Studio Code](https://code.visualstudio.com), you can run & debug
-> the application by pressing `F5`.
 
 ## License
 
