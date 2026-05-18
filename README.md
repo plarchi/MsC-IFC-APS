@@ -164,10 +164,91 @@ The analysis demonstrates that:
 
 This validates the selective ETL strategy for efficient IFC metadata transformation and future relational database integration.
 
-## 5. From JSON to SQLite
-## 6. Research Value
-## 7. Future Development
-## 8. Installation
+## 6. From JSON to SQLite
+
+This stage extends the OpenBIM workflow from semi-structured IFC JSON extraction into a relational SQLite environment. The objective is not only to store IFC metadata, but also to establish an early-stage BIM Data Lake architecture capable of supporting scalable querying, asset analytics, COBie integration, and future Digital Twin development.
+
+Rather than treating IFC models as isolated files, this workflow demonstrates how multiple IFC datasets can be consolidated into a centralized relational data environment. The process aligns with modern Data Engineering concepts where raw IFC-derived JSON datasets operate as a BIM-oriented Data Lake, while selective structured queries can later evolve into targeted Data Warehouse solutions for asset management and operational analytics.
+
+---
+
+### 6.1 Multiple IFC JSON Models as a BIM Data Lake
+
+The workflow below illustrates the transformation process from multiple IFC-derived JSON datasets into a centralized SQLite relational database.
+
+![JSON to SQLite Workflow](Context/JSON_to_SQLite.png)
+*Figure 9. Workflow from multiple IFC JSON datasets into SQLite relational databases.*
+
+The process begins with IFC metadata extraction through APS Viewer and .NET applications. The exported JSON datasets are then transformed and normalized using Python scripts before being mapped into logical relational fields. A dynamic field mapping process was developed to automatically discover IFC properties and flatten semi-structured metadata into structured relational tables.
+
+This approach enables multiple IFC model datasets to be consolidated into a single SQLite environment, effectively creating a lightweight BIM Data Lake. The SQLite database stores both raw and transformed IFC metadata, allowing large volumes of IFC information to remain queryable outside traditional BIM authoring software.
+
+The workflow also demonstrates an important transition from file-centric BIM workflows toward data-centric BIM infrastructure, where IFC metadata becomes reusable enterprise data rather than isolated project deliverables.
+
+---
+
+### 6.2 Relational Querying from the BIM Data Lake
+
+Once multiple IFC datasets were consolidated into SQLite, relational queries could be performed directly across the centralized BIM Data Lake.
+
+![SQLite Database Query](Context/SQLite_Database_Query.png)
+
+*Figure 10. Querying IFC relational data within SQLite.*
+
+The database structure enables:
+- querying IFC elements across multiple source models,
+- filtering metadata by IFC properties and classifications,
+- tracing elements using GlobalID,
+- and analysing asset information independently from BIM authoring tools.
+
+The successful flattening of IFC metadata into relational tables demonstrates how OpenBIM data can support scalable querying and cross-model analysis. Instead of manually reviewing IFC files individually, users can retrieve asset information through structured SQL queries.
+
+This relational structure also provides a foundation for future interoperability between BIM, asset management systems, and enterprise analytics platforms.
+
+---
+
+### 6.3 Selective Asset Querying as a BIM Data Warehouse
+
+A separate SQLite structure was created for selective asset-focused querying using filtered IFC property extraction.
+
+![SQLite Asset Query](Context/SQLite_Database_Asset_Query.png)
+
+*Figure 11. Selective IFC asset querying within SQLite.*
+
+Unlike the broader BIM Data Lake approach, this stage focuses on extracting targeted asset information for operational use cases. Only selected IFC properties relevant to asset management and COBie workflows were loaded into simplified relational tables.
+
+This structure represents an early-stage BIM Data Warehouse concept, where curated and structured IFC metadata can support:
+- asset management workflows,
+- lifecycle information tracking,
+- COBie deliverables,
+- operational reporting,
+- and future Digital Twin analytics.
+
+The separation between raw IFC metadata and curated asset datasets reflects common enterprise Data Engineering practices, where Data Lakes retain large-scale raw information while Data Warehouses provide optimized datasets for business and operational analysis.
+
+---
+
+### 6.4 COBie Relational Analysis Across Multiple IFC Models
+
+The relational SQLite database was further analysed using Python visualization workflows to validate COBie integration across multiple IFC datasets.
+
+![COBie SQLite Analysis](Context/COBie_SQLite_Analysis.png)
+
+*Figure 12. COBie analysis from relational SQLite database queries.*
+
+The bubble chart visualization demonstrates the successful querying and aggregation of COBie-enriched IFC metadata from multiple models. The analysis highlights:
+- relational grouping of IFC object types,
+- comparison of COBie classifications,
+- scalable metadata aggregation across datasets,
+- and the ability to identify asset-rich model categories.
+
+This stage demonstrates how OpenBIM workflows can move beyond geometry-centric BIM usage into data-driven analytical environments. By combining IFC metadata, relational databases, and Python analytics, the workflow establishes a scalable foundation for future BIM Data Lakes, Data Warehouses, Digital Twins, and machine learning applications.
+
+---
+
+## 7. Research Value
+## 8. Future Development
+## 9. Installation
 
 
 - Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-simple-viewer-dotnet`
