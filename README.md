@@ -277,6 +277,37 @@ The proposed framework also creates future opportunities for integration with:
 
 ## 8. Key Review from Python Notebook
 
+The following notebooks and scripts demonstrate the core Data Engineering workflows developed throughout this research project, including IFC metadata analysis, ETL transformation, relational database generation, and COBie asset querying.
+
+### 8.1 IFC Metadata Analysis Example
+Python notebook for Exploratory Data Analysis (EDA) of IFC JSON datasets, including category distribution, metadata validation, and IFC property investigation.
+
+🔗 [IFC Metadata Analysis Notebook](https://github.com/plarchi/MsC-IFC-APS/blob/main/PyDataAnalysis/ACD-18040-ALL-ST-N2x3.ipynb)
+
+---
+
+### 8.2 IFC JSON Transformation Example
+Python notebook demonstrating ETL transformation workflows for IFC metadata, including naming convention standardization and COBie enrichment.
+
+🔗 [IFC JSON Transformation Notebook](https://github.com/plarchi/MsC-IFC-APS/blob/main/PyDataTransform/ACD-18040-ALL-ST-N2x3.ipynb)
+
+---
+
+### 8.3 Dynamic IFC Field Mapping for SQLite
+Python script for generating dynamic field mappings from multiple IFC JSON datasets into relational SQLite structures.
+
+🔗 [Generate IFC Field Mapping Script](https://github.com/plarchi/MsC-IFC-APS/blob/main/PyToSQL/Generate-IFCAllData-FieldMap.py)
+
+---
+
+### 8.4 COBie Asset Data Warehouse Query
+SQL workflow demonstrating selective IFC asset querying and COBie-based Data Warehouse generation from centralized SQLite databases.
+
+🔗 [COBie SQLite Query Workflow](https://github.com/plarchi/MsC-IFC-APS/blob/main/SQL/IFCAllData-COBie.sql)
+
+---
+
+These notebooks and scripts represent the practical implementation of the OpenBIM ETL workflow and demonstrate how IFC metadata can be transformed into scalable relational data structures for Digital Twin and future Data Engineering applications.
 
 
 ## License
