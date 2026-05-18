@@ -9,6 +9,7 @@ This project explores a Data Engineering approach for OpenBIM workflows using Au
 ## 1. Overall Architecture
 
 ![OpenBIM ETL Architecture](Context/openbim_etl_architecture.jpg)
+*Figure 1. OpenBIM ETL Overall Architecture for IFC metadata to individual Model to SQLite relational database.*
 
 ## 2. Features & Tech Stack
 ### Key Features
@@ -28,7 +29,7 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 | BIM Platform | [APS.NET](https://forge.autodesk.com) |
 | BIM Format | [IFC](https://www.buildingsmart.org/about/openbim/) / OpenBIM |
 | IFC Library | [IFCOpenShall](https://ifcopenshell.org/) |
-| Backend | C# / [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)|
+| Backend | [C#.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)|
 | Data Processing | [Python](https://www.python.org/) with [Jupyter Notebook](https://jupyter.org/) |
 | Database | [SQLite](https://sqlite.org/) |
 | Extracted Data Format | [JSON](https://www.json.org/json-en.html) |
@@ -40,18 +41,36 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 ![ETL Workflow](Context/etl_ifc_workflow.png)
 *Figure 2. OpenBIM ETL workflow for IFC metadata extraction, transformation, and validation.*
 
-This workflow demonstrates how IFC metadata can be extracted from Autodesk Platform Services (APS) into structured JSON datasets for further transformation using Python-based ETL processes.
+This workflow demonstrates how IFC metadata can be extracted from [APS.NET](https://forge.autodesk.com) into structured JSON datasets for further transformation using Python-based ETL processes.
 
 The workflow includes:
 - IFC model upload and visualization through APS
 - Extraction of BIM metadata into JSON
-- Python-based metadata transformation
+- Python-based metadata transformation with correct Naming convention to IFC element Name
 - COBie and naming convention enrichment
 - Reloading transformed JSON data back into IFC models
 - Visual verification of transformed IFC metadata
 
 The objective is to transform OpenBIM data from isolated model files into reusable and queryable asset information structures.
-### EDA Workflow
+
+## 3.2 Exploratory Data Analysis (EDA) Workflow
+
+![EDA Workflow](Context/eda_ifc_workflow.png)
+*Figure 3. Exploratory Data Analysis (EDA) workflow for IFC metadata transformation and standardization.*
+
+Python and Jupyter Notebook were used to perform Exploratory Data Analysis (EDA) on extracted IFC JSON datasets.
+
+The EDA workflow investigates:
+- IFC entity classification
+- Property set distribution
+- Metadata consistency
+- Object naming structure
+- COBie mapping
+- Category-based transformation logic
+
+The workflow demonstrates how semi-structured IFC metadata can be analyzed, standardized, and prepared for future relational database and Digital Twin applications.
+
+Processed datasets are exported as transformed JSON files for further validation and database integration.
 
 ## 4. Example Results for IFC Data
 ## 5. From JSON to SQLite
