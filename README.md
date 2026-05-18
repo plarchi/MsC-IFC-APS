@@ -97,6 +97,73 @@ The example above demonstrates the transformation of an IFC door element from it
 
 This validation demonstrates how IFC metadata can be transformed through a Data Engineering workflow instead of relying solely on manual BIM model editing processes.
 
+## 5. Data Visulisation and Verification
+The transformed IFC metadata was further analysed and verified using Python-based data visualization workflows. These visualizations demonstrate the effectiveness of the ETL process and validate the successful implementation of standardized naming conventions and COBie asset information within IFC models.
+
+---
+
+### 5.1 IFC Naming Transformation Verification
+
+The donut chart below illustrates the transformed IFC door and window naming conventions after the ETL workflow.
+
+![IFC FLIP Donut Chart](Context/IFC_FLIP_Donut_Chart.png)
+
+*Figure 5. Verification of transformed IFC door and window naming conventions.*
+
+The result demonstrates:
+- standardized IFC object naming,
+- object classification consistency,
+- and successful metadata transformation across multiple IFC elements.
+
+---
+
+### 5.2 COBie Data Coverage
+
+The nested pie chart illustrates the distribution of COBie classifications applied to IFC elements.
+
+![IFC COBie Nested Pie](Context/IFC_COBie_Nested_Pie_Chart.png)
+
+*Figure 6. COBie classification distribution across IFC object categories.*
+
+The ETL workflow successfully mapped COBie classifications into:
+- IFCWINDOW
+- IFCDOOR
+- IFCWALL
+- IFCSLAB
+- and additional IFC asset categories.
+
+---
+
+### 5.3 COBie Data Implementation Table
+
+The table below demonstrates examples of COBie data successfully loaded into IFC model elements.
+
+![COBie Data Table](Context/COBie_Data_Table.png)
+
+*Figure 7. Example of COBie metadata implementation within IFC elements.*
+
+The transformed IFC metadata includes:
+- standardized classification codes,
+- asset descriptions,
+- IFC object types,
+- and structured COBie references suitable for asset management workflows.
+
+---
+
+### 5.4 IFC Metadata Coverage Analysis
+
+The bubble chart below visualizes IFC object categories containing COBie-related metadata after transformation.
+
+![IFC COBie Bubble Chart](Context/IFC_COBie_Bubble_Chart.png)
+
+*Figure 8. IFC object category coverage after COBie implementation.*
+
+The analysis demonstrates that:
+- only selected IFC object categories require COBie enrichment,
+- while geometric and representation entities such as IFCPOLYLINE or IFCSHAPEREPRESENTATION do not require asset-level COBie metadata.
+
+This validates the selective ETL strategy for efficient IFC metadata transformation and future relational database integration.
+
 ## 5. From JSON to SQLite
 ## 6. Research Value
 ## 7. Future Development
