@@ -37,7 +37,7 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 
 ## 3. Workflow Section
 ### 3.1 OpenBIM ETL Workflow
-![ETL Workflow](Context/etl_ifc_workflow.jpg)
+![ETL Workflow](Context/etl_ifc_workflow.png)
 *Figure 2. OpenBIM ETL workflow for IFC metadata extraction, transformation, and validation.*
 
 This workflow demonstrates how IFC metadata can be extracted from Autodesk Platform Services (APS) into structured JSON datasets for further transformation using Python-based ETL processes.
