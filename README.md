@@ -4,7 +4,7 @@
 [![.net](https://img.shields.io/badge/net-6.0-blue.svg)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 [![license](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT)
 
-This project explores a Data Engineering approach for OpenBIM workflows using Autodesk Platform Services [APS.NET](https://forge.autodesk.com) with [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/), [IFC](https://www.buildingsmart.org/about/openbim/), [JSON](https://www.json.org/json-en.html), Python with [Jupyter Notebook](https://jupyter.org/), and [SQLite](https://sqlite.org/). The platform extracts BIM metadata from IFC models, transforms asset information into structured datasets, and demonstrates how BIM data can evolve from isolated model files into queryable data products suitable for Digital Twins, asset management, and future machine learning applications.
+This project explores a Data Engineering approach for OpenBIM workflows using Autodesk Platform Services [APS.NET](https://forge.autodesk.com) with [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/), [IFC](https://www.buildingsmart.org/about/openbim/), [JSON](https://www.json.org/json-en.html), [Python](https://www.python.org/) with [Jupyter Notebook](https://jupyter.org/), and [SQLite](https://sqlite.org/). The platform extracts BIM metadata from IFC models, transforms asset information into structured datasets, and demonstrates how BIM data can evolve from isolated model files into queryable data products suitable for Digital Twins, asset management, and future machine learning applications.
 
 ## 1. Overall Architecture
 
@@ -27,7 +27,7 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 | Category | Technology |
 |---|---|
 | BIM Platform | [APS.NET](https://forge.autodesk.com) |
-| BIM Format | [IFC](https://www.buildingsmart.org/about/openbim/) / OpenBIM |
+| BIM Format | [IFC](https://www.buildingsmart.org/about/openbim/) / [OpenBIM](https://www.buildingsmart.org/about/openbim/)|
 | IFC Library | [IFCOpenShall](https://ifcopenshell.org/) |
 | Backend | [C#.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)|
 | Data Processing | [Python](https://www.python.org/) with [Jupyter Notebook](https://jupyter.org/) |
@@ -73,6 +73,30 @@ The workflow demonstrates how semi-structured IFC metadata can be analyzed, stan
 Processed datasets are exported as transformed JSON files for further validation and database integration.
 
 ## 4. Example Results for IFC Data
+### IFC Metadata Transformation Result
+
+![Before and After ETL](Context/before_after_ETL.png)
+*Figure 4. IFC metadata before and after ETL transformation workflow.*
+
+The ETL workflow successfully transformed IFC metadata by applying:
+- standardized naming conventions,
+- COBie classification data,
+- and structured object metadata enrichment.
+
+The example above demonstrates the transformation of an IFC door element from its original BIM authoring format into a standardized OpenBIM asset structure.
+
+### Before ETL
+- Original object naming generated from BIM authoring software
+- No structured COBie classification
+- Limited asset information standardization
+
+### After ETL
+- Standardized object naming convention applied
+- COBie classification successfully mapped into IFC metadata
+- Enhanced interoperability and asset information consistency
+
+This validation demonstrates how IFC metadata can be transformed through a Data Engineering workflow instead of relying solely on manual BIM model editing processes.
+
 ## 5. From JSON to SQLite
 ## 6. Research Value
 ## 7. Future Development
