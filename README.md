@@ -10,10 +10,10 @@ This project explores a Data Engineering approach for OpenBIM workflows using Au
 
 ![OpenBIM ETL Architecture](Context/openbim_etl_architecture.jpg)
 
-## 2. Features & Teach Stack
+## 2. Features & Tech Stack
 ### Key Features
 
-IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenShall](https://ifcopenshell.org/)
+IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenShell](https://ifcopenshell.org/)
 - OpenBIM JSON transformation workflow
 - Python ETL pipeline for BIM asset data
 - SQLite relational database integration
@@ -29,14 +29,29 @@ IFC metadata extraction using [APS.NET](https://forge.autodesk.com) & [IFCOpenSh
 | BIM Format | [IFC](https://www.buildingsmart.org/about/openbim/) / OpenBIM |
 | IFC Library | [IFCOpenShall](https://ifcopenshell.org/) |
 | Backend | C# / [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)|
-| Data Processing | Python with [Jupyter Notebook](https://jupyter.org/) |
+| Data Processing | [Python](https://www.python.org/) with [Jupyter Notebook](https://jupyter.org/) |
 | Database | [SQLite](https://sqlite.org/) |
 | Extracted Data Format | [JSON](https://www.json.org/json-en.html) |
 | Version Control | [GitHub](https://github.com/plarchi/MsC-IFC-APS/tree/main) |
 | Future Integration | [Power BI](https://app.powerbi.com/) / [Azure SQL, Blob and VM](https://azure.microsoft.com/en-us) |
 
-## 4. Workflow Section
-### ETL Workflow
+## 3. Workflow Section
+### 3.1 OpenBIM ETL Workflow
+![ETL Workflow](Context/etl_ifc_workflow.jpg)
+*Figure 2. OpenBIM ETL workflow for IFC metadata extraction, transformation, and validation.*
+
+This workflow demonstrates how IFC metadata can be extracted from Autodesk Platform Services (APS) into structured JSON datasets for further transformation using Python-based ETL processes.
+
+The workflow includes:
+- IFC model upload and visualization through APS
+- Extraction of BIM metadata into JSON
+- Python-based metadata transformation
+- COBie and naming convention enrichment
+- Reloading transformed JSON data back into IFC models
+- Visual verification of transformed IFC metadata
+
+The objective is to transform OpenBIM data from isolated model files into reusable and queryable asset information structures.
+### EDA Workflow
 
 ## 4. Example Results for IFC Data
 ## 5. From JSON to SQLite
@@ -77,6 +92,3 @@ with your APS Client ID and Client Secret:
 This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 Please see the [LICENSE](LICENSE) file for more details.
 =======
-# APS-IFC
-APS for IFC Data Engineering
->>>>>>> origin/main
