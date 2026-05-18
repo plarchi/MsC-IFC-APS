@@ -309,9 +309,4 @@ SQL workflow demonstrating selective IFC asset querying and COBie-based Data War
 
 These notebooks and scripts represent the practical implementation of the OpenBIM ETL workflow and demonstrate how IFC metadata can be transformed into scalable relational data structures for Digital Twin and future Data Engineering applications.
 
-
-## License
-
-This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-Please see the [LICENSE](LICENSE) file for more details.
 =======
